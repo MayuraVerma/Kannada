@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Glyph Names and Current Implementations</title>
+	</head>
+
+	<body>
+		<h1>Glyph Names and Current Implementations</h1>
+		<h4>[ Document version 1.1. Last updated January 31, 2003 ]</h4>
+
+		<ol>
+			<li><a href="#1">Introduction</a></li>
+			<li><a href="#2">Where and why glyph names are used</a></li>
+			<li><a href="#3">Why the name prefix &quot;u&quot; is not yet recommended for glyphs which are encoded in the Unicode BMP</a></li>
+			<li><a href="#4">Length and character set limitations on names</a></li>
+			<li><a href="#5">Adobe Type Manager and kern pair filtering</a></li>
+			<li><a href="#6">Document changes</a></li>
+		</ol>
+
+		<a name="1"><h3>1. Introduction</h3></a>
+			<p>This article is strongly time-dated, as it contains comments about current implementations.  Please bear in this mind if reading it much after Oct 2002.</p>
+
+		<a name="2"><h3>2. Where and why glyph names are used</h3></a>
+			<p>Following the naming conventions of the article &quot;Unicode and Glyph Names&quot; will currently enable copying text and searching text in PDF (Adobe Portable Document Format) documents under a wider variety of circumstances than having no names, or names that do not follow these conventions. In the era of the Internet, where many documents must be searchable in order to be useful, this is very important.</p>
+			<p>Many PDF files are made from PostScript printer files, when the original fonts referenced by the document are not available, and the embedded font data must be used. In this case, the Unicode cmap table of an OpenType font is not available, and the only clue that the PDF maker may have about the semantics of a glyph is the name of the glyph.</p>
+			<p>Even when the original font file is present, glyphs which do not match characters in the Unicode specification may still be usefully connected to a Unicode character by the glyph name. For example, naming a decorative variant of &quot;t&quot; as &quot;t.alt&quot; allows a PDF producing program to note that &quot;t.alt&quot; carries the same semantics as &quot;t&quot;, for searching.</p>
+			<p>In the future, it is expected that more products than Adobe's suite will support text string searches by the Unicode semantics of a glyph, and that the scope of usefulness of these rules will become much wider.</p>
+			<p>For OpenType/TTF fonts, where the font may be missing glyph names altogether, the presence in the font file cmap table of a correct Unicode value for a glyph will still cause it to be correctly identified in most cases. However, for glyphs that do not have a Unicode character representation, the comments above apply.</p>
+
+		<a name="3"><h3>3. Why the prefix &quot;u&quot; is not yet recommended for glyphs which are encoded in the Unicode BMP</h3></a>
+			<p>The prefix &quot;u&quot; is not supported by by Acrobat 4 and 5. It will be supported by Acrobat 6 and later, which is also when support for Unicode characters outside the Basic Multilingual Plane (BMP) will be introduced. The AGL names, and names with the prefix &quot;uni&quot;, and the &quot;.&quot; and &quot;_&quot; parsing rules are already understood by Acrobat 4 and 5.</p>
+
+		<a name="4"><h3>4. Length and character set limitations on names</h3></a>
+			<p>Glyphs from Western OpenType/CFF and OpenType/TTF fonts must still be referenced in many workflow cases as name-keyed font data. As a result, glyph names are still subject to the length and character code limitations that are imposed by the Type 1 specification and the implementation of existing installations of PostScript interpreters. These both require the following:</p>
+			<p>A glyph name may be up to 31 characters in length, must be entirely comprised of characters from the following set:</p>
+					<ul>
+						<li>A-Z</li>
+						<li>a-z</li>
+						<li>0-9</li>
+						<li>. (period)</li>
+						<li>_ (underscore)</li>
+					</ul>
+			<p>and must not start with a digit or period. The only exception is the special character &quot;.notdef&quot;.</p>
+			<p>&quot;twocents&quot;, &quot;a1&quot;, and &quot;_&quot; are valid glyph names. &quot;2cents&quot; and &quot;.twocents&quot; are not.</p>
+
+		<a name="5"><h3>5. Adobe Type Manager and kern pair filtering</h3></a>
+			<p>For many programs, support for kerning in OpenType fonts is provided to a limited degree by the Windows and Macintosh Adobe Type Managers. This limitation arises because most programs that are not OpenType-aware assume that all the kern pairs in a font can reasonably fit is a single table, and that there will be no more than a few thousand kern pairs. Providing more kern pairs than this causes such programs to crash. With the class-based kerning supported by OpenType layout, even a font with only 220 glyphs will usually exceed the limit, if well-kerned. In order to allow use of OpenTyoe fonts without crashing many current programs, the Adobe Type Manager programs support kerning via the legacy operating system calls by first fully expanding the class-based kerning  to a list of single glyph name pairs, and then filtering this list through a hard-coded list of glyph names. If the glyph name on either side of the kern pair is not in the filter list, then the kern pair is omitted.  The kern filtering list for Windows 95 and Mac OS 9 is <a href="win_95_mac_kern.txt">here</a>. The kern filtering list for Windows NT and 2000 is <a href="win_nt_kern.txt">here</a>.</p>
+
+		<a name="6"><h3>Document changes</h3></a>
+			<p><strong>v1.1</strong><br>
+					[31 January 2003] Added kern filter lists.</p>
+			<p><strong>v1.0</strong><br>
+					[4 November 2002] First version.</p>
+
+	</body>
+</html>

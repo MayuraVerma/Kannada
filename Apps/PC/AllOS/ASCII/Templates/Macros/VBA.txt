@@ -1,0 +1,211 @@
+ Sub Read_registry_Value()
+    Dim Shell As Object
+    Dim keyname As String
+    Dim value As String
+    Dim keyvalue As String
+
+    keyname = "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\" & _
+              "Control\ComputerName\ActiveComputerName\"
+             
+    value = "ComputerName"
+
+    Set Shell = CreateObject("wscript.shell")
+    On Error Resume Next
+    keyvalue = Shell.regread(keyname & value)
+    'If Err.Number 0 Then
+       ' MsgBox "Invalid Registry Entry"
+    'Else
+        MsgBox keyvalue
+   ' End If
+   ' On Error GoTo 0
+End Sub
+
+
+Private Declare Function getRepString Lib "Text_ConverterDLL.DLL" (ByVal inPattern As String, ByVal outPattern As String) As Long
+
+Sub convert()
+Dim strFind As String
+Dim strReplace As String
+Dim start As Long
+Dim last As Long
+Dim i As Long
+Dim j As Long
+Dim strWW As String
+Dim fnt As Font
+Dim fntName As String
+Dim replChars As String
+Dim status As Long
+Dim repStr() As String
+Dim kanFont As Long
+Dim styl As Style
+Dim startW As Long
+Dim endW As Long
+Dim lastChrFont As String
+Dim currentChrFont As String
+Dim crlf As String
+
+lst = ActiveDocument.Range.End
+crlf = Chr(13) & Chr(10)
+
+'For i = 0 To lst - 1
+'While i <= lst
+i = 0
+j = i
+runLoop: Do While lst - 1 > i
+kanFont = 2
+    'ActiveDocument.Range.Find.Execute FindText:=Mid$(strFind, i, 1), _
+      'ReplaceWith:=Mid$(strReplace, i, 1), Replace:=wdReplaceAll
+      'ActiveDocument.Range.Text
+         'Set rngParagraphs = ActiveDocument.Range(i, i + 7)
+         'j = i
+         startW = i
+         endW = i + 1
+        
+         Set rngParagraphs = ActiveDocument.Range(startW, endW)
+                
+                 With rngParagraphs.Select
+                    lastChrFont = Selection.Font.Name
+                 End With
+       j = 0
+       Do While True
+                
+                 Set rngWrd = ActiveDocument.Range(startW + j, endW)
+                
+                 With rngWrd.Select
+                    currentChrFont = Selection.Font.Name
+                 End With
+                
+                                
+                 If " " = ActiveDocument.Range(startW + j, endW).Text Then
+                 'endW = endW - 1
+                 'i = i + 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf vbCrLf = ActiveDocument.Range(startW + j, endW).Text Then
+                 'endW = endW - 1
+                 'i = i + 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf crlf = ActiveDocument.Range(startW + j, endW).Text Then
+                 'endW = endW - 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf vbCr = ActiveDocument.Range(startW + j, endW).Text Then
+                 endW = endW - 1
+                 i = i + 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf vbLf = ActiveDocument.Range(startW + j, endW).Text Then
+                 'endW = endW - 1
+                 'i = i + 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf vbTab = ActiveDocument.Range(startW + j, endW).Text Then
+                 'endW = endW - 1
+                 'i = i + 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf isKannadaFont(currentChrFont) = False Then
+                 endW = endW - 1
+                 i = i + 1
+                      GoTo EndWrdSelectWhile
+                 ElseIf Not 0 = StrComp(lastChrFont, currentChrFont, vbTextCompare) Then
+                 endW = endW - 1
+                 'i = i + 1
+                      GoTo EndWrdSelectWhile
+                 Else
+                      endW = endW + 1
+                      lastChrFont = currentChrFont
+                      j = j + 1
+                 End If
+           Loop 'End while
+EndWrdSelectWhile:
+        
+         Set rngParagraphs = ActiveDocument.Range(startW, endW)
+        
+         With rngParagraphs.Select
+          strWW = ActiveDocument.Range(startW, endW).Text
+          'fnt = ActiveDocument.Range(i, i + 1).font
+          fntName = Selection.Font.Name
+          Selection.CopyFormat
+          'fntName = fnt.NameAscii
+          kanFont = isKannadaFont(fntName) 'StrComp(fntName, "Praja", vbTextCompare)
+         End With
+             
+        If Len(strWW) > 0 Then
+        GoTo replWord
+        Else
+        i = i + 1
+        lst = ActiveDocument.Range.End
+        GoTo runLoop
+        End If
+       
+replWord:          If kanFont = 1 Then
+              replChars = String$(1024, 0)
+             
+              status = getRepString(strWW, replChars)
+              repStr = Split(replChars, "*#", 2, vbTextCompare)
+             
+           With rngParagraphs
+               .Delete
+               .InsertAfter Text:=repStr(0)
+               i = i + Len(repStr(0))
+               lst = ActiveDocument.Range.End
+              'Selection.PasteFormat
+              '.InsertParagraphAfter
+         End With
+        
+         lst = ActiveDocument.Range.End
+        
+         With rngParagraphs.Select
+         Selection.PasteFormat
+         End With
+ 
+         With rngParagraphs.Font
+             .Name = getKuvempuFont(fntName)
+         End With
+     Else
+         i = i + 1
+     End If
+lst = ActiveDocument.Range.End
+'Next i
+Loop
+
+End Sub
+
+
+Private Function isKannadaFont(fontName As String) As Integer
+Dim retVal As Integer
+
+retVal = 0
+If StrComp(fontName, "Praja", vbTextCompare) = 0 Then
+retVal = 1
+ElseIf StrComp(fontName, "Praja_Demi", vbTextCompare) = 0 Then
+retVal = 1
+ElseIf StrComp(fontName, "Praja_Medium", vbTextCompare) = 0 Then
+retVal = 1
+ElseIf StrComp(fontName, "Praja Bold", vbTextCompare) = 0 Then
+retVal = 1
+ElseIf StrComp(fontName, "Praja_Light", vbTextCompare) = 0 Then
+retVal = 1
+End If
+isKannadaFont = retVal
+End Function
+
+Private Function getKuvempuFont(fontName As String) As String
+If StrComp(fontName, "Praja", vbTextCompare) = 0 Then
+getKuvempuFont = "Kuvempu_Praja3"
+ElseIf StrComp(fontName, "Praja_Medium", vbTextCompare) = 0 Then
+getKuvempuFont = "Kuvempu_Praja3"
+ElseIf StrComp(fontName, "Praja Bold", vbTextCompare) = 0 Then
+getKuvempuFont = "Kuvempu_Praja4"
+ElseIf StrComp(fontName, "Praja_Demi", vbTextCompare) = 0 Then
+getKuvempuFont = "Kuvempu_Praja1"
+ElseIf StrComp(fontName, "Praja_Light", vbTextCompare) = 0 Then
+getKuvempuFont = "Kuvempu_Praja2"
+End If
+End Function
+    'tmpVal = String$(1024, 0)
+       
+    'Mark Variable Size
+    'KeyValSize = 1024
+
+    'Retrieve Registry Key Value...
+
+    'rc = RegQueryValueEx(hKey, "Path", _
+                         0, KeyValType, tmpVal, _
+                         KeyValSize)

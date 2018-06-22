@@ -1,0 +1,136 @@
+; ttogdef.txt - Format Description File for GDEF table for TTOASM.EXE
+; Expand to handle Class parameter and switch values - 1/25/95
+; Add Count type
+; TTOGDEF.FMT 1.2
+ 
+DEFINE ZERO=0
+DEFINE MAXCOUNT=0xFFFF
+
+;**** GDEF ****
+
+GDEFHeader, HEAD {
+fixed32, 0x00010000                     ; GDEFHeader version
+Offset, ClassDef                        
+Offset, AttachList
+Offset, LigCaretList
+Offset, ClassDef				   ; AttachClassDef (1.2)
+}
+
+CoverageFormat1, TABLE {
+uint16, 1                               ; Format 1
+Count, 1, MAXCOUNT                      ; GlyphCount
+Array, $T2, GlyphID, 0, MAXGLYPHID
+}
+
+CoverageFormat2, TABLE {
+uint16, 2                               ; Format 2
+Count, 1, MAXCOUNT                   	; CoverageRangeCount
+Array, $T2, RangeRecord
+}
+
+RangeRecord, RECORD {
+GlyphID, 0, MAXGLYPHID					; RangeStart
+GlyphID, $R1, MAXGLYPHID				; RangeEnd
+uint16, CheckRangeRecord()              ; StartCoverageIndex
+}
+
+Coverage, CLASS, , $B0 {
+CoverageFormat1
+CoverageFormat2
+}
+
+ClassDefFormat1, TABLE {
+uint16, 1                               ; Format 1
+GlyphID, 0, MAXGLYPHID					; StartGlyph
+Count, 1, MAXGLYPHID           			; GlyphCount
+Array, $T3, uint16
+}
+
+ClassDefFormat2, TABLE {
+uint16, 2                               ; Format 2
+Count, 1, MAXCOUNT                     	; ClassRangeCount
+Array, $T2, ClassRangeRecord
+}
+
+ClassRangeRecord, RECORD {
+GlyphID, 0, MAXGLYPHID					; Start GlyphID
+GlyphID, $R1, MAXGLYPHID				; End GlyphID
+uint16                                  ; Class
+}
+
+ClassDef, CLASS, , $B0 {
+ClassDefFormat1
+ClassDefFormat2
+}
+
+DeviceTableFormat1, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 1                               ; Format 1
+Array, $T2 - $T1+1, packedint2    
+}
+
+DeviceTableFormat2, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 2                               ; Format 2
+Array, $T2 - $T1+1, packedint4    
+}
+
+DeviceTableFormat3, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 3                               ; Format 3
+Array, $T2 - $T1+1, packedint8
+}
+DeviceTable, CLASS, , $B4 {             ; Identifier is 4 bytes into DeviceTable structure
+DeviceTableFormat1
+DeviceTableFormat2
+DeviceTableFormat3
+}
+
+
+AttachList, TABLE {
+Offset, Coverage, NOTNULL               
+Count, CoverageCount($T1)              ; GlyphCount
+Array, $T2, Offset, AttachPoint, NOTNULL
+}
+
+AttachPoint, TABLE {
+Count, 1, MAXCOUNT       				; PointCount
+Array, $T1, uint16
+}
+
+LigCaretList, TABLE {
+Offset, Coverage, NOTNULL               
+Count, CoverageCount($T1)              ; GlyphCount
+Array, $T2, Offset, LigGlyph, NOTNULL
+}
+
+LigGlyph, TABLE {
+Count, 1, MAXCOUNT                     ; CaretCount
+Array, $T1, Offset, CaretValue, NOTNULL 
+}
+
+CaretValueFormat1, TABLE {
+uint16, 1                               ; Format 1
+int16                                   ; CaretValueCoordinate x or y
+}
+
+CaretValueFormat2, TABLE {
+uint16, 2                               ; Format 2
+uint16                                  ; CaretValuePoint
+}
+
+CaretValueFormat3, TABLE {
+uint16, 3                               ; Format 3
+int16                                   ; CaretValueCoordinate x or y
+Offset, DeviceTable, NOTNULL
+}
+
+CaretValue, CLASS, , $B0 {
+CaretValueFormat1
+CaretValueFormat2
+CaretValueFormat3
+}
+

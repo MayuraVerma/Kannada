@@ -1,0 +1,384 @@
+; Adobe Latin Font Conversion Database
+;
+; Pattern	Description                 name table name id      
+; --------  -------------------------- ---------------------
+; f=        Preferred Family             16 (Preferred Family)
+; s=        Subfamily                    17 (Preferred Subfamily)
+; l=        Compatible family            1 (Family) 
+; m=1,      Mac Compatible Full Name.    18 (Mac Compatible Full)
+;
+
+[AGaramondPro-BoldItalic]
+	f=Adobe Garamond Pro
+	s=Bold Italic
+	l=Adobe Garamond Pro Bold
+	m=1,Adobe Garamond Pro Bold Italic
+
+[AGaramondPro-Bold]
+	f=Adobe Garamond Pro
+	s=Bold
+	l=Adobe Garamond Pro Bold
+	m=1,Adobe Garamond Pro Bold
+
+[AGaramondPro-Italic]
+	f=Adobe Garamond Pro
+	s=Italic
+
+[AGaramondPro-Regular]
+	f=Adobe Garamond Pro
+	s=Regular
+	l=Adobe Garamond Pro
+
+[AGaramondPro-SemiboldItalic]
+	f=Adobe Garamond Pro
+	s=Semibold Italic
+	l=Adobe Garamond Pro
+	m=1,Adobe Garamond Pro Sb Italic
+
+[AGaramondPro-Semibold]
+	f=Adobe Garamond Pro
+	s=Semibold
+	l=Adobe Garamond Pro
+	m=1,Adobe Garamond Pro Sb
+
+[FrutigerLTStd-BlackCn]
+	f=Frutiger LT Std
+	s=77 Black Condensed
+	l=Frutiger LT Std 57 Cn
+	m=1,Frutiger LT Std 77 Black Cn
+
+[FrutigerLTStd-BlackItalic]
+	f=Frutiger LT Std
+	s=76 Black Italic
+	l=Frutiger LT Std 55 Roman
+	m=1,Frutiger LT Std 76 Black Italic
+
+[FrutigerLTStd-Black]
+	f=Frutiger LT Std
+	s=75 Black
+	l=Frutiger LT Std 55 Roman
+	m=1,Frutiger LT Std 75 Black
+
+[FrutigerLTStd-BoldCn]
+	f=Frutiger LT Std
+	s=67 Bold Condensed
+	l=Frutiger LT Std 47 Light Cn
+	m=1,Frutiger LT Std 67 Bold Cn
+
+[FrutigerLTStd-BoldItalic]
+	f=Frutiger LT Std
+	s=66 Bold Italic
+	l=Frutiger LT Std 45 Light
+	m=1,Frutiger LT Std 66 Bold Italic
+
+[FrutigerLTStd-Bold]
+	f=Frutiger LT Std
+	s=65 Bold
+	l=Frutiger LT Std 45 Light
+	m=1,Frutiger LT Std 65 Bold
+
+[FrutigerLTStd-Cn]
+	f=Frutiger LT Std
+	s=57 Condensed
+	l=Frutiger LT Std 57 Cn
+	m=1,Frutiger LT Std 57 Cn
+
+[FrutigerLTStd-ExtraBlackCn]
+	f=Frutiger LT Std
+	s=87 Extra Black Condensed
+	l=Frutiger LT Std 87 ExtraBlk Cn
+	m=1,Frutiger LT Std 87 ExtraBlk Cn
+
+[FrutigerLTStd-Italic]
+	f=Frutiger LT Std
+	s=56 Italic
+	l=Frutiger LT Std 55 Roman
+	m=1,Frutiger LT Std 56 Italic
+
+[FrutigerLTStd-LightCn]
+	f=Frutiger LT Std
+	s=47 Light Condensed
+	l=Frutiger LT Std 47 Light Cn
+	m=1,Frutiger LT Std 47 Light Cn
+
+[FrutigerLTStd-LightItalic]
+	f=Frutiger LT Std
+	s=46 Light Italic
+	l=Frutiger LT Std 45 Light
+	m=1,Frutiger LT Std 46 Light Italic
+
+[FrutigerLTStd-Light]
+	f=Frutiger LT Std
+	s=45 Light
+	l=Frutiger LT Std 45 Light
+	m=1,Frutiger LT Std 45 Light
+
+[FrutigerLTStd-Roman]
+	f=Frutiger LT Std
+	s=55 Roman
+	l=Frutiger LT Std 55 Roman
+	m=1,Frutiger LT Std 55 Roman
+
+[FrutigerLTStd-UltraBlack]
+	f=Frutiger LT Std
+	s=95 Ultra Black
+	l=Frutiger LT Std 95 UltraBlack
+	m=1,Frutiger LT Std 95 UltraBlack
+
+[KozMinPr6N-Regular]
+	f=Kozuka Mincho Pr6N MP
+	s=R
+	l=Kozuka Mincho Pr6N R
+
+	f=3,1,0x411,\5c0f\585a\660e\671d Pr6N WP
+	s=3,1,0x411,R
+	l=3,1,0x411,\5c0f\585a\660e\671d Pr6N R
+	
+	f=1,1,11,\8f\ac\92\cb\96\be\92\a9 Pr6N MP
+	s=1,1,11,R
+	l=1,1,0x411,\8f\ac\92\cb\96\be\92\a9 Pr6N R
+	
+	m=1,1,11,\8f\ac\92\cb\96\be\92\a9 Pr6N R
+	
+
+
+[MyriadPro-BlackCondIt]
+	f=Myriad Pro
+	s=Black Condensed Italic
+	l=Myriad Pro Black Cond
+	m=1,Myriad Pro Black Cond It
+
+[MyriadPro-BlackCond]
+	f=Myriad Pro
+	s=Black Condensed
+	l=Myriad Pro Black Cond
+	m=1,Myriad Pro Black Cond
+
+[MyriadPro-BlackIt]
+	f=Myriad Pro
+	s=Black Italic
+	l=Myriad Pro Black
+	m=1,Myriad Pro Black It
+
+[MyriadPro-BlackSemiCnIt]
+	f=Myriad Pro
+	s=Black SemiCondensed Italic
+	l=Myriad Pro Black SemiCond
+	m=1,Myriad Pro Black SemiCond It
+
+[MyriadPro-BlackSemiCn]
+	f=Myriad Pro
+	s=Black SemiCondensed
+	l=Myriad Pro Black SemiCond
+	m=1,Myriad Pro Black SemiCond
+
+[MyriadPro-BlackSemiExtIt]
+	f=Myriad Pro
+	s=Black SemiExtended Italic
+	l=Myriad Pro Black SemiExt
+	m=1,Myriad Pro Black SemiExt It
+
+[MyriadPro-BlackSemiExt]
+	f=Myriad Pro
+	s=Black SemiExtended
+	l=Myriad Pro Black SemiExt
+	m=1,Myriad Pro Black SemiExt
+
+[MyriadPro-Black]
+	f=Myriad Pro
+	s=Black
+	l=Myriad Pro Black
+	m=1,Myriad Pro Black
+
+[MyriadPro-BoldCondIt]
+	f=Myriad Pro
+	s=Bold Condensed Italic
+	l=Myriad Pro Cond
+	m=1,Myriad Pro Bold Cond It
+
+[MyriadPro-BoldCond]
+	f=Myriad Pro
+	s=Bold Condensed
+	l=Myriad Pro Cond
+	m=1,Myriad Pro Bold Cond
+
+[MyriadPro-BoldIt]
+	f=Myriad Pro
+	s=Bold Italic
+	l=Myriad Pro
+	m=1,Myriad Pro Bold It
+
+[MyriadPro-BoldSemiCnIt]
+	f=Myriad Pro
+	s=Bold SemiCondensed Italic
+	l=Myriad Pro SemiCond
+	m=1,Myriad Pro Bold SemiCond It
+
+[MyriadPro-BoldSemiCn]
+	f=Myriad Pro
+	s=Bold SemiCondensed
+	l=Myriad Pro SemiCond
+	m=1,Myriad Pro Bold SemiCond
+
+[MyriadPro-BoldSemiExtIt]
+	f=Myriad Pro
+	s=Bold SemiExtended Italic
+	l=Myriad Pro SemiExt
+	m=1,Myriad Pro Bold SemiExt It
+
+[MyriadPro-BoldSemiExt]
+	f=Myriad Pro
+	s=Bold SemiExtended
+	l=Myriad Pro SemiExt
+	m=1,Myriad Pro Bold SemiExt
+
+[MyriadPro-Bold]
+	f=Myriad Pro
+	s=Bold
+	l=Myriad Pro
+	m=1,Myriad Pro Bold
+
+[MyriadPro-CondIt]
+	f=Myriad Pro
+	s=Condensed Italic
+	l=Myriad Pro Cond
+	m=1,Myriad Pro Cond It
+
+[MyriadPro-Cond]
+	f=Myriad Pro
+	s=Condensed
+	l=Myriad Pro Cond
+	m=1,Myriad Pro Cond
+
+[MyriadPro-It]
+	f=Myriad Pro
+	s=Italic
+	l=Myriad Pro
+	m=1,Myriad Pro It
+
+[MyriadPro-LightCondIt]
+	f=Myriad Pro
+	s=Light Condensed Italic
+	l=Myriad Pro Light Cond
+	m=1,Myriad Pro Light Cond It
+
+[MyriadPro-LightCond]
+	f=Myriad Pro
+	s=Light Condensed
+	l=Myriad Pro Light Cond
+	m=1,Myriad Pro Light Cond
+
+[MyriadPro-LightIt]
+	f=Myriad Pro
+	s=Light Italic
+	l=Myriad Pro Light
+	m=1,Myriad Pro Light It
+
+[MyriadPro-LightSemiCnIt]
+	f=Myriad Pro
+	s=Light SemiCondensed Italic
+	l=Myriad Pro Light SemiCond
+	m=1,Myriad Pro Light SemiCond It
+
+[MyriadPro-LightSemiCn]
+	f=Myriad Pro
+	s=Light SemiCondensed
+	l=Myriad Pro Light SemiCond
+	m=1,Myriad Pro Light SemiCond
+
+[MyriadPro-LightSemiExtIt]
+	f=Myriad Pro
+	s=Light SemiExtended Italic
+        l=Myriad Pro Light SemiExt
+        m=1,Myriad Pro Light SemiExt It
+
+[MyriadPro-LightSemiExt]
+	f=Myriad Pro
+	s=Light SemiExtended
+	l=Myriad Pro Light SemiExt
+	m=1,Myriad Pro Light SemiExt
+
+[MyriadPro-Light]
+	f=Myriad Pro
+	s=Light
+	l=Myriad Pro Light
+	m=1,Myriad Pro Light
+
+[MyriadPro-Regular]
+	f=Myriad Pro
+	s=Regular
+	l=Myriad Pro
+	m=1,Myriad Pro
+
+[MyriadPro-SemiCnIt]
+	f=Myriad Pro
+	s=SemiCondensed Italic
+	l=Myriad Pro SemiCond
+	m=1,Myriad Pro SemiCondIt
+
+[MyriadPro-SemiCn]
+	f=Myriad Pro
+	s=SemiCondensed
+	l=Myriad Pro SemiCond
+	m=1,Myriad Pro SemiCond
+
+[MyriadPro-SemiExtIt]
+	f=Myriad Pro
+	s=SemiExtended Italic
+	l=Myriad Pro SemiExt
+	m=1,Myriad Pro SemiExt It
+
+[MyriadPro-SemiExt]
+	f=Myriad Pro
+	s=SemiExtended
+	l=Myriad Pro SemiExt
+	m=1,Myriad Pro SemiExt
+
+[MyriadPro-SemiboldCondIt]
+	f=Myriad Pro
+	s=Semibold Condensed Italic
+	l=Myriad Pro Light Cond
+	m=1,Myriad Pro Semibold Cond It
+
+[MyriadPro-SemiboldCond]
+	f=Myriad Pro
+	s=Semibold Condensed
+	l=Myriad Pro Light Cond
+	m=1,Myriad Pro Semibold Cond
+
+[MyriadPro-SemiboldIt]
+	f=Myriad Pro
+	s=Semibold Italic
+	l=Myriad Pro Light
+	m=1,Myriad Pro Semibold It
+
+[MyriadPro-SemiboldSemiCnIt]
+	f=Myriad Pro
+	s=Semibold SemiCondensed Italic
+	l=Myriad Pro Light SemiCond
+	m=1,Myriad Pro Semibold SemiCond It
+
+[MyriadPro-SemiboldSemiCn]
+	f=Myriad Pro
+	s=Semibold SemiCondensed
+	l=Myriad Pro Light SemiCond
+	m=1,Myriad Pro Semibold SemiCond
+
+[MyriadPro-SemiboldSemiExtIt]
+	f=Myriad Pro
+	s=Semibold SemiExtended Italic
+	l=Myriad Pro Light SemiExt
+	m=1,Myriad Pro Semibold SemiExt It
+
+[MyriadPro-SemiboldSemiExt]
+	f=Myriad Pro
+	s=Semibold SemiExtended
+	l=Myriad Pro Light SemiExt
+	m=1,Myriad Pro Semibold SemiExt
+
+[MyriadPro-Semibold]
+	f=Myriad Pro
+	s=Semibold
+	l=Myriad Pro Light
+	m=1,Myriad Pro Semibold
+

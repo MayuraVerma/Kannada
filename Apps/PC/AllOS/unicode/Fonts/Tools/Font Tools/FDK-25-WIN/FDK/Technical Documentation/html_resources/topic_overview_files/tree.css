@@ -1,0 +1,38 @@
+/*	TREE NAV
+$Revision: 1.1 $
+@author btapley
+*/
+dl.dyn-treelist { display: none; }
+dl.treelist {
+padding: 0;
+margin-top: 0;
+margin-bottom: 1em;
+}
+dl.treelist dt,
+dl.treelist dt a {
+cursor: pointer;
+_cursor: hand;
+}
+dl.treelist dt {
+background-repeat: no-repeat;
+_height: 1em;
+padding-left: 20px;
+margin-bottom: 0;
+zoom: 100%; 
+}
+dl.treelist dt.expand { background-image: url(expand.gif); }
+dl.treelist dt.collapse { background-image: url(collapse.gif); }
+dl.treelist dt a {
+display: block;
+margin-left: -20px;
+padding-left: 20px;
+-moz-outline: none;
+_zoom: 100%; 
+}
+dl.treelist dd { margin: 5px 0 0 20px; }
+dl.treelist dd.hide { display: none; }
+dl.treelist dd.show { display: block; }
+dl.treelist .nobranch {
+background-image: none;
+padding-left: 0;
+}

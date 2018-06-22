@@ -1,0 +1,1435 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=Title content="Dummy&#8217;s Guide to Digitally Signing OpenType Fonts ">
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=macintosh">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="DSIG_guide_files/filelist.xml">
+<title>Dummy&#8217;s Guide to Digitally Signing OpenType Fonts </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Office User</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:Created>2002-03-01T01:47:00Z</o:Created>
+  <o:LastSaved>2002-03-01T01:57:00Z</o:LastSaved>
+  <o:Pages>13</o:Pages>
+  <o:Words>3756</o:Words>
+  <o:Characters>21414</o:Characters>
+  <o:Company>Adobe Systems Incorporated</o:Company>
+  <o:Lines>178</o:Lines>
+  <o:Paragraphs>42</o:Paragraphs>
+  <o:CharactersWithSpaces>26297</o:CharactersWithSpaces>
+  <o:Version>9.2511</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"Times New Roman";
+	panose-1:0 2 2 6 3 5 4 5 2 3;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:50331648 0 0 0 1 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:0 2 11 6 4 3 5 4 4 2;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:50331648 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Times;}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Helvetica;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Helvetica;}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:33384449;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1553676960 1115145 1639433 1770505 984073 1639433 1770505 984073 1639433 1770505;}
+@list l0:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:938491174;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1350546886 1115145 -1295343736 -81907768 984073 1639433 1770505 984073 1639433 1770505;}
+@list l1:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-tab-stop:117.0pt;
+	mso-level-number-position:left;
+	margin-left:117.0pt;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:1384251678;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1222509458 1115145 1639433 1770505 984073 1639433 1770505 984073 1639433 1770505;}
+@list l2:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1>Beginner&#8217;s Guide to Digitally Signing OpenType Fonts </h1>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>V1.0 Feb 27, 2002</p>
+
+<p class=MsoNormal>Read Roberts</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><a href="#_Digital_Signature_Basics">Digital Signature
+Basics</a></p>
+
+<p class=MsoNormal><a href="#_Digital_Signature_Check">Digital Signature Check
+List</a></p>
+
+<p class=MsoNormal><a href="#_Detailed_Procedures">Detailed Procedures</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><a
+href="#_1)_Buy_your">1) Buy your digital certificate from Verisign.</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><a
+href="#_2)_Install_the">2) Install the signing tools from the MS Typography web
+site</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><a
+href="#_3)_Write_commands">3) Write commands file to sign batches of fonts</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.1_Installing_your">3.1
+Installing your digital certificate in your personal store.</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.2_Command_file">3.2
+Command file to sign a list of fonts dragged onto the command file, using
+floppy PVK file</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.3_Command_file">3.3
+Command file to sign a list of fonts dragged onto the command file, using PVK
+in registry</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.4_Command_file">3.4
+Command file to time-stamp a list of fonts dragged onto the command file.</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.5_Command_file">3.5
+Command file to sign a list of directories of fonts, when the selected
+directories are dragged onto the command file, using floppy PVK file</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.6_Command_file">3.6
+Command file to sign a list of directories of fonts dragged onto the command
+file, using PVK in registry</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun:
+yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="#_3.7_Command_file">3.7
+Command file to time-stamp a list of directories of fonts, when the selected
+directories are dragged onto the command file.</a></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Digital_Signature_Basics"></a>Digital Signature Basics</h2>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Why do you want to digitally sign an OpenType font?</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Secure identification. If the digital signature is valid, then
+the font really was made by the font foundry identified in the DSIG table.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Guarantee of no tampering.<span style="mso-spacerun:
+yes">&nbsp; </span>If the digital signature is valid, then the font has not
+been changed in any way since it was signed. .<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>In a digital world that is increasingly concerned with
+security and reliability, making these two statements about your font offers
+useful customer value. </p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Also, it seems probable that future versions of some
+operating systems will offer users the option of installing only digitally
+signed, and hence trusted,<span style="mso-spacerun: yes">&nbsp;
+</span>components. If your fonts are not digitally signed, then users who
+require this feature will not use your fonts.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Finally, a valid digital signature proves the end-user that
+the font file has not been damaged or corrupted. This is also a useful
+assertion to make. There is other data in the OpenType font that can offer the
+same proof, but only the the digital certificate can be easily checked by an
+end-user, through use of the Font Properties dialog.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>What do digital signature not do?</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Digital signatures are not copy protection. They do not keep
+an end-user from editing your fonts or duplicating them, nor do they keep someone
+from using a font editor to steal the font data and re-issue it under their own
+name. However, if anything &#8211; including the copyright and trademark info
+in the font &#8211; is changed, then the font is valid only if digital
+signature is removed.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Digital signatures do not guarantee that that the font is a
+good font. The Microsoft signcode tool does require that basic OpenType tables
+are present, and that the font is in the correct format, but cannot check that
+data in the file is good.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>How do digital signatures work?</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>A digital signature is actually a linked chain of digital
+signatures, each depending on a &#8216;digital certificate&#8217;, which cannot
+be faked or duplicated by someone else.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>A root authority , such as the Verisign company, makes a
+digital certificate which only they own. This certificate says basically<span
+style="mso-spacerun: yes">&nbsp; </span>&#8220;This certificate is owned and
+used only be Verisign&#8221;.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You buy from them a digital certificate, which only you own.
+Yours is signed by reference with their certificate. Yours says &#8220; This
+certificate is owned and used by only Whosis Font Company, at such-and-such
+address, and Verisign checked that we really are who we say we are and live at
+this address, and the proof is that our certificate is signed using their
+certificate, with this unique ID&#8221;.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You then use your certificate to make a DSIG table in your
+OpenType font file. This DSIG table will be valid only as long as the data in
+the rest of the font file does not change at all, and will work for only this
+exact font &#8211; you can&#8217;t copy a DSIG table from one font to another.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>A digital signature is only as good as the root authority,
+however. Any one can set up to be a root authority, and can even make digital
+certificates that claim to be Verisign. The way around this is that the
+software which checks digital signatures has the (short) list of known<span
+style="mso-spacerun: yes">&nbsp; </span>valid root authority digital
+certificates. It can also check ( over the Web) to see if any of them have been
+revoked by the owner, as might happen if one has been stolen.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Another issue is time. In order to reduce the risk of a
+digital certificate being stolen, Verisign makes them valid for only a period
+of time. The digital certificate that you can buy is valid for only one year.
+The reason that digital signatures can be valid for more than the duration of the
+certificate which made the signature, is that the signature can be
+time-stamped. Verisign offers a web-based service, whereby the signing tool
+calls up Verisign, and Verisign sends back a snippet of stuff which can be
+added to the digital signature, and offers proof that the digital signature was
+time-stamped at a specific date, and that it is Verisign which says so. This
+proves that the signature was made during the period when the certificate was
+valid. </p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>NOTE! You must time-stamp your digital signature, or it
+becomes invalid when the original digital certificate<span style="mso-spacerun:
+yes">&nbsp; </span>expires.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Digital_Signature_Check"></a>Digital Signature Check List</h2>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Buy your digital certificate from Verisign. You need a Windows
+system with a floppy drive and with access to the Internet.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Get the signing tools from the MS Typography web site</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Write a command file to sign batches of fonts, unless you like
+typing a lot.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>Start signing and time-stamping fonts.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Detailed_Procedures"></a>Detailed Procedures</h2>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_1)_Buy_your"></a>1) Buy your digital certificate from Verisign.</h3>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Verisign is currently the only vendor selling digital
+certificates and time-stamping services that can be used with the MS signing
+tools.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You need a Windows system with a floppy drive and with
+access to the Internet, and a Visa or Mastercard good for $400.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Don&#8217;t try to work with Verisign customer support. As
+of the writing of this document, they know nothing about signing fonts, and
+will give you a lot of advice that does not help. The people who can help
+you<span style="mso-spacerun: yes">&nbsp; </span>are busy with really big
+accounts. Just go directly to the web<span style="mso-spacerun: yes">&nbsp;
+</span>site and register.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>First collect the following information.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Name and contact information (e-mail, address, telephone
+number) of your technical contact. This person will collect the digital
+certificate, and will get an e-mail from Verisign about a month before the
+digital certificate expires.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Name and contact information (e-mail, address, telephone
+number) of your billing contact. This person will get phone calls from Verisign
+to check all the contact info you give them, and will get e-mail about problems
+with the Visa card.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Name and contact information (e-mail, address, telephone
+number) of your organization contact. This person will get phone calls from
+Verisign to check all the contact info you give them, and must be an employee
+of your company.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>DUNS number ( Dun and BradStreet number). This is part of
+the proof of who you are. If you don&#8217;t<span style="mso-spacerun:
+yes">&nbsp; </span>have one, you must fax <span style='color:black'>a copy of
+your articles of incorporation, business license, or other charter documents
+when you place your order.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Visa card number, expiration card, and account name. The
+account name should be the company name, or the name of one of the people
+above. You can also do this with a PO order or check, but that adds weeks to
+the purchase process.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Challenge phrase. This is a password which is used by the
+technical contact person to get the full digital certificate.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You need to buy a Class 3 Standard (not Pro) commercial certificate. You do
+this at:</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>http://www.verisign.com/resources/gd/authenticode/index.html</p>
+<p class=MsoNormal>This link will get you to page which provides an overview of the process. To
+actually order the digital ID, page down to the section "The Six Steps to Signing Code",
+and follow the link under Step 2. Read the directions here to make sure you have the 
+right browser, and then follow the link "Code Signing Digital ID for Microsoft Authenticode".</p>
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Put a floppy disk in your Windows system drive A:, connect to
+the web address above, and fill out all the requested info.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;You will also be asked to
+ choose a Cryptographic Cervice provider. You should choose:
+"Microsoft Base Cryptographic Provider."<o:p></o:p></p>
+
+<p class=MsoNormal>When you submit the info, the Verisign web service will ask
+you for some information about delivering the first half of<span
+style="mso-spacerun: yes">&nbsp; </span>your digital certificate This will be
+in the form of a file with the extension &#8220;.pvk:&#8221; and is written to
+your floppy disk. You can pick whatever filename you want. You can also choose
+a password for use of your digital certificate. This can be different than the
+challenge phrase you chose on the first page. If you leave the password field
+blank, no password will be required to use the digital certificate. The
+drawback to using a password is that you can then sign fonts in batch mode only
+if you install<span style="mso-spacerun: yes">&nbsp; </span>your digital
+certificate in your Windows system.<span style="mso-spacerun: yes">&nbsp;
+</span>The drawback to NOT having a password is that then someone can steal
+your digital certificate file, and use it without having to know a password.
+You must<span style="mso-spacerun: yes">&nbsp; </span>decide which you feel is
+safer:<span style="mso-spacerun: yes">&nbsp; </span>a hidden floppy disk with a
+digital certificate in a file and without no password, or<span
+style="mso-spacerun: yes">&nbsp; </span>the digital certificate installed on a
+Windows system that is connected to the Internet.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>When you complete this info, the Versign web service will
+write the pvk file to your floppy disk. You then need to keep this floppy until
+you can pick up the second half of the digital certificate, in the form of a
+file with the same name and the extension &#8216;.spc&#8217;.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>When Verisign has processed your payment and verified your
+organizational information, your technical contact will get an e-mail saying
+that the other half ( a file with the extension &#8220;.spc&#8221;) can be
+picked up at a specific Web URL. </p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>WARNING! The person who picks up the other half:</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:117.0pt;text-indent:-.25in;mso-list:l1 level3 lfo6;
+tab-stops:list 117.0pt'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>needs to be using the same Windows system, with no browser or
+system updates since the first half was picked up.</p>
+
+<p class=MsoNormal style='margin-left:117.0pt;text-indent:-.25in;mso-list:l1 level3 lfo6;
+tab-stops:list 117.0pt'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>needs to have the SAME floppy, with the pvk file on it, in the
+floppy drive</p>
+
+<p class=MsoNormal style='margin-left:117.0pt;text-indent:-.25in;mso-list:l1 level3 lfo6;
+tab-stops:list 117.0pt'><![if !supportLists]>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span><![endif]>needs to be logged into the system with the same user name</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Once the second half has been picked up, you have the
+complete digital certificate on the floppy disk. Make a copy!</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_2)_Install_the"></a>2) Install the signing tools from the MS
+Typography web site</h3>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>On a Windows system, go to:</p>
+
+<p class=MsoNormal><a href="http://www.microsoft.com/typography/creators.htm">http://www.microsoft.com/typography/creators.htm</a></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>and double-click on the title &#8220;OpenType Font Signing
+Tool&#8221;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Then follow the link &#8220; download and info page&#8221;.</p>
+
+<p class=MsoNormal>Download<span style="mso-spacerun: yes">&nbsp; </span>the
+tools by clicking on the server name that is closest to you.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Choose to save the file to disk, and to save it anywhere you
+want. This creates a file:</p>
+
+<p class=MsoNormal>dsig.exe</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Create the directory where you want to keep the signing
+tools &#8211; the installer will install the files loose in the directory you
+choose. Make sure the path is short &#8211; you will have to use the command
+window to run these tools, and you don&#8217;t want to have to type long path
+names. You can put them anywhere you want, but if you put them in : </p>
+
+<p class=MsoNormal>C:/Program Files/MSSignTools</p>
+
+<p class=MsoNormal>you will need to do less editing of the command files below.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Double-click on this file. This starts the installer. When
+prompted to type the location, browse to the location you want the files.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>T o run the command prompt window, from the Start menu,
+choose:</p>
+
+<p class=MsoNormal>Programs-&gt;Accessories-&gt;Command Prompt. This gives you
+a DOS command window. </p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Follow the instructions on &#8216;download and info
+page&#8221;<span style="mso-spacerun: yes">&nbsp; </span>through step 2, to get
+the system library installed.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You can run the signing tools manually as described &#8211;
+you just need to change the current directory in the command window to the
+location of the sign tools:</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><b>C:<o:p></o:p></b></p>
+
+<p class=MsoNormal>To change to the C: drive. Then:</p>
+
+<p class=MsoNormal><b>cd<span style="mso-spacerun: yes">&nbsp;
+</span>&#8220;Program Files/MSSignTools&#8221;<o:p></o:p></b></p>
+
+<p class=MsoNormal>You need the quotes around the directory path, because of
+the space in the first directory name.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Then follow the rest of the instructions to sign a font.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You can also just double-click on the signcode tool, and a
+series of dialogs will guide you through signing the font. The first dialog
+asks you to choose the font to sign. The next dialog offers Typical vs Custom
+configuration.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>To use the digital certificate on your floppy, you must
+choose the &#8220;custom&#8221; rather than the &#8220;Typical &#8221; configuration.
+In the dialog after choosing Custom configuration. choose to select the
+certificate from file. Browse to and open the *.spc file on your floppy. You return
+to the dialog for selecting a certificate, with the file name listed. Select
+this file name, and then continue. On the next dialog, don&#8217;t change any
+settings &#8211; just browse to and select the *.pvk file on your floppy. If
+your certificate has a password, at this point you will be prompted to enter
+the password. Now continue to the end. Don&#8217;t change any technical
+options: do add your companies web address. Choose to time-stamp &#8211;
+remember, this requires a web connection.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>To use the &#8220;Typical configuration&#8221;, you must
+install your digital certificate on your Windows system registry. To do this, see
+&#8220;3.1 Installing your digital certificate in your personal store.&#8221;
+Below.<span style="mso-spacerun: yes">&nbsp; </span>When this is complete, you
+can use the &#8220;Typical&#8221; configuration setting for the signcode tool.
+When you get to the &#8220;Signature Certificate&#8221; dialog, choose &#8220;
+Select From Store&#8221;, and select your certificate.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_3)_Write_commands"></a>3) Write commands file to sign batches of
+fonts<span style='font-size:12.0pt'><o:p></o:p></span></h3>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>If you need to sing a lot of fonts, then doing them one by
+one is annoying.<span style="mso-spacerun: yes">&nbsp; </span>You can create
+command files to allow batch signing and time-stamping. You can then
+drag-and-drop either a set of fonts, or a set of directories, on to the command
+file, and have them all batch processed. HOWEVER: you have to avoid entering a
+password to do so.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.1_Installing_your"></a>3.1 Installing your digital certificate
+in your personal store.<span style='font-family:Times'><o:p></o:p></span></h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>If you specified a password for use of your digital
+certificate when you bought it, then you must install the associated private
+key in your Windows system local stores. This way, you only enter the password
+once, when you install it.<span style="mso-spacerun: yes">&nbsp; </span>To do
+this, you must first obtain the tool PVKIMPRT.EXE. To get this:</p>
+
+<p class=MsoNormal>Go to:</p>
+
+<p class=MsoNormal><a href="http://msdn.microsoft.com/vba/technical/pvk.asp">http://msdn.microsoft.com/vba/technical/pvk.asp</a></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>and follow the directions. Note that you can get to the
+Certificate Manager more easily than described &#8211; a copy is in included in
+the signing tools, so you can just double-click on that copy.</p>
+
+<p class=MsoNormal><span style='font-family:Verdana;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Signing vs time-stamping:</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>The command files below time-stamp as a separate operation
+from signing. This is partly because it can be useful to ensure that all your
+fonts get signed correctly before time-stamping. Also, time-stamping is not
+reliable &#8211; the web service is not always available, for all the usual
+Internet problems. Finally, you may prefer to be able to take your floppy with
+the digital certificate out of the Windows system while it is connected to the
+Internet, and then you must be able to sign first, and then time-stamp later.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>To use these command files, you must edit them to provide
+the correct:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l1 level2 lfo6;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Times New Roman"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]>path
+to the SPC file</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l1 level2 lfo6;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Times New Roman"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]>path
+to the PVK file ( if using the pvk file on the floppy)</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l1 level2 lfo6;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Times New Roman"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]>-
+the SHA1 value ( if using the pvk installed in your system)</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l1 level2 lfo6;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Times New Roman"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]>your
+company&#8217;s web address</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l1 level2 lfo6;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:"Times New Roman"'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><![endif]>the
+correct path to your signtools directory.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.2_Command_file"></a>3.2 Command file to sign a list of fonts
+dragged onto the command file, using floppy PVK file</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>This command file will write a log file in the same
+directory as the cmd file. Log file name is sign_fonts.log.</p>
+
+<p class=MsoNormal>You must replace:</p>
+
+<p class=MsoNormal>&#8220;A:\fontcert003.spc&#8221; with the path to your *.spc
+file</p>
+
+<p class=MsoNormal>&#8220;A:\fontcert003.pvk&#8221; with the path to your *.pvk
+file.</p>
+
+<p class=MsoNormal>&#8220;<a href="http://www.adobe.com/">www.adobe.com</a>&#8221;
+with the URL for you company.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>NOTE: This cmd file works only if your digital certificate
+has no password. Otherwise, you are prompted for the password for every single
+font.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Note: it is important that the file extension be &#8220;.cmd&#8221;.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal>rem START OF FILE &#8220;sign_fonts.cmd&#8221;<o:p></o:p></p>
+
+<p class=MsoNormal>@echo off</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Change directory to where the signcode.exe file is. We
+need the quotes because of the space in the path name.</p>
+
+<p class=MsoNormal>cd &quot;C:\Program Files\MSSignTools&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo date to the log file, overwriting any existing file
+by the same name.</p>
+
+<p class=MsoNormal>date /T &gt; sign_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo time to the log file, appending to it..</p>
+
+<p class=MsoNormal>time /T &gt;&gt; sign_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem DO loop control on list of files dropped on the command
+file</p>
+
+<p class=MsoNormal>:DO_NEXT_NAME</p>
+
+<p class=MsoNormal>if %1#==# goto DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Echo font name to console</p>
+
+<p class=MsoNormal>echo Signing font: %1%</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Echo command line to console</p>
+
+<p class=MsoNormal>echo signcode -spc A:\fontcert003.spc -v A:\fontcert003.pvk
+-j mssipotf.dll -i &quot;www.adobe.com&quot;<span style="mso-spacerun:
+yes">&nbsp; </span>%1</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Run signcode tool, and send the result report to the log
+file</p>
+
+<p class=MsoNormal>rem We need the quotes around %1%, because the path to the
+font might contain spaces.</p>
+
+<p class=MsoNormal>signcode -spc A:\fontcert003.spc -v A:\fontcert003.pvk -j
+mssipotf.dll -i &quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp;
+</span>%1 &gt;&gt; sign_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem discard the last font name.</p>
+
+<p class=MsoNormal>Shift</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>goto DO_NEXT_NAME</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>:DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem All done with file list. Write time to log file</p>
+
+<p class=MsoNormal>time /T &gt;&gt; sign_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Echo the log file to the command window.</p>
+
+<p class=MsoNormal>type sign_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Keep the command window from closing , so user has a
+chance to see the stuff echoed above. </p>
+
+<p class=MsoNormal>pause</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem END OF FILE</p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.3_Command_file"></a>3.3 Command file to sign a list of fonts
+dragged onto the command file, using PVK in registry</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You must replace the long hexadecimal number following the
+&#8216;-sha1&#8217; option with the thumbprint value for your digital certificate.
+To get this:</p>
+
+<p class=MsoNormal>- First, use the PVKIMPRT.exe tool to import your digital
+certificate as described above. </p>
+
+<p class=MsoNormal>Then, double-click on the certmgr.exe tool that you got with
+the rest of the sign tools. This brings up the Certificate Manager wizard. Select
+your digital certificate. This will be under the &#8220;Personal&#8221; tab,
+unless you chose to put it in another store. Then click on the
+&#8216;View&#8221; button. Then select the &#8220;Details&#8217; tab. Then
+scroll to the bottom of the Details window. Then select the
+&#8220;Thumbprint&#8221; item. The value will appear in the bottom window. Copy
+and paste this value into the command file. Edit out all the spaces &#8211; the
+number must be one long value.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Note: it is important that the file extension be &#8220;.cmd&#8221;.<o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Use same command file as above, but replace the signcode
+command with:</p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal>rem Echo command line to console, so we can see what&#8217;s
+heppening.</p>
+
+<p class=MsoNormal>echo signcode -sha1 E649ED6B7599E0610DDA93ED64EB8A4534BDFD4B
+-j mssipotf.dll -i &quot;www.adobe.com&quot;<span style="mso-spacerun:
+yes">&nbsp; </span>%1</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Run signcode tool, and direct result report to the log
+file</p>
+
+<p class=MsoNormal>signcode -sha1 E649ED6B7599E0610DDA93ED64EB8A4534BDFD4B -j
+mssipotf.dll -i &quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp;
+</span>%1 &gt;&gt; sign_fonts.log </p>
+
+<p class=MsoNormal>*************************************************************************
+<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-family:"Times New Roman"'><span
+style='font-size:8.5pt;font-family:Courier'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-family:"Times New Roman"'><span
+style='font-size:8.5pt;font-family:Courier'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.4_Command_file"></a>3.4 Command file to time-stamp a list of fonts
+dragged onto the command file.</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Note: it is important that the file extension be &#8220;.cmd&#8221;.<o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal>rem Start<span style="mso-spacerun: yes">&nbsp; </span>of
+file &#8220;tstamp_fonts.cmd&#8221;</p>
+
+<p class=MsoNormal>@echo off</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Change directory to where the signcode.exe file is. We
+need the quotes because of the space in the path name.</p>
+
+<p class=MsoNormal>cd &quot;C:\Program Files\MSSignTools&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo date to the log file, overwriting any existing file
+by the same name.</p>
+
+<p class=MsoNormal>date /T &gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo time to the log file, appending to it..</p>
+
+<p class=MsoNormal>time /T &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem DO loop control on list of files dropped on the command
+file</p>
+
+<p class=MsoNormal>:DO_NEXT_NAME</p>
+
+<p class=MsoNormal>if %1#==# goto DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Echo font name to console</p>
+
+<p class=MsoNormal>echo &quot;Time-stamping font: &quot;%1</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Echo command line to console</p>
+
+<p class=MsoNormal>echo signcode -x -tw 5 tr 4 -t
+&quot;http://timestamp.verisign.com/scripts/timstamp.dll&quot; %1<span
+style="mso-spacerun: yes">&nbsp; </span>&gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Run signcode tool, and send the result report to the log
+file</p>
+
+<p class=MsoNormal>signcode -x -tr 5 -tw 4 -t
+&quot;http://timestamp.verisign.com/scripts/timstamp.dll&quot; %1 &gt;&gt;
+tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem discard the last font name.</p>
+
+<p class=MsoNormal>shift</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>goto DO_NEXT_NAME</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>:DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem All done with file list. Write time to log file</p>
+
+<p class=MsoNormal>Time /T &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Keep the command window from closing , so user has a
+chance to see the stuff echoed above. </p>
+
+<p class=MsoNormal>type tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Keep the command window from closing , so user has a
+chance to see the stuff echoed above. </p>
+
+<p class=MsoNormal>Pause</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem End of file</p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.5_Command_file"></a>3.5 Command file to sign a list of
+directories of fonts, when the selected directories are dragged onto the
+command file, using floppy PVK file</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>The following &#8216;sign_fontdir.cmd&#8221; file will<span
+style="mso-spacerun: yes">&nbsp; </span>write a log file in<span
+style="mso-spacerun: yes">&nbsp; </span>the font dir. Log file name is
+sign_fonts.log.</p>
+
+<p class=MsoNormal>You must replace:</p>
+
+<p class=MsoNormal>&#8220;A:\fontcert003.spc&#8221; with the path to your *.spc
+file</p>
+
+<p class=MsoNormal>&#8220;A:\fontcert003.pvk&#8221; with the path to your PVK
+file.</p>
+
+<p class=MsoNormal>&#8220;<a href="http://www.adobe.com/">www.adobe.com</a>&#8221;
+with the URL for you company.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>NOTE: This works only if your digital certificate has no
+password. Otherwise, you are prompted for the password for every single font.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Note: it is important that the file extension be &#8220;.cmd&#8221;.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal>rem START OF FILE sign_fontdir.cmd<o:p></o:p></p>
+
+<p class=MsoNormal>@echo off</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Add the path to the signcode tool to the system PATH
+variable, so that the system will find the signcode command</p>
+
+<p class=MsoNormal>set SIGN_FONT_TOOLS=C:\Program Files\MSSignTools</p>
+
+<p class=MsoNormal>path &quot;%SIGN_FONT_TOOLS%&quot;;%PATH%</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>:DO_NEXT_NAME</p>
+
+<p class=MsoNormal>if %1#==# goto DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem report directory to command prompt window</p>
+
+<p class=MsoNormal>echo &quot;Signing fonts in dir: %1%&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem change current directory to the target directory.</p>
+
+<p class=MsoNormal>pushd &quot;%1%&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo directory name to log file, overwriting any
+existing file by the same name.</p>
+
+<p class=MsoNormal>rem write log file in the target directory.</p>
+
+<p class=MsoNormal>echo &quot;Signing fonts in dir: %1%&quot;<span
+style="mso-spacerun: yes">&nbsp; </span>&gt; signdir.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo date to the log file</p>
+
+<p class=MsoNormal>date /T &gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>time /T &gt;&gt; signdir.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem for each file ending in tf, then in otf, echo the
+filename to the log file, then run the signcode command</p>
+
+<p class=MsoNormal>rem and send the result to the log file.</p>
+
+<p class=MsoNormal>@echo on</p>
+
+<p class=MsoNormal>for %%o in (*.ttf*) do echo %%o &gt;&gt; signdir.log &amp;
+signcode -spc A:\fontcert003.spc -v A:\fontcert003.pvk -j mssipotf.dll -i
+&quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp; </span>%%o
+&gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>for %%o in (*.otf*) do echo %%o &gt;&gt; signdir.log &amp;
+signcode -spc A:\fontcert003.spc -v A:\fontcert003.pvk -j mssipotf.dll -i
+&quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp; </span>%%o
+&gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>@echo off</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem All done with this directory. echo date to the log file</p>
+
+<p class=MsoNormal>date /T &gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>time /T &gt;&gt; signdir.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>echo See signdir.log in %1% for results</p>
+
+<p class=MsoNormal>echo </p>
+
+<p class=MsoNormal>echo </p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem return to original directory</p>
+
+<p class=MsoNormal>popd</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem discard the last directory processed.</p>
+
+<p class=MsoNormal>shift</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>goto DO_NEXT_NAME</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>:DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem All done. </p>
+
+<p class=MsoNormal>rem Keep the command window from closing , so user has a
+chance to see the stuff echoed above. </p>
+
+<p class=MsoNormal>Pause</p>
+
+<p class=MsoNormal>Rem End of file</p>
+
+<p class=MsoNormal>*************************************************************************</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.6_Command_file"></a>3.6 Command file to sign a list of
+directories of fonts dragged onto the command file, using PVK in registry</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>You must replace the long hexadecimal number following the
+&#8216;-sha1&#8217; option with the thumbprint value for your digital certificate.
+See sction 3.3 on how to get this</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Note: it is important that the file extension be &#8220;.cmd&#8221;.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Use the same command file as in section 3.5, but replace the
+lines:</p>
+
+<p class=MsoNormal>***************************************************************************</p>
+
+<p class=MsoNormal>for %%o in (*.ttf*) do echo %%o &gt;&gt; signdir.log &amp;
+signcode -spc A:\fontcert003.spc -v A:\fontcert003.pvk -j mssipotf.dll -i
+&quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp; </span>%%o
+&gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>for %%o in (*.otff*) do echo %%o &gt;&gt; signdir.log &amp;
+signcode -spc A:\fontcert003.spc -v A:\fontcert003.pvk -j mssipotf.dll -i
+&quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp; </span>%%o
+&gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>***************************************************************************</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>with:</p>
+
+<p class=MsoNormal>***************************************************************************</p>
+
+<p class=MsoNormal>for %%o in (*.ttf*) do echo %%o &gt;&gt; signdir.log &amp;
+signcode -sha1 E649ED6B7599E0610DDA93ED64EB8A4534BDFD4B -j mssipotf.dll -i
+&quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp; </span>%%o
+&gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>for %%o in (*.otf*) do echo %%o &gt;&gt; signdir.log &amp;
+signcode -sha1 E649ED6B7599E0610DDA93ED64EB8A4534BDFD4B -j mssipotf.dll -i
+&quot;www.adobe.com&quot;<span style="mso-spacerun: yes">&nbsp; </span>%%o
+&gt;&gt; signdir.log</p>
+
+<p class=MsoNormal>***************************************************************************</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h4><a name="_3.7_Command_file"></a>3.7 Command file to time-stamp a list of
+directories of fonts, when the selected directories are dragged onto the
+command file.</h4>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<div style='border:none;border-bottom:dotted windowtext 3.0pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:dotted windowtext 3.0pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'>The following
+&#8216;tstamp_fontdir.cmd&#8221; file will<span style="mso-spacerun:
+yes">&nbsp; </span>write a log file in<span style="mso-spacerun: yes">&nbsp;
+</span>the font dir. Log file name is tstamp_fonts.log.</p>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:dotted windowtext 3.0pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:dotted windowtext 3.0pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'>Note: it is important that the
+file extension be &#8220;.cmd&#8221;.<o:p></o:p></p>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:dotted windowtext 3.0pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+<p class=MsoNormal>rem Start of file tstamp_fontdirs.cmd</p>
+
+<p class=MsoNormal>@echo off</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem Add the path to the signcode tool to the system PATH
+variable, so that the system will find the signcode command</p>
+
+<p class=MsoNormal>set SIGN_FONT_TOOLS=C:\Program Files\MSSignTools</p>
+
+<p class=MsoNormal>path &quot;%SIGN_FONT_TOOLS%&quot;;%PATH%</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>:DO_NEXT_NAME</p>
+
+<p class=MsoNormal>if %1#==# goto DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem report directory to command prompt window</p>
+
+<p class=MsoNormal>echo &quot;Time-stamping fonts in dir: %1%&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem change current directory to the target directory.</p>
+
+<p class=MsoNormal>pushd &quot;%1%&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo directory name to log file, overwriting any
+existing file by the same name.</p>
+
+<p class=MsoNormal>rem write log file in the target directory.</p>
+
+<p class=MsoNormal>echo &quot;Signing fonts in dir: %1%&quot;<span
+style="mso-spacerun: yes">&nbsp; </span>&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem echo date to the log file</p>
+
+<p class=MsoNormal>date /T &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal>time /T &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem for each file ending in otf, echo the filename to the
+log file, then run the signcode command</p>
+
+<p class=MsoNormal>rem and send the result to the log file.</p>
+
+<p class=MsoNormal>@echo on</p>
+
+<p class=MsoNormal>for %%o in (*.ttf*) do echo %%o &gt;&gt; tstamp_fonts.log
+&amp; signcode -x -t &quot;http://timestamp.verisign.com/scripts/timstamp.dll&quot;
+%%o &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal>for %%o in (*.otf*) do echo %%o &gt;&gt; tstamp_fonts.log
+&amp; signcode -x -t
+&quot;http://timestamp.verisign.com/scripts/timstamp.dll&quot; %%o &gt;&gt;
+tstamp_fonts.log</p>
+
+<p class=MsoNormal>@echo off</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem All done with this directory. echo date to the log file</p>
+
+<p class=MsoNormal>date /T &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal>time /T &gt;&gt; tstamp_fonts.log</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>echo See tstamp_fonts.log in %1% for results</p>
+
+<p class=MsoNormal>echo &quot;&quot;</p>
+
+<p class=MsoNormal>echo &quot;&quot;</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem return to original directory</p>
+
+<p class=MsoNormal>popd</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem discard the last directory processed.</p>
+
+<p class=MsoNormal>shift</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>goto DO_NEXT_NAME</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>:DONE</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>rem All done. </p>
+
+<p class=MsoNormal>rem Keep the command window from closing , so user has a
+chance to see the stuff echoed above. </p>
+
+<p class=MsoNormal>Pause</p>
+
+<p class=MsoNormal>Rem End of file</p>
+
+<p class=MsoNormal>***************************************************************************</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</span></span></div>
+
+</body>
+
+</html>

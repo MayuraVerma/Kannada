@@ -1,0 +1,108 @@
+/*	
+YUI Accordion CSS (injected)
+$Revision: 1.9 $
+@author mok
+Note: to be cleaned up and possibly removed.
+*/
+.accordion-controller,
+.expanded .accordion-content {
+width: auto;
+position: relative;
+}
+.accordion-content a { padding: 1px }
+#content-pocket .accordion-controller:first-child { margin-top: -17px; }
+#content-pocket .accordion-controller,
+#content-pocket .accordion { margin: 0 -12px 0 -11px; }
+.columns-1-A-A {
+_zoom: 1;
+_height: 1em;
+}
+.columns-1-A-A .accordion-controller { margin: 0 -20px; }
+.columns-1-A-A .accordion {
+padding: 0 ;
+margin: 0 -20px;
+z-index: 6;
+}
+.accordion-horizontal { 
+width: 140px; 
+padding-left: 20px; 
+height: auto;
+}
+.accordion-horizontal .accordion-controller {	margin: 0; }
+.accordion-controller {	
+margin: 0;
+padding: 0;
+zoom: 1;
+position: relative;
+background-color: #9e9e9e;
+cursor: pointer;
+text-transform: uppercase;
+z-index: 3;
+}
+.accordion-controller[class~=opened] { background-color: #eee; }
+#content-pocket .accordion-controller[class~=opened] { background-color: #cacaca; }
+.accordion-controller:hover,
+.accordion-controller:hover .accordion-handle { background-color: #bbb; color: #fff;}
+#content-body h3.accordion-handle:hover { color: #fff }
+.accordion-controller[class~=opened]:hover,
+.accordion-controller[class~=opened]:hover .accordion-handle { background-color: #bbb; color: #fff !important; }
+.accordion-controller[class~=closed]:hover,
+.accordion-controller[class~=closed]:hover .accordion-handle { background-color: #bbb; }
+.opened { _background-color: #cacaca; _color: #fff;}
+#content-pocket .opened { _background-color: #cacaca; }
+.accordion-controller.hover,
+.accordion-controller.hover .accordion-handle { _background-color: #9e9e9e; _color: #fff !important;}
+.opened.hover,
+.opened.hover .accordion-handle { _background-color: #bbb; _color: #fff !important;}
+.accordion-controller .down { background-image: url(expand_arrow.gif); }
+.accordion-controller .up { background-image: url(collapse_arrow.gif); }
+.accordion-controller .up:hover { background-image: url(collapse_arrow_hover.gif); }
+#content-body h3.accordion-handle,
+#content-pocket h3.accordion-handle,
+.accordion-handle {
+padding: 4px 8px 5px 16px;
+margin: 0;
+line-height: 1em;
+background-repeat: no-repeat; 
+background-position:  5px center;
+font-weight: normal;
+text-transform: none;
+color: #fff;
+border-bottom: none;
+}
+#content-body h3.accordion-handle,
+.accordion-handle { font-size: 1.333em; }
+#content-pocket h3.accordion-handle { font-size: 0.817em; font-weight: bold; text-transform: uppercase; }
+#content-body .opened h3.accordion-handle,
+#content-pocket .opened h3.accordion-handle,
+.opened .accordion-handle  { color: #666; }
+ 
+.columns-1-A-A .opened { border-top: 1px solid #dedede; }
+.teaser,
+.accordion { _zoom: 1 }
+.accordion {
+clear: both;
+height: 0;
+margin-bottom: 1px;
+overflow:hidden;
+position:relative;	
+z-index:2;
+_height: 0;
+}
+#L6C1.columns-0-A #products-technologies-teaser,
+#L6C1.columns-0-A #resources-teaser {
+height: auto;
+}
+.teaser { margin-bottom: 0 !important; }
+.expanded,
+.expanded .accordion-content { height: auto;  min-height: 3em;  }
+#content-pocket .expanded,
+#content-pocket .expanded .accordion-content {  min-height: 1em;  }
+.accordion-content {
+position:absolute;	
+left:0;
+padding: 10px 10px 20px; 
+color:#333;
+zoom: 1;
+z-index: 3;
+}	

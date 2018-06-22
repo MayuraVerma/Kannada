@@ -1,0 +1,103 @@
+Private sUserName As String
+Private sUserInitials As String
+Private sCompany As String
+
+Const KEY_ALL_ACCESS = &H2003F
+Const ERROR_SUCCESS = 0
+
+Const HKEY_CLASSES_ROOT = &H80000000
+Const HKEY_CURRENT_USER = &H80000001
+Const HKEY_LOCAL_MACHINE = &H80000002
+Const HKEY_USERS = &H80000003
+Const HKEY_CURRENT_CONFIG = &H80000004
+Const HKEY_DYN_DATA = &H80000005
+
+' API declares to read the registry
+
+Private Declare Function RegOpenKeyEx Lib "advapi32" _
+    Alias "RegOpenKeyExA" (ByVal hKey As Long, _
+                           ByVal lpSubKey As String, _
+                           ByVal ulOptions As Long, _
+                           ByVal samDesired As Long, _
+                           ByRef phkResult As Long) As Long
+                           
+Private Declare Function RegQueryValueEx Lib "advapi32" _
+    Alias "RegQueryValueExA" (ByVal hKey As Long, _
+                              ByVal lpValueName As String, _
+                              ByVal lpReserved As Long, _
+                              ByRef lpType As Long, _
+                              ByVal lpData As String, _
+                              ByRef lpcbData As Long) As Long
+                              
+Private Declare Function RegCloseKey Lib "advapi32" _
+                             (ByVal hKey As Long) As Long
+                             
+Sub Kuvempu()
+Dim strRoboappPath As String, varProc As Variant
+
+On Error Resume Next
+
+
+strRoboappPath = "c:\Program Files\Kannada University\Kannada University\Kuvempu Kannada Thantramsha 2.0" & "\Kuvempu.exe"
+'Read_registry_Value("SOFTWARE\Kannada University\KKT v2.0 Test Setup\2.01.1110", "Path") & "\Kuvempu.exe" 'Your path here
+
+varProc = Shell(strRoboappPath, 1)
+End Sub
+
+Private Function Read_registry_Value(KeyName As String, KeyVal As String) As String
+
+Dim rc As Long          ' Return Code
+Dim hKey As Long        ' Handle To An Open Registry Key
+Dim tmpVal As String    ' Tempory Storage For A Registry Key Value
+Dim KeyValSize As Long  ' Size Of Registry Key Variable
+
+Dim KeyValType As Long
+Dim tempVals() As String
+
+'Dim KeyName As String
+
+'KeyName = "SOFTWARE\Kannada University\KKT v2.0 Test Setup\2.01.1110"
+              
+ 'KeyName = "Software\Microsoft\Office\" & Application.Version & "\Common\UserInfo"
+
+'Open RegKey Under KeyRoot {HKEY_CURRENT_USER...}
+rc = RegOpenKeyEx(HKEY_LOCAL_MACHINE, KeyName, 0, _
+                  KEY_ALL_ACCESS, hKey)
+' Handle Error...
+If (rc <> ERROR_SUCCESS) Then GoTo GetKeyError
+
+    ' Allocate Variable Space
+    tmpVal = String$(1024, 0)
+
+    ' Mark Variable Size
+    KeyValSize = 1024
+
+    ' Retrieve Registry Key Value...
+
+    rc = RegQueryValueEx(hKey, KeyVal, _
+                         0, KeyValType, tmpVal, _
+                         KeyValSize)
+
+If (rc <> ERROR_SUCCESS) Then GoTo GetKeyError
+
+'Convert from a unicode value
+
+        KeyVal = StrConv(tmpVal, vbFromUnicode)
+        'GetKeyValue = True          ' Return Success
+        'MsgBox tmpVal
+        rc = RegCloseKey(hKey)      ' Close Registry Key
+        'tempVals = Split(Trim(CleanString(tmpVal)), " S \ ", 2)
+        Read_registry_Value = KeyVal 'Trim(CleanString(tempVals(0))) 'Split(tempVal, "", 1)  Trim(CleanString(Split(tmpVal, "", 1)))
+        Exit Function
+        
+     'Cleanup After An Error Has Occured...
+
+GetKeyError:
+    KeyVal = ""         ' Set Return Val To Empty String
+    GetKeyValue = False ' Return Failure
+    rc = RegCloseKey(hKey)
+
+End Function
+ 
+
+

@@ -1,0 +1,19 @@
+:Base flint.hlp>proc4
+:Title Flint Help
+1 Using Flint to Test TrueType Fonts=IDH_OVERVIEW
+1 Setting Test Parameters
+2 Choosing a Font=IDH_CHOOSEFONT
+2 Characters=IDH_SETCHAR
+2 Sizes=IDH_SETSIZE
+2 Transformations=IDH_SETTRANS
+2 Output=IDH_SETFILE
+1 Running the Tests
+2 For a Single Font=IDH_SingleFont
+2 Running Tests in Batches
+3 Using Job Files=IDH_USINGJOB
+3 Job File Syntax=IDH_JOBFILES>ref
+1 Interpreting the Test Results
+2 Error Output Format=IDH_OUTFORMAT>ref
+2 Possible Errors=IDH_ERRORS>ref
+1 TrueType Specification
+2 TrueType Instruction Reference=IDH_TTINST>instref

@@ -1,0 +1,118 @@
+; ttobase.txt - Format Description File for BASE table for TTOASM.EXE 
+; Expand to handle Class parameter and switch values - 1/25/95 
+; Update Axis, BaseTagList to allow for NULL entries - 3/21/95
+; Add Count type
+; TTOBASE.FMT 1.2
+ 
+DEFINE ZERO=0
+DEFINE MAXCOUNT=0xFFFF
+
+;**** Baseline Table ****
+
+BASEHeader, HEAD {
+fixed32, 0x00010000                     ; BASEHeader version
+Offset, Axis                            ; HorizAxis
+Offset, Axis                            ; VertAxis
+}
+
+DeviceTableFormat1, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 1                               ; Format 1
+Array, $T2 - $T1+1, packedint2    
+}
+
+DeviceTableFormat2, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 2                               ; Format 2
+Array, $T2 - $T1+1, packedint4    
+}
+
+DeviceTableFormat3, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 3                               ; Format 3
+Array, $T2 - $T1+1, packedint8
+}
+DeviceTable, CLASS, , $B4 {
+DeviceTableFormat1
+DeviceTableFormat2
+DeviceTableFormat3
+}
+
+Axis, TABLE {
+Offset, BaseTagList
+Offset, BaseScriptList, NOTNULL
+}
+
+BaseTagList, TABLE {
+Count, 1, MAXCOUNT						; BaseTagCount
+Array, $T1, Tag                         ; Baseline identification tags
+}
+
+BaseScriptList, TABLE {
+Count, 1, MAXCOUNT                      ; BaseScriptCount
+Array, $T1, BaseScriptRecord
+}
+
+BaseScriptRecord, RECORD {
+Tag                                     ; Tag
+Offset, BaseScript, NOTNULL
+}
+
+BaseScript, TABLE {
+Offset, BaseValues
+Offset, MinMax
+Count                                   ; BaseLangSysCount
+Array, $T3, BaseLangSysRecord
+}
+
+BaseLangSysRecord, RECORD {
+Tag                                     ; Tag
+Offset, MinMax, NOTNULL
+}
+
+BaseValues, TABLE {
+uint16                                  ; DefaultIndex
+Count                                   ; BaseCoordCount
+Array, $T2, Offset, BaseCoord, NOTNULL
+}
+
+MinMax, TABLE {
+Offset, BaseCoord              		    ; MinCoord
+Offset, BaseCoord		                ; MaxCoord
+Count                                   ; FeatMinMaxCount
+Array, $T3, FeatMinMaxRecord
+}
+
+FeatMinMaxRecord, RECORD {
+Tag                                     ; Tag
+Offset, BaseCoord		                ; MinCoord
+Offset, BaseCoord		                ; MaxCoord
+}
+
+BaseCoordFormat1, TABLE {
+uint16, 1                               ; Format 1
+int16                                   ; Coordinate X or Y
+}
+
+BaseCoordFormat2, TABLE {
+uint16, 2                               ; Format 2
+int16                                   ; Coordinate X or Y
+GlyphID, 0, MAXGLYPHID                  ; Reference Glyph ID
+uint16                                  ; BaseCoordPoint
+}
+
+BaseCoordFormat3, TABLE {
+uint16, 3                               ; Format 3
+int16                                   ; Coordinate X or Y
+Offset, DeviceTable, NOTNULL
+}
+
+BaseCoord, CLASS, , $B0 {
+BaseCoordFormat1
+BaseCoordFormat2
+BaseCoordFormat3
+}
+

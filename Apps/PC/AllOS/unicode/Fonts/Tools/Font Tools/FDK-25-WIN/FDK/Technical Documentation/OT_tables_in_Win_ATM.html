@@ -1,0 +1,551 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Summary of the usage of OpenType tables in ATM 4.1 NT</TITLE>
+<META NAME="Template" CONTENT="D:\Program Files\Microsoft
+Office\Office\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+<br>
+<P><B>Copyright</B>
+            <p>
+								Copyright (c) 1997,1998,2002,2003,2007 Adobe Systems Incorporated<br>
+								
+								Permission is hereby granted, free of charge, to any person obtaining a
+								copy of this documentation file to use, copy, publish, distribute,
+								sublicense, and/or sell copies of the documentation, and to permit
+								others to do the same, provided that:<br><br>
+								- No modification, editing or other alteration of this document is
+								allowed; and<br>
+								- The above copyright notice and this permission notice shall be
+								included in all copies of the documentation.<br><br>
+								
+								Permission is hereby granted, free of charge, to any person obtaining a
+								copy of this documentation file, to create their own derivative works
+								from the content of this document to use, copy, publish, distribute,
+								sublicense, and/or sell the derivative works, and to permit others to do
+								the same, provided that the derived work is not represented as being a
+								copy or version of this document.<br><br>
+								
+								Adobe shall not be liable to any party for any loss of revenue or profit
+								or for indirect, incidental, special, consequential, or other similar
+								damages, whether based on tort (including without limitation negligence
+								or strict liability), contract or other legal or equitable grounds even
+								if Adobe has been advised or had reason to know of the possibility of
+								such damages. The Adobe materials are provided on an "AS IS" basis.
+								Adobe specifically disclaims all express, statutory, or implied
+								warranties relating to the Adobe materials, including but not limited to
+								those concerning merchantability or fitness for a particular purpose or
+								non-infringement of any third party rights regarding the Adobe
+								materials.
+            </p>
+<P><B>Introduction</B>
+<P>The following table summarizes the usage of OpenType tables by the 4.1
+ATM font driver for Windows NT.</P>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=7 WIDTH=450>
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<P><B>Required Tables</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>cmap</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Character to glyph mapping</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>head</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Font header</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>hhea</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Horizontal header</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>hmtx</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Horizontal metrics</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>maxp</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Maximum profile</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>name</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Naming table</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>OS/2</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Windows specific metrics</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>post</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>PostScript information</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<B><P>TrueType Tables</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>cvt</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Control Value Table</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>fpgm</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Font program</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>glyf</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Glyph data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>loca</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Index to location</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>prep</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>CVT Program</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<B><P>PostScript Tables</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>CFF</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Compact font format</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Required</TD>
+</TR>
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<B><P>Advanced Typographic Tables</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>BASE</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Baseline data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>GDEF</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Glyph definition data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>GPOS</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Glyph positioning data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>For "kern" feature</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>GSUB</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Glyph substitution data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>For "vrt2" feature</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>JSTF</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Justification data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<B><P>Bitmap Tables</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>EBDT</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Embedded bitmap data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>EBLC</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Embedded bitmap location data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>EBSC</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Embedded bitmap scaling data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<B><P>Other OpenType Tables</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>DSIG</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Digital signature</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>gasp</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Grid-fitting/Scan-conversion</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>hdmx</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Horizontal device metrics</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>kern</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Kerning</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>LTSH</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Linear threshold data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>PCLT</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>PCL 5 data</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>VDMX</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Vertical device metrics</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>Ignored</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>vhea</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Vertical metrics header</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>For vertical mode</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>vmtx</TD>
+<TD WIDTH="48%" VALIGN="TOP">
+<P>Vertical metrics</TD>
+<TD WIDTH="36%" VALIGN="TOP">
+<P>For vertical mode</TD>
+</TR>
+</TABLE>
+
+<I><P>Following is a discussion of ATM’s treatment of individual OpenType
+tables. Reviewers should be familiar with the v.1.2 OpenType
+Specification.</P>
+</I><B><P>cmap</P>
+</B><P>The cmap table version must be &gt;= 0 (equivalent to ignoring it).</P>
+<P>The OpenType specification <I>strongly recommends</I>, but ATM
+<I>requires</I> a cmap with PlatformID 3 (Microsoft) and EncodingID 1
+(Unicode). This cmap must be in format 4 (Microsoft Standard).</P>
+<P>ATM uses an optional cmap with PlatformID 4 (Custom) and EncodingID less
+than 256. This provides a "compatibility" cmap that contains the original
+font encoding for converted non-StandardEncoded Adobe fonts. The
+compatibility cmap must be in either format 0 (Apple Standard) or format 6
+(Trimmed). <I>Note: PlatformID 4 is not defined in the current OpenType
+specification.</P>
+</I><P>All other cmaps are ignored. In particular, ATM does not use:</P><DIR>
+<DIR>
+
+<P>PlatformID 1 EncodingID 0 (Macintosh)</P>
+<P>PlatformID 3 EncodingID 0 (Symbol)</P>
+<P>PlatformID 3 EncodingID 2-6 (Far East)</P></DIR>
+</DIR>
+
+<I><P>Note: contrary to the current OpenType specification, ATM does not
+support PlatformID 3 EncodingID 0 for Symbol fonts, even for the font
+"Symbol".</P>
+</I><P>The cmap table checksum must be correct.</P>
+<B><P>head</P>
+</B><P>ATM uses the following fields from the head table.</P><DIR>
+<DIR>
+
+<P>version (must be &gt;= 1.0 and &lt; 2.0)</P>
+<P>fontRevision</P>
+<P>magicNumber (must be 0x5F0F3CF5)</P>
+<P>flags</P>
+<P>unitsPerEm</P>
+<P>lowestRecPPEM </P>
+<P>xMin,yMin,xMax,yMax (for single master fonts only)</P>
+<P>macStyle </P></DIR>
+</DIR>
+
+<P>If the OS/2.achVendID is 'ADBE' then fontRevision must be &gt;= 1.0 (0.9
+during beta).</P>
+<P>When bit 12 of the flags field is set, it indicates a converted font,
+and ATM does the following:</P>
+
+<UL>
+
+<UL>
+<DL>
+<DD><LI>Enable Non-linear external leading.</LI></DD>
+<DD><LI>Disable support for multiple 'kern' subtables, for class kerning
+and for kern filtering.</LI></DD>
+<DD><LI>Force OS/2.usWeightClass to either Regular (400) or Bold (700).
+Force panose.bWeight to either Book (5) or Bold (8), respectively.</LI></DD>
+<DD><LI>Enable the algorithmic calculation of OS/2.sTypoAscender,
+OS/2.sTypoDescender and OS/2.sTypoLineGap for multiple master
+fonts.</LI></DD>
+</DL></UL>
+</UL>
+
+<P>All other bits in the flags field are ignored.</P>
+<P>All other fields are ignored.</P>
+<P>The head table checksum (and the checkSumAdjustment field) are currently
+ignored.</P>
+<B><P>hhea</P>
+</B><P>ATM uses the following fields from the hhea table.</P><DIR>
+<DIR>
+
+<P>version (must be &gt;= 1.0 and &lt; 2.0)</P>
+<P>advanceWidthMax (for single master fonts only)</P>
+<P>Ascender (for single master fonts only)</P>
+<P>Descender (for single master fonts only)</P>
+<P>caretSlopeRise</P>
+<P>caretSlopeRun</P>
+<P>numberOfHMetrics</P></DIR>
+</DIR>
+
+<P>All other fields are ignored.</P>
+<P>The hhea table checksum must be correct.</P>
+<B><P>hmtx</P>
+</B><P>ATM uses the hMetrics array to obtain advance widths for single
+master fonts. This includes an implicit advance width when numberOfHMetrics
+is less than numGlyphs. ATM ignores leftSideBearing. The hmtx table is
+required but is actually ignored for Multiple Master fonts.</P>
+<P>The hmtx table checksum must be correct.</P>
+<B><P>maxp</P>
+</B><P>ATM requires the maxp table and obtains numGlyphs from it. The
+version must be &gt;= 0.5 (hexadecimal) and &lt; 2.0. All other fields are
+ignored.</P>
+<P>The maxp table checksum must be correct.</P>
+<B><P>name</P>
+</B><P>ATM requires a format 0 name table. Names must be defined for
+PlatformID 3 (Microsoft) and EncodingID 1 (Unicode). ATM requires the
+following NameIDs.</P><DIR>
+<DIR>
+
+<P>1 Font Family</P>
+<P>2 Font Subfamily</P>
+<P>3 Unique font identifier</P>
+<P>6 PostScript</P>
+</DIR>
+
+<P>The following NameID is optional:</P><DIR>
+<DIR>
+
+<P>17 Preferred Subfamily</P></DIR>
+</DIR>
+
+<P>All other names are ignored.</P>
+<P>The name table checksum must be correct.</P>
+<B><P>OS/2</P>
+</B><P>ATM uses the following fields:</P><DIR>
+<DIR>
+
+<P>version (must be &gt;= 2)</P>
+<P>xAvgCharWidth (for single master only)</P>
+<P>usWeightClass (for non-converted fonts only)</P>
+<P>fsType</P>
+<P>ySubscriptXSize</P>
+<P>ySubscriptYSize</P>
+<P>ySubscriptXOffset</P>
+<P>ySubscriptYOffset</P>
+<P>ySuperscriptXSize</P>
+<P>ySuperscriptYSize</P>
+<P>ySuperscriptXOffset</P>
+<P>ySuperscriptYOffset</P>
+<P>yStrikeOutSize</P>
+<P>yStrikeOutPosition</P>
+<P>panose</P>
+<P>ulUnicodeRange1</P>
+<P>ulUnicodeRange2</P>
+<P>ulUnicodeRange3</P>
+<P>ulUnicodeRange4</P>
+<P>achVendID </P>
+<P>sTypoAscender (except converted multiple master)</P>
+<P>sTypoDescender (except converted multiple master)</P>
+<P>sTypoLineGap (except converted multiple master)</P>
+<P>usWinAscent (for single master only)</P>
+<P>usWinDescent (for single master only)</P>
+<P>ulCodePageRange1</P>
+<P>ulCodePageRange2</P>
+<P>sXHeight (for single master only)</P>
+<P>sCapHeight (for single master only)</P>
+<P>usDefaultChar</P>
+<P>usBreakChar</P></DIR>
+</DIR>
+
+<P>The following fields are ignored.</P><DIR>
+<DIR>
+
+<P>xAvgCharWidth (for multiple master only)</P>
+<P>usWeightClass (for converted fonts only)</P>
+<P>usWidthClass</P>
+<P>sFamilyClass</P>
+<P>fsSelection</P>
+<P>sTypoAscender (for converted multiple master only)</P>
+<P>sTypoDescender (for converted multiple master only)</P>
+<P>sTypoLineGap (for converted multiple master only)</P>
+<P>usWinAscent (for multiple master only)</P>
+<P>usWinDescent (for multiple master only)</P>
+<P>sXHeight (for multiple master only)</P>
+<P>sCapHeight (for multiple master only)</P>
+<P>usFirstCharIndex</P>
+<P>usLastCharIndex</P>
+<P>usMaxLookups</P></DIR>
+</DIR>
+
+<P>The OS/2 table checksum must be correct.</P>
+<B><P>post</P>
+</B><P>ATM uses the following fields from the post table.</P><DIR>
+<DIR>
+
+<P>version (must be &gt;= 3.0 and &lt; 4.0)</P>
+<P>underlineThickness</P>
+<P>underlinePosition</P>
+<P>italicAngle</P></DIR>
+</DIR>
+
+<P>All other fields are ignored.</P>
+<P>The post table checksum must be correct.</P>
+<B><P>CFF</P>
+</B><P>ATM requires this table.</P>
+<P>The CFF table checksum is currently ignored.</P>
+<B><P>GPOS</P>
+</B><P>If the GPOS table is present, ATM requires the version to be &gt;=
+1.0 and &lt; 2.0.</P>
+<P>The GPOS table is used only for the 'kern' feature. See ATM Kerning
+Spec.</P>
+<P>The GPOS table checksum must be correct.</P>
+<B><P>GSUB</P>
+</B><P>ATM looks for a GSUB table in every OpenType font to determine if vertical mode is supported (see description below). The requirements stated in thi
+s section are necessary for ATM to support vertical mode for the font. If
+any of these requirements are not met, then ATM loads the font but disables
+vertical mode.</P>
+<P>If the GSUB table is present, ATM requires the version to be &gt;= 1.0
+and &lt; 2.0. The ScriptList is ignored. If the FeatureList does not
+contain a 'vrt2' feature, the rest of the GSUB table is ignored. The vrt2
+feature must include a single lookup of LookupType 1 (Single Substitution
+Subtable). The predecessor feature, 'vert', is ignored.</P>
+<P>The lookup must contain a single subtable of format 1 (delta) or format
+2 (general Single Substitution). The LookupFlag must be zero.</P>
+<P>The coverage table must be format 1 (index array) or format 2 (index
+ranges).</P>
+<P>The Windows menuname (name ID FontFamily (1)) must &lt;= 30 characters
+long (to allow for '@').</P>
+<P>The GSUB table checksum must be correct.</P>
+<B><P>EBDT, EBLC, EBSC</P>
+</B><P>ATM does not support bitmaps in OpenType fonts.</P>
+<B><P>vhea</P>
+</B><P>This table is required for fonts that support vertical mode. ATM
+uses the following fields from the vhea table.</P><DIR>
+<DIR>
+
+<P>version (must be &gt;= 1.0 and &lt; 2.0)</P>
+<P>numOfLongVerMetrics</P></DIR>
+</DIR>
+
+<P>All other fields are ignored.</P>
+<P>The vhea table checksum must be correct.</P>
+<B><P>vmtx</P>
+</B><P>This table is required for fonts that support vertical mode.</P>
+<P>ATM uses the vMetrics array to obtain advance widths in vertical mode.
+This includes an implicit advance width when numOfLongVerMetrics is less
+than numGlyphs. ATM ignores rightSideBearing.</P>
+<P>The vmtx table checksum must be correct.</P>
+<B><P>vertical mode</P>
+</B><P>ATM reports a second "face" to the system for fonts that support
+vertical mode:</P>
+
+<UL>
+
+<UL>
+<DL>
+<DD><LI>The Windows menuname of this face is formed by appending '@' with
+the normal font menuname.</LI></DD>
+<DD><LI>The font bounding box is rotated 90 degrees counter-clockwise. The
+metrics derived from the bounding box are recalculated:</LI></DD>
+
+<UL>
+<DD><LI>sTypoAscender</LI></DD>
+<DD><LI>sTypoDescender</LI></DD>
+<DD><LI>sTypoLineGap</LI></DD>
+<DD><LI>usWinAscent</LI></DD>
+<DD><LI>usWinDescent</LI></DD></UL>
+
+<DD><LI>The Unicode encoding from the cmap is recalculated, using the
+one-to-one glyph substitution specified by GSUB 'vrt2'.</LI></DD>
+</DL></UL>
+</UL>
+
+<P>When producing glyph data for the @facename, ATM does the following:</P>
+
+<UL>
+
+<UL>
+<DL>
+<DD><LI>Rotates each glyph 90 degrees counter-clockwise.</LI></DD>
+<DD><LI>Uses advance widths from vmtx instead of hmtx.</LI></DD>
+</DL></UL>
+</UL>
+
+<I><FONT SIZE=2><P>&nbsp;</P>
+<P>Last modified:&nbsp;<!--$$Date: --> 12/04/98 3:03p <!-- $--><BR>
+Maintained by </I></FONT><A HREF="mailto:darnold@adobe.com"><I><FONT
+SIZE=2>Dave Arnold</I></FONT></A><I><FONT SIZE=2>. </P>
+</FONT><P>&nbsp;</P></I></BODY>
+</HTML>
+

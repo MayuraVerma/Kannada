@@ -1,0 +1,172 @@
+# Examples of new feature file syntax for FDK 2.5
+# Oct 21 2008
+
+languagesystem DFLT dflt;
+
+#------------------------------------
+# stand-alone lookup: definded outside of a feature block
+#------------------------------------
+
+lookup STAND_ALONE1 {
+	sub [a c] by [d e];
+} STAND_ALONE1;
+
+
+#------------------------------------
+# Names for stylistic set features
+#------------------------------------
+feature ss01 {
+
+	featureNames {
+		name 3 "This is a Windows platform descriptive name for stylistic set ss01";
+		name 1 "This is a Mac platform descriptive name for stylistic set ss01";
+		name 3 1 0x40c "C'est un nom descriptif pour ss01 sur le systeme Windows.";
+		name 1 0 1 "C'est un nom descriptif pour ss01 sur le systeme Mac.";
+	};
+	
+		sub a by b;
+		sub c by d;
+	
+} ss01;
+
+#------------------------------------
+# Multiple substitution
+#------------------------------------
+
+feature gst1 {
+	lookup MULT {
+		sub f_f_j by f f j;
+	} MULT;
+} gst1;
+
+#------------------------------------
+# Reverse chaining  substitution
+#------------------------------------
+
+feature gst2 {
+	reversesub [a e n] i' by i.dot;
+} gst2;
+
+#------------------------------------
+# Contextual chaining substitution with explicit lookup references
+#------------------------------------
+feature gst3 {
+		# in 5-element contextual string "[o i e] f_f_j [o i e] [a c] y"
+		# apply lookup MULT to f_f_j, and lookup STAND_ALONE1 to [a c].
+	sub [o i e] f_f_j' lookup MULT [o i e]' [a c]' lookup STAND_ALONE1 y;
+} gst3;
+
+
+#------------------------------------
+# Named anchor and named value record
+#------------------------------------
+
+anchorDef 10 100 FIRST_ANCHOR;
+
+valueRecordDef -10 FIRST_KERN;
+valueRecordDef  <0  0 -20  0> CPSP_ADJUSTMENT;
+
+feature pst1 {
+	pos A B < FIRST_KERN> ;
+} pst1;
+
+feature pst2 {
+	pos A  < CPSP_ADJUSTMENT> ;
+} pst2;
+
+
+#------------------------------------
+# Cursive adjustment
+#------------------------------------
+
+feature pst3 {
+	pos cursive N <anchor 30 600> <anchor NULL>; # no exit anchor, entry anchor at (30,600).
+} pst3;
+
+#------------------------------------
+# Mark adjustments
+#------------------------------------
+
+markClass [grave acute] <anchor 320 -10> @TOP1; #define mark class @TOP1
+markClass [dieresis]  <anchor 300 -10 >  @TOP1;  # Add more glyphs with different anchor points to @TOP1.
+markClass [circumflex]  <anchor 350 -10>  @TOP2;
+markClass [cedilla]  <anchor 350 400 >  @BOTTOM1;
+
+
+feature pst4 {
+	# Mark to Base
+	pos base [ e i o u ] <anchor 300 600> mark @TOP1
+					<anchor 300 600> mark @TOP2
+					<anchor 350 -10> mark @BOTTOM1;
+
+
+	# Mark to Ligature
+	pos ligature  [ f_i ]
+					# c has 3 anchor points
+					<anchor 300 600> mark @TOP1
+					<anchor 300 600> mark @TOP2
+					<anchor 350 -10> mark @BOTTOM1
+					ligComponent; # start anchor -mark class pairs for next component.
+					# t has no attaching marks - you need to specify only real anchor points.
+
+	# Mark to Mark. Same syntax as for Mark to Base.
+	pos mark [ circumflex dieresis ] <anchor 300 600> mark @TOP1;
+
+} pst4;
+
+# more stand-alone lookups
+lookup SINGLE_POS {
+	pos @UPPER_CASE 12;
+} SINGLE_POS;
+
+lookup PAIR_POS {
+	pos [ T F V W]  [ a o e u ] -10
+} PAIR_POS;
+
+#------------------------------------
+# Contextual chaining positioning 
+#------------------------------------
+feature pst5 {
+
+	# 3-element contxtual string: M N [a e i o u]
+	# Cursive lookup applied to N.
+	pos M cursive N' <anchor 30 600> <anchor NULL> [a e i o u]; 
+
+	# 5-element contxtual string: "M [ e i o u ] [n m] [@TOP1 + @TOP2 + BOTTOM1] s"
+	# Mark-to-Base lookup applied to the single element input sequence [@TOP1 + @TOP2 + BOTTOM1].
+	# Note that all marked glyph clases are concatenated to form single glyph class.
+	pos M base [ e i o u ] [n m] <anchor 300 600> mark @TOP1'
+					<anchor 300 600> mark @TOP2'
+					<anchor 350 -10> mark @BOTTOM1'
+					s;
+	
+	# contextual string with direct lookup references
+	# 3 element contextual string "@UPPER_CASE @UPPER_CASE @LOWER_CASE" with
+	# lookup SINGLE_POS is applied at the first element, lookup PAIR_POS is applied
+	# at the second element
+	pos @UPPER_CASE' lookup SINGLE_POS  @UPPER_CASE' lookup PAIR_POS @LOWER_CASE;
+	
+} pst5;
+
+
+#------------------------------------
+# GDEF table definition 
+#------------------------------------
+
+# Note that MarkAttachClass cannot be explicitly specifed. They are automatically defined
+# by the use of class names in lookupflag statements.
+
+@BASE = [o u];
+@LIGATURES = [ f_i f_l];
+@COMPONENT = [ i f l];
+
+@GDEF_MARK1 = [acute grave ];
+@GDEF_MARK2 = [cedilla ];
+
+ table GDEF {
+     GlyphClassDef [a b c ], @LIGATURES, [@GDEF_MARK1 @GDEF_MARK2], @COMPONENT;
+     Attach m 5;
+     Attach m 4;
+     LigatureCaretByPos f_i 400 380;
+     LigatureCaretByIndex f_l 23 46;
+} GDEF;

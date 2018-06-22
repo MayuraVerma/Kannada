@@ -1,0 +1,126 @@
+%%FONTLAB CLASSES
+
+%%CLASS abvs2
+%%GLYPHS  uni0C95 uni0C96 uni0C97 uni0C98 uni0C99 uni0C9A uni0C9B uni0C9C uni0C9D uni0C9E uni0C9F uni0CA0 uni0CA1 uni0CA2 uni0CA3 uni0CA4 uni0CA5 uni0CA6 uni0CA7 uni0CA8 uni0CAA uni0CAB uni0CAC uni0CAD uni0CAE uni0CAF uni0CB0 uni0CB1 uni0CB2 uni0CB3 uni0CB5 uni0CB6 uni0CB7 uni0CB8 uni0CB9 uni0CDE uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC mta_01 mta_09
+%%END
+
+%%CLASS rphf1
+%%GLYPHS  uni0C95 uni0C96 uni0C97 uni0C98 uni0C99 uni0C9A uni0C9B uni0C9C uni0C9D uni0C9E uni0C9F uni0CA0 uni0CA1 uni0CA2 uni0CA3 uni0CA4 uni0CA5 uni0CA6 uni0CA7 uni0CA8 uni0CAA uni0CAB uni0CAC uni0CAD uni0CAE uni0CAF uni0CB0 uni0CB1 uni0CB2 uni0CB3 uni0CB5 uni0CB6 uni0CB7 uni0CB8 uni0CB9 uni0CDE uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC mta_01 mta_09
+%%END
+
+%%CLASS blwf1
+%%GLYPHS  uni0C95 uni0C96 uni0C97 uni0C98 uni0C99 uni0C9A uni0C9B uni0C9C uni0C9D uni0C9E uni0C9F uni0CA0 uni0CA1 uni0CA2 uni0CA3 uni0CA4 uni0CA5 uni0CA6 uni0CA7 uni0CA8 uni0CAA uni0CAB uni0CAC uni0CAD uni0CAE uni0CAF uni0CB0 uni0CB1 uni0CB2 uni0CB3 uni0CB5 uni0CB6 uni0CB7 uni0CB8 uni0CB9 uni0CDE uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC mta_01 mta_09
+%%END
+
+%%CLASS class7
+%%GLYPHS  _uni0C95_uni0CCD _uni0C96_uni0CCD _uni0C97_uni0CCD _uni0C98_uni0CCD _uni0C99_uni0CCD _uni0C9A_uni0CCD _uni0C9B_uni0CCD _uni0C9C_uni0CCD _uni0C9D_uni0CCD _uni0C9E_uni0CCD _uni0C9F_uni0CCD _uni0CA0_uni0CCD _uni0CA1_uni0CCD _uni0CA2_uni0CCD _uni0CA3_uni0CCD _uni0CA4_uni0CCD _uni0CA5_uni0CCD _uni0CA6_uni0CCD _uni0CA7_uni0CCD _uni0CA8_uni0CCD _uni0CAA_uni0CCD _uni0CAB_uni0CCD _uni0CAC_uni0CCD _uni0CAD_uni0CCD _uni0CAE_uni0CCD _uni0CAF_uni0CCD _uni0CB0_uni0CCD _uni0CB1_uni0CCD _uni0CB2_uni0CCD _uni0CB3_uni0CCD _uni0CB5_uni0CCD _uni0CB6_uni0CCD _uni0CB7_uni0CCD _uni0CB8_uni0CCD _uni0CB9_uni0CCD _uni0CDE_uni0CCD _uni0C96_uni0CBC_uni0CCD _uni0C9C_uni0CBC_uni0CCD _uni0CAB_uni0CBC_uni0CCD mta_04 mta_12
+%%END
+
+%%CLASS class6
+%%GLYPHS  m_711 m_712 m_713 m_714 m_715 m_716 m_717 m_718 m_719 m_720 m_721 m_722 m_723 m_724 m_725 m_726 m_727 m_728 m_729 m_730 m_731 m_732 m_733 m_734 m_735 m_736 m_737 m_738 m_739 m_740 m_741 m_742 m_743 m_744 m_745 m_746 m_747 m_748 m_749 mta_02 mta_10
+%%END
+
+%%CLASS oseq1
+%%GLYPHS  uni0C95_uni0CCD uni0C96_uni0CCD uni0C97_uni0CCD uni0C98_uni0CCD uni0C99_uni0CCD uni0C9A_uni0CCD uni0C9B_uni0CCD uni0C9C_uni0CCD uni0C9D_uni0CCD uni0C9E_uni0CCD uni0C9F_uni0CCD uni0CA0_uni0CCD uni0CA1_uni0CCD uni0CA2_uni0CCD uni0CA3_uni0CCD uni0CA4_uni0CCD uni0CA5_uni0CCD uni0CA6_uni0CCD uni0CA7_uni0CCD uni0CA8_uni0CCD uni0CAA_uni0CCD uni0CAB_uni0CCD uni0CAC_uni0CCD uni0CAD_uni0CCD uni0CAE_uni0CCD uni0CAF_uni0CCD uni0CB0_uni0CCD uni0CB1_uni0CCD uni0CB2_uni0CCD uni0CB3_uni0CCD uni0CB5_uni0CCD uni0CB6_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD uni0CDE_uni0CCD uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD
+%%END
+
+%%CLASS oseq12
+%%GLYPHS  _446 _457
+%%END
+
+%%CLASS oseq2
+%%GLYPHS  uni0C95_uni0CCD.blws uni0C96_uni0CCD.blws uni0C97_uni0CCD.blws uni0C98_uni0CCD.blws uni0C99_uni0CCD.blws uni0C9A_uni0CCD.blws uni0C9B_uni0CCD.blws uni0C9C_uni0CCD.blws uni0C9D_uni0CCD.blws uni0C9E_uni0CCD.blws uni0C9F_uni0CCD.blws uni0CA0_uni0CCD.blws uni0CA1_uni0CCD.blws uni0CA2_uni0CCD.blws uni0CA3_uni0CCD.blws uni0CA4_uni0CCD.blws uni0CA5_uni0CCD.blws uni0CA6_uni0CCD.blws uni0CA7_uni0CCD.blws uni0CA8_uni0CCD.blws uni0CAA_uni0CCD.blws uni0CAB_uni0CCD.blws uni0CAC_uni0CCD.blws uni0CAD_uni0CCD.blws uni0CAE_uni0CCD.blws uni0CAF_uni0CCD.blws uni0CB0_uni0CCD.blws uni0CB1_uni0CCD.blws uni0CB2_uni0CCD.blws uni0CB3_uni0CCD.blws uni0CB5_uni0CCD.blws uni0CB6_uni0CCD.blws uni0CB7_uni0CCD.blws uni0CB8_uni0CCD.blws uni0CB9_uni0CCD.blws uni0CDE_uni0CCD.blws uni0C96_uni0CBC_uni0CCD.blws uni0C9C_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws
+%%END
+
+%%CLASS oseq13
+%%GLYPHS  uni0C9F_uni0CCD uni0CAA_uni0CCD uni0CB2_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD
+%%END
+
+%%CLASS oseq14
+%%GLYPHS  uni0CA4_uni0CCD uni0CB0_uni0CCD
+%%END
+
+%%CLASS oseq15
+%%GLYPHS  uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0C9B_uni0CCD uni0C9D_uni0CCD uni0CA2_uni0CCD uni0CA5_uni0CCD uni0CA7_uni0CCD uni0CAD_uni0CCD
+%%END
+
+%%CLASS oseq23
+%%GLYPHS  _301 _302 _303 _304 _305 _306 _307 _308 _309 _310 _311 _312 _313 _314 _315 _316 _317 _318 _319 _320 _321 _322 _323 _324 _325 _326 _327 _328 _329 _330 _331 _332 _333 _334 _335 _336 _337 _338 _339
+%%END
+
+%%CLASS abvs3
+%%GLYPHS  uni0C98 uni0C98_uni0CBF uni0C9B uni0C9B_uni0CBF uni0C9D uni0C9D_uni0CBF uni0CA2 uni0CA2_uni0CBF uni0CA5 uni0CA5_uni0CBF uni0CA7 uni0CA7_uni0CBF uni0CAB uni0CAB_uni0CBF uni0CAD uni0CAD_uni0CBF
+%%END
+
+%%CLASS abvs4
+%%GLYPHS  uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC uni0C96_uni0CBC_uni0CBF uni0C9C_uni0CBC_uni0CBF uni0CAB_uni0CBC_uni0CBF _uni0C96_uni0CBC_uni0CCD _uni0C9C_uni0CBC_uni0CCD _uni0CAB_uni0CBC_uni0CCD
+%%END
+
+%%CLASS oseq24
+%%GLYPHS  _341 _342 _343 _344 _345 _346 _347 _348 _349 _350 _351 _352 _353 _354 _355 _356 _357 _358 _359 _360 _361 _362 _363 _364 _365 _366 _367 _368 _369 _370 _371 _372 _373 _374 _375 _376 _377 _378 _379
+%%END
+
+%%CLASS oseq25
+%%GLYPHS  _381 _382 _383 _384 _385 _386 _387 _388 _389 _390 _391 _392 _393 _394 _395 _396 _397 _398 _399 _400 _401 _402 _403 _404 _405 _406 _407 _408 _409 _410 _411 _412 _413 _414 _415 _416 _417 _418 _419
+%%END
+
+%%CLASS oseq16
+%%GLYPHS  _431 _432 _433 _434 _435 _436 _437 _438 _439 _440 _441 _442 _443 _444 _445 _446 _447 _448 _449 _450 _451 _452 _453 _454 _455 _456 _457 _458 _459 _460 _461 _462 _463 _464 _465 _466 _467 _468 _469
+%%END
+
+%%CLASS oseq1a
+%%GLYPHS  _471 _472 _473 _474 _475 _476 _477 _478 _479 _480 _481 _482 _483 _484 _485 _486 _487 _488 _489 _490 _491 _492 _493 _494 _495 _496 _497 _498 _499 _500 _501 _502 _503 _504 _505 _506 _507 _508 _509
+%%END
+
+%%CLASS oseq2a
+%%GLYPHS  m_791 m_792 m_793 m_794 m_795 m_796 m_797 m_798 m_799 m_800 m_801 m_802 m_803 m_804 m_805 m_806 m_807 m_808 m_809 m_810 m_811 m_812 m_813 m_814 m_815 m_816 m_817 m_818 m_819 m_820 m_821 m_822 m_823 m_824 m_825 m_826 m_827 m_828 m_829
+%%END
+
+%%CLASS oseq2b
+%%GLYPHS  _711 _712 _713 _714 _715 _716 _717 _718 _719 _720 _721 _722 _723 _724 _725 _726 _727 _728 _729 _730 _731 _732 _733 _734 _735 _736 _737 _738 _739 _740 _741 _742 _743 _744 _745 _746 _747 _748 _749
+%%END
+
+%%CLASS abvs5
+%%GLYPHS  uni0C95 uni0C95.abvs uni0C95_uni0CBF _uni0C95_uni0CCD
+%%END
+
+%%CLASS abvs1
+%%GLYPHS  uni0CBE uni0CBF uni0CC0 uni0CC6 uni0CC7 uni0CC8 uni0CCA uni0CCB uni0CCC
+%%END
+
+%%CLASS class24
+%%GLYPHS  uni0C95.abvs uni0C96.abvs uni0C97.abvs uni0C98.abvs uni0C99.abvs uni0C9A.abvs uni0C9B.abvs uni0C9C.abvs uni0C9D.abvs uni0C9E.abvs uni0C9F.abvs uni0CA0.abvs uni0CA1.abvs uni0CA2.abvs uni0CA3.abvs uni0CA4.abvs uni0CA5.abvs uni0CA6.abvs uni0CA7.abvs uni0CA8.abvs uni0CAA.abvs uni0CAB.abvs uni0CAC.abvs uni0CAD.abvs uni0CAE.abvs uni0CAF.abvs uni0CB0.abvs uni0CB1.abvs uni0CB2.abvs uni0CB3.abvs uni0CB5.abvs uni0CB6.abvs uni0CB7.abvs uni0CB8.abvs uni0CB9.abvs uni0CDE.abvs uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC mta_02 mta_10
+%%END
+
+%%CLASS oseq22
+%%GLYPHS  m_751 m_752 m_753 m_754 m_755 m_756 m_757 m_758 m_759 m_760 m_761 m_762 m_763 m_764 m_765 m_766 m_767 m_768 m_769 m_770 m_771 m_772 m_773 m_774 m_775 m_776 m_777 m_778 m_779 m_780 m_781 m_782 m_783 m_784 m_785 m_786 m_787 m_788 m_789
+%%END
+
+%%CLASS abvs7
+%%GLYPHS  uni0C9C uni0C9C.abvs uni0C9C_uni0CBF _uni0C9C_uni0CCD
+%%END
+
+%%CLASS class26
+%%GLYPHS   uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC
+%%END
+
+%%CLASS class27
+%%GLYPHS   uni0C96.abvs uni0C9C.abvs uni0CAB.abvs
+%%END
+
+%%CLASS class28
+%%GLYPHS  uni0C96 uni0C9C uni0CAB
+%%END
+
+%%CLASS class29
+%%GLYPHS  uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC uni0C96_uni0CBC_uni0CBF uni0C9C_uni0CBC_uni0CBF uni0CAB_uni0CBC_uni0CBF _uni0C96_uni0CBC_uni0CCD _uni0C9C_uni0CBC_uni0CCD _uni0CAB_uni0CBC_uni0CCD uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC
+%%END
+
+%%CLASS class30
+%%GLYPHS  uni0C95_uni0CBF uni0C96_uni0CBF uni0C97_uni0CBF uni0C99_uni0CBF uni0C9A_uni0CBF uni0C9C_uni0CBF uni0C9E_uni0CBF uni0C9F_uni0CBF uni0CA0_uni0CBF uni0CA1_uni0CBF uni0CA3_uni0CBF uni0CA4_uni0CBF uni0CA6_uni0CBF uni0CA8_uni0CBF uni0CAA_uni0CBF uni0CAC_uni0CBF uni0CAE_uni0CBF uni0CAF_uni0CBF uni0CB0_uni0CBF uni0CB2_uni0CBF uni0CB3_uni0CBF uni0CB5_uni0CBF uni0CB6_uni0CBF uni0CB7_uni0CBF uni0CB8_uni0CBF uni0CB9_uni0CBF uni0CDE_uni0CBF uni0C98_uni0CBF uni0C9B_uni0CBF uni0C9D_uni0CBF
+uni0CA2_uni0CBF uni0CA5_uni0CBF uni0CA7_uni0CBF uni0CAB_uni0CBF uni0CAD_uni0CBF uni0C96_uni0CBC_uni0CBF uni0C9C_uni0CBC_uni0CBF   uni0CAB_uni0CBC_uni0CBF
+%%END
+
+%%CLASS class31
+%%GLYPHS  uni0CBE uni0CC6 uni0CCC uni0CCA uni0CC1 uni0CC2
+%%END

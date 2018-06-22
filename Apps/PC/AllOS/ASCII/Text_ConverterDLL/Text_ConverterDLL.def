@@ -1,0 +1,9 @@
+; Text_ConverterDLL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Text_ConverterDLL"
+DESCRIPTION  'Text_ConverterDLL Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+getRepString @3
+

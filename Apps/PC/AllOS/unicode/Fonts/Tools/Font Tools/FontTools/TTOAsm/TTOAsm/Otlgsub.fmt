@@ -1,0 +1,370 @@
+; ttogsub.fmt - Format Description File for GSUB table for TTOASM.EXE
+; Expand to handle Class parameter and switch values - 1/25/95
+; Add ffconfig info 5/22/95
+; Add Extention Lookup Format (uses Offset32 datatype)
+; Add ReverseChainContext lookup format   08/19/2002
+; TTOGSUB.FMT 1.4
+
+DEFINE ZERO=0
+DEFINE MAXCOUNT=0xFFFF
+
+; **** GSUB Table ****
+
+GSUBHeader, HEAD {                      
+fixed32, 0x00010000                     ; GSUBHeader version
+Offset, ScriptList, NOTNULL             
+Offset, FeatureList, NOTNULL            
+Offset, LookupList, NOTNULL
+}
+
+; **** Scripts ****
+ 
+ScriptList, TABLE {
+Count, 1, MAXCOUNT						; ScriptCount   
+Array, $T1, ScriptRecord
+}
+
+ScriptRecord, RECORD {
+Tag                                     ; Tag
+Offset, Script, NOTNULL                 ; An offset to a Script table to be generated
+}
+
+Script, TABLE {
+Offset, LangSys
+Count                     				; LangSysCount
+Array, $T2, LangSysRecord
+}
+
+LangSysRecord, RECORD {
+Tag                                     ; Tag
+Offset, LangSys, NOTNULL
+}
+	
+LangSys, TABLE {
+Offset, LookupOrder, NULL
+GSUBFeatureIndex                            ; ReqFeatureIndex
+Count, 0, MAXFEATURECOUNT				; FeatureCount
+Array, $T3, GSUBFeatureIndex, 0, MAXFEATURECOUNT-1
+}
+
+LookupOrder, TABLE {                    ; Dummy table
+int16
+}
+
+; **** Features ****
+
+FeatureList, TABLE {
+Count, 1, MAXFEATURECOUNT				; FeatureCount
+Array, $T1, FeatureRecord : $IGSUBFeatureIndex
+}
+
+FeatureRecord, RECORD {
+Tag                                     ; Feature Tag              
+Offset, Feature, NOTNULL    
+}
+
+Feature, TABLE {
+Offset, FeatureParams, NULL
+Count, 1, MAXLOOKUPCOUNT               ; LookupCount
+Array, $T2, GSUBLookupIndex, 0, MAXLOOKUPCOUNT-1 ; LookupListIndex
+}
+ 
+FeatureParams, TABLE {                  ; Dummy Table 
+uint16
+} 
+
+; **** Lookups ****
+
+LookupList, TABLE {
+Count, 1, MAXLOOKUPCOUNT               ; LookupCount
+Array, $T1, Offset, Lookup, NOTNULL : $IGSUBLookupIndex     
+}
+
+Lookup, TABLE {
+uint16, 1, 8             	            ; LookupType
+uint16                                  ; LookupFlag
+Count, 1, MAXCOUNT                     ; SubTableCount
+Array, $T3, Offset, SubstTable, NOTNULL, $T1  
+}
+
+CoverageFormat1, TABLE {
+uint16, 1                               ; Format 1
+Count, 1, MAXCOUNT                     ; GlyphCount
+Array, $T2, GlyphID, 0, MAXGLYPHID
+}
+
+CoverageFormat2, TABLE {
+uint16, 2                               ; Format 2
+Count, 1, MAXCOUNT                   	; CoverageRangeCount
+Array, $T2, RangeRecord
+}
+
+RangeRecord, RECORD {
+GlyphID, 0, MAXGLYPHID					; RangeStart
+GlyphID, $R1, MAXGLYPHID				; RangeEnd
+uint16, CheckRangeRecord()              ; StartCoverageIndex
+}
+
+Coverage, CLASS, , $B0 {
+CoverageFormat1
+CoverageFormat2
+}
+
+ClassDefFormat1, TABLE {
+uint16, 1                               ; Format 1
+GlyphID, 0, MAXGLYPHID					; StartGlyph
+Count, 1, MAXGLYPHID           		; GlyphCount
+Array, $T3, uint16
+}
+
+ClassDefFormat2, TABLE {
+uint16, 2                               ; Format 2
+Count, 1, MAXCOUNT                     ; ClassRangeCount
+Array, $T2, ClassRangeRecord
+}
+
+ClassRangeRecord, RECORD {
+GlyphID, 0, MAXGLYPHID					; Start GlyphID
+GlyphID, $R1, MAXGLYPHID				; End GlyphID
+uint16                                  ; Class
+}
+
+ClassDef, CLASS, , $B0 {
+ClassDefFormat1
+ClassDefFormat2
+}
+
+SingleSubstFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL
+int16                                   ; DeltaGlyphID
+}
+
+SingleSubstFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL
+Count, CoverageCount($T2)              ; GlyphCount
+Array, $T3, GlyphID, 0, MAXGLYPHID      
+}
+
+MultipleSubstFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL
+Count, CoverageCount($T2)              ; Sequence Count
+Array, $T3, Offset, Sequence, NOTNULL
+}
+
+Sequence, TABLE {
+Count, 1, MAXCOUNT                     ; SequenceGlyphCount
+Array, $T1, GlyphID, 0, MAXGLYPHID: DelNone  
+}
+
+AlternateSubstFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL
+Count, CoverageCount($T2)              ; AlternateSetCount
+Array, $T3, Offset, AlternateSet, NOTNULL
+}
+
+AlternateSet, TABLE {
+Count, 1, MAXCOUNT                    	; GlyphCount
+Array, $T1, GlyphID, 0, MAXGLYPHID  
+}
+
+LigatureSubstFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               
+Count, CoverageCount($T2)              ; LigatureSetCount
+Array, $T3, Offset, LigatureSet, NOTNULL
+}
+
+LigatureSet, TABLE {
+Count, 1, MAXCOUNT                     ; LigatureCount
+Array, $T1, Offset, Ligature, NOTNULL   
+}
+
+Ligature, TABLE {
+GlyphID, 0, MAXGLYPHID                  ; Glyph ID
+Count, 2, MAXCOUNT                     ; LigatureCompCount
+Array, $T2-1, GlyphID, 0, MAXGLYPHID : DelNone   
+}
+
+SubstLookupRecord, RECORD {
+uint16                                  ; SequenceIndex
+GSUBLookupIndex, 0, MAXLOOKUPCOUNT          ; LookupListIndex
+}             
+
+ContextSubstFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               
+Count, CoverageCount($T2)              ; SubRuleSet Count
+Array, $T3, Offset, SubRuleSet, NOTNULL
+}
+
+SubRuleSet, TABLE {
+Count, 1, MAXCOUNT                     ; SubRule Count
+Array, $T1, Offset, SubRule, NOTNULL    
+}
+
+SubRule, TABLE {
+Count, 2, MAXCOUNT                     ; SubRuleGlyphCount
+Count, 1, MAXCOUNT                     ; SubRuleSubstCount
+Array, $T1-1, GlyphID, 0, MAXGLYPHID : DelNone
+Array, $T2, SubstLookupRecord :DelNone
+}
+
+ContextSubstFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL               
+Offset, ClassDef, NOTNULL               
+Count, ClassCount($T3)                 ; SubClassSet Count
+Array, $T4, Offset, SubClassSet
+}
+
+SubClassSet, TABLE {
+Count, 1, MAXCOUNT                     ; SubClassRule Count
+Array, $T1, Offset, SubClassRule, NOTNULL   
+}
+
+SubClassRule, TABLE {
+Count, 2, MAXCOUNT                   	; GlyphCount
+Count, 1, MAXCOUNT                     ; SubstCount
+Array, $T1-1, uint16 : DelNone
+Array, $T2, SubstLookupRecord : DelNone
+}
+
+ContextSubstFormat3, TABLE {
+uint16, 3                               ; Format 3
+Count, 2, MAXCOUNT                     ; GlyphCount
+Count, 1, MAXCOUNT                     ; SubstCount
+Array, $T2, Offset, Coverage, NOTNULL : DelNone   
+Array, $T3, SubstLookupRecord : DelNone
+}
+
+ChainContextSubstFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               
+Count, CoverageCount($T2)              ; SubRuleSet Count
+Array, $T3, Offset, ChainSubRuleSet, NOTNULL
+}
+
+ChainSubRuleSet, TABLE {
+Count, 1, MAXCOUNT                     ; SubRule Count
+Array, $T1, Offset, ChainSubRule, NOTNULL    
+}
+
+ChainSubRule, TABLE {
+Count, 0, MAXCOUNT                     ; BacktrackGlyphCount
+Array, $T1, GlyphID, 0, MAXGLYPHID : DelNone
+Count, 1, MAXCOUNT                     ; InputGlyphCount
+Array, $T3-1, GlyphID, 0, MAXGLYPHID : DelNone
+Count, 0, MAXCOUNT                     ; LookaheadGlyphCount
+Array, $T5, GlyphID, 0, MAXGLYPHID : DelNone
+Count, 1, MAXCOUNT                     ; SubstCount
+Array, $T7, SubstLookupRecord :DelNone
+}
+
+ChainContextSubstFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL               
+Offset, ClassDef, NOTNULL               ; Backtrack Class Def
+Offset, ClassDef, NOTNULL               ; Input Class Def
+Offset, ClassDef, NOTNULL               ; Lookahead Class Def
+Count, ClassCount($T4)                 ; ChainSubClassSet Count
+Array, $T6, Offset, ChainSubClassSet
+}
+
+ChainSubClassSet, TABLE {
+Count, 1, MAXCOUNT                     ; ChainSubClassRule Count
+Array, $T1, Offset, ChainSubClassRule, NOTNULL   
+}
+
+ChainSubClassRule, TABLE {
+Count, 0, MAXCOUNT                     ; BacktrackClassCount
+Array, $T1, uint16 : DelNone
+Count, 1, MAXCOUNT                     ; InputClassCount
+Array, $T3-1, uint16 : DelNone
+Count, 0, MAXCOUNT                     ; LookaheadClassCount
+Array, $T5, uint16 : DelNone
+Count, 1, MAXCOUNT                     ; ChainSubRuleSubstCount
+Array, $T7, SubstLookupRecord :DelNone
+}
+
+ChainContextSubstFormat3, TABLE {
+uint16, 3                               ; Format 3
+Count, 0, MAXCOUNT                     ; BacktrackGlyphCount
+Array, $T2, Offset, Coverage, NOTNULL : DelNone
+Count, 1, MAXCOUNT                     ; InputGlyphCount
+Array, $T4, Offset, Coverage, NOTNULL : DelNone   
+Count, 0, MAXCOUNT                     ; LookaheadGlyphCount
+Array, $T6, Offset, Coverage, NOTNULL : DelNone
+Count, 1, MAXCOUNT                     ; SubstCount
+Array, $T8, SubstLookupRecord : DelNone
+}
+
+ExtensionSubstFormat1, TABLE, 2 {
+uint16, 1                               ; Format 1
+uint16, 1, 8                            ; ExtensionLookupType
+Offset32, SubstTable, NOTNULL, $T2 
+}
+
+SubstTable, CLASS, 1, $P1 { 
+SingleSubstClass
+MultipleSubstClass 
+AlternateSubstClass
+LigatureSubstClass
+ContextSubstClass
+ChainContextSubstClass
+ExtensionSubstClass
+ReverseChainContextSubstClass
+}
+
+
+SingleSubstClass, CLASS, , $B0 {
+SingleSubstFormat1
+SingleSubstFormat2 
+}
+
+
+MultipleSubstClass, CLASS, , $B0 {
+MultipleSubstFormat1 
+}
+
+AlternateSubstClass, CLASS, , $B0 {
+AlternateSubstFormat1  
+}
+
+LigatureSubstClass, CLASS, , $B0 {
+LigatureSubstFormat1
+}
+
+ContextSubstClass, CLASS, , $B0 {
+ContextSubstFormat1
+ContextSubstFormat2
+ContextSubstFormat3
+}
+
+ChainContextSubstClass, CLASS, , $B0 {
+ChainContextSubstFormat1
+ChainContextSubstFormat2
+ChainContextSubstFormat3
+}
+
+ExtensionSubstClass, CLASS, , $B0 {
+ExtensionSubstFormat1
+}
+
+ReverseChainContextSubstClass, CLASS, , $B0 {
+ReverseChainContextSubstFormat1
+}
+
+ReverseChainContextSubstFormat1, TABLE {
+uint16, 1                                         ; Format 1
+Offset, Coverage, NOTNULL                         ; Input glyph coverage
+Count, 0, MAXCOUNT                                ; BacktrackGlyphCount
+Array, $T3, Offset, Coverage, NOTNULL : DelNone
+Count, 0, MAXCOUNT                                ; LookaheadGlyphCount
+Array, $T5, Offset, Coverage, NOTNULL : DelNone
+Count, CoverageCount($T2)                         ; Substitute GlyphCount
+Array, $T7, GlyphID, 0, MAXGLYPHID
+}

@@ -1,0 +1,516 @@
+; ttogpos.txt - Format Description File for GPOS table for TTOASM.EXE  
+; Expand to handle Class parameter and switch values - 1/25/95  
+; Set ContextPosFormat2, PosClassSet to allow for NULL - 3/21/95 
+; Add Extended FFConfig Format information.
+; Set PosClassSet Offset array to allow NULL PosClassRules 5/22/95
+; Allow ComponentRecord Anchor array to be NULL 5/25/95
+; Add Count, FeatureIndex and LookupIndex 6/8/95
+; Add Extention Lookup Format (uses Offset32 datatype)
+; TTOGPOS.FMT ver 1.3
+
+; **** Scripts ****
+ 
+DEFINE ZERO=0
+DEFINE MAXCOUNT=0xFFFF
+
+; **** GPOS ****
+
+GPOSHeader, HEAD {
+fixed32, 0x00010000                     ; GPOSHeader version
+Offset, ScriptList, NOTNULL            
+Offset, FeatureList, NOTNULL            
+Offset, LookupList, NOTNULL 
+}
+
+ScriptList, TABLE {
+Count, 1, MAXCOUNT						; ScriptCount   
+Array, $T1, ScriptRecord
+}
+
+ScriptRecord, RECORD {
+Tag                                     ; Tag
+Offset, Script, NOTNULL                 ; An offset to a Script table to be generated
+}
+
+Script, TABLE {
+Offset, LangSys
+Count                     				; LangSysCount
+Array, $T2, LangSysRecord
+}
+
+LangSysRecord, RECORD {
+Tag                                     ; Tag
+Offset, LangSys, NOTNULL
+}
+	
+LangSys, TABLE {
+Offset, LookupOrder, NULL
+GPOSFeatureIndex                        ; ReqFeatureIndex
+Count, 0, MAXFEATURECOUNT				; FeatureCount
+Array, $T3, GPOSFeatureIndex, 0, MAXFEATURECOUNT-1
+}
+
+LookupOrder, TABLE {                    ; Dummy table
+int16
+}
+
+; **** Features ****
+
+FeatureList, TABLE {
+Count, 1, MAXFEATURECOUNT				; FeatureCount
+Array, $T1, FeatureRecord : $IGPOSFeatureIndex
+}
+
+FeatureRecord, RECORD {
+Tag                                     ; Feature Tag              
+Offset, Feature, NOTNULL    
+}
+
+Feature, TABLE {
+Offset, FeatureParams, NULL
+Count, 1, MAXLOOKUPCOUNT               ; LookupCount
+Array, $T2, GPOSLookupIndex, 0, MAXLOOKUPCOUNT-1  ; LookupListIndex
+}
+ 
+FeatureParams, TABLE {                  ; Dummy Table 
+uint16
+} 
+
+; **** Lookups ****
+
+LookupList, TABLE {
+Count, 1, MAXLOOKUPCOUNT                ; LookupCount
+Array, $T1, Offset, Lookup, NOTNULL: $IGPOSLookupIndex     
+}
+
+Lookup, TABLE {
+uint16, 1, 9	                        ; LookupType
+uint16                                  ; LookupFlag
+Count, 1, MAXCOUNT                      ; PosTableCount
+Array, $T3, Offset, PosTable, NOTNULL, $T1  
+}
+
+
+CoverageFormat1, TABLE {
+uint16, 1                               ; Format 1
+Count, 1, MAXCOUNT                      ; GlyphCount
+Array, $T2, GlyphID, 0, MAXGLYPHID
+}
+
+CoverageFormat2, TABLE {
+uint16, 2                               ; Format 2
+Count, 1, MAXCOUNT                   	; CoverageRangeCount
+Array, $T2, RangeRecord
+}
+
+RangeRecord, RECORD {
+GlyphID, 0, MAXGLYPHID					; RangeStart
+GlyphID, $R1, MAXGLYPHID				; RangeEnd
+uint16, CheckRangeRecord()              ; StartCoverageIndex
+}
+
+Coverage, CLASS, , $B0 {
+CoverageFormat1
+CoverageFormat2
+}
+
+ClassDefFormat1, TABLE {
+uint16, 1                               ; Format 1
+GlyphID, 0, MAXGLYPHID					; StartGlyph
+Count, 1, MAXGLYPHID           			; GlyphCount
+Array, $T3, uint16
+}
+
+ClassDefFormat2, TABLE {
+uint16, 2                               ; Format 2
+Count, 1, MAXCOUNT                     	; ClassRangeCount
+Array, $T2, ClassRangeRecord
+}
+
+ClassRangeRecord, RECORD {
+GlyphID, 0, MAXGLYPHID					; Start GlyphID
+GlyphID, $R1, MAXGLYPHID				; End GlyphID
+uint16                                  ; Class
+}
+
+ClassDef, CLASS, , $B0 {
+ClassDefFormat1
+ClassDefFormat2
+}
+
+DeviceTableFormat1, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 1                               ; Format 1
+Array, $T2 - $T1+1, packedint2    
+}
+
+DeviceTableFormat2, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 2                               ; Format 2
+Array, $T2 - $T1+1, packedint4    
+}
+
+DeviceTableFormat3, TABLE {
+uint16                                  ; StartSize
+uint16                                  ; EndSize
+uint16, 3                               ; Format 3
+Array, $T2 - $T1+1, packedint8
+}
+DeviceTable, CLASS, , $B4 {             ; Identifier is 4 bytes into DeviceTable structure
+DeviceTableFormat1
+DeviceTableFormat2
+DeviceTableFormat3
+}
+
+; *** Position tables ****
+
+AnchorFormat1, TABLE {
+uint16, 1                               ; Format 1
+int16                                   ; XCoord
+int16                                   ; YCoord
+}
+
+AnchorFormat2, TABLE {
+uint16, 2                               ; Format 2
+int16                                   ; XCoord
+int16                                   ; YCoord
+uint16                                  ; Anchor Point
+}
+
+AnchorFormat3, TABLE {
+uint16, 3                               ; Format 3
+int16                                   ; XCoord
+int16                                   ; YCoord
+Offset, DeviceTable
+Offset, DeviceTable
+}
+
+Anchor, CLASS, , $B0 {
+AnchorFormat1
+AnchorFormat2
+AnchorFormat3
+}
+
+
+
+SinglePosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               
+uint16, 0, 0x00FF                       ; ValueFormat
+Array, BitCount0F($T3), int16
+Array, BitCountF0($T3), Offset, DeviceTable, NOTNULL
+}
+
+SinglePosFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL               
+uint16, 0, 0x00FF                       ; ValueFormat
+Count, CoverageCount($T2)               ; ValueCount
+Array, $T4, SinglePosFormat2ValueRecord
+}
+
+SinglePosFormat2ValueRecord, RECORD {
+Array, BitCount0F($T3), int16
+Array, BitCountF0($T3), Offset, DeviceTable, NOTNULL
+}
+
+PairPosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               
+uint16, 0, 0x00FF                       ; ValueFormat1
+uint16, 0, 0x00FF                       ; ValueFormat2
+Count, CoverageCount($T2)               ; PairSetCount
+Array, $T5, Offset, PairSet, NOTNULL, $T3, $T4
+}
+
+PairSet, TABLE, 2 {
+Count, 1, MAXCOUNT                      ; PairValueCount
+Array, $T1, PairValueRecord
+}
+
+PairValueRecord, RECORD {
+GlyphID, 0, MAXGLYPHID                  ; SecondGlyph
+Array, BitCount0F($P1), int16
+Array, BitCountF0($P1), Offset, DeviceTable, NOTNULL
+Array, BitCount0F($P2), int16
+Array, BitCountF0($P2), Offset, DeviceTable, NOTNULL
+}   
+
+PairPosFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL               
+uint16, 0, 0x00FF                       ; ValueFormat1
+uint16, 0, 0x00FF                       ; ValueFormat2
+Offset, ClassDef, NOTNULL               ; Class1
+Offset, ClassDef, NOTNULL               ; Class2
+Count, ClassCount($T5)                  ; Class1Count
+Count, ClassCount($T6)                  ; Class2Count
+Array, $T7, PairPosFormat2Class1Record
+}
+
+PairPosFormat2Class1Record, RECORD {
+Array, $T8, PairPosFormat2ClassRecord
+}
+
+PairPosFormat2ClassRecord, RECORD {
+Array, BitCount0F($T3), int16
+Array, BitCountF0($T3), Offset, DeviceTable, NOTNULL
+Array, BitCount0F($T4), int16
+Array, BitCountF0($T4), Offset, DeviceTable, NOTNULL
+}
+
+CursivePosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL
+Count, CoverageCount($T2)               ; EntryExitCount
+Array, $T3, EntryExitRecord
+}
+
+EntryExitRecord, RECORD {
+Offset, Anchor                          ; EntryAnchor
+Offset, Anchor                          ; ExitAnchor
+}
+
+MarkBasePosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               ; MarkCoverage
+Offset, Coverage, NOTNULL               ; BaseCoverage
+Count, 1, MAXCOUNT                      ; MarkBaseClassCount - Used for BaseArray Table
+Offset, MarkArray, NOTNULL, $T2 
+Offset, BaseArray, NOTNULL, $T3, $T4
+}
+
+MarkArray, TABLE, 1 {
+Count, CoverageCount($P1)				; MarkCount
+Array, $T1, MarkRecord
+}
+
+MarkRecord, RECORD {
+uint16                                  ; MarkRecordClass
+Offset, Anchor, NOTNULL                 
+}
+
+BaseArray, TABLE, 2 {
+Count, CoverageCount($P1)            	; BaseCount
+Array, $T1, BaseRecord
+}
+
+BaseRecord, RECORD{
+Array, $P2, Offset, Anchor, NOTNULL
+}
+
+MarkLigPosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               ; Mark Coverage
+Offset, Coverage, NOTNULL               ; Ligature Coverage
+Count, 1, MAXCOUNT                      ; MarkLigClassCount used for LigatureAttach table
+Offset, MarkArray, NOTNULL, $T2
+Offset, LigatureArray, NOTNULL, $T3, $T4
+}
+
+LigatureArray, TABLE, 2 {
+Count, CoverageCount($P1)				; LigatureCount
+Array, $T1, Offset, LigatureAttach, NOTNULL, $P2
+}
+
+LigatureAttach, TABLE, 1 {
+Count, 1, MAXCOUNT						; ComponentCount
+Array, $T1, ComponentRecord
+}
+
+ComponentRecord, RECORD {
+Array, $P1, Offset, Anchor
+}
+
+MarkMarkPosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               ; Mark1 Coverage
+Offset, Coverage, NOTNULL               ; Mark2 Coverage
+Count, 1, MAXCOUNT                       ; MarkMarkClassCount
+Offset, MarkArray, NOTNULL, $T2         ; Mark1Array 
+Offset, Mark2Array, NOTNULL, $T3, $T4   ; Mark2Array
+}
+
+Mark2Array, TABLE, 2 {
+Count, CoverageCount($P1)               ; Mark2Count
+Array, $T1, Mark2Record
+}
+
+Mark2Record, RECORD {
+Array, $P2, Offset, Anchor, NOTNULL     ; Mark2Anchors
+}
+
+PosLookupRecord, RECORD {
+uint16                                  ; SequenceIndex
+GPOSLookupIndex, 0, MAXLOOKUPCOUNT-1	; LookupListIndex
+}
+
+ContextPosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               ; Coverage
+Count, CoverageCount($T2)               ; PosRuleSetCount
+Array, $T3, Offset, PosRuleSet, NOTNULL
+}
+
+PosRuleSet, TABLE {
+Count, 1, MAXCOUNT						; PosRuleCount
+Array, $T1, Offset, PosRule, NOTNULL
+}
+
+PosRule, TABLE {
+Count, 2, MAXCOUNT						; GlyphCount
+Count, 1, MAXCOUNT                      ; PosCount
+Array, $T1-1, GlyphID, 0, MAXGLYPHID : DelNone
+Array, $T2, PosLookupRecord 
+}
+
+ContextPosFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL               
+Offset, ClassDef, NOTNULL               
+Count, ClassCount($T3)               	; PosClassSetCnt    
+Array, $T4, Offset, PosClassSet
+}
+
+PosClassSet, TABLE {
+Count, 1, MAXCOUNT						; PosClassRuleCount
+Array, $T1, Offset, PosClassRule
+}
+
+PosClassRule, TABLE, 1 {
+Count, 2, MAXCOUNT						; GlyphCount
+Count, 1, MAXCOUNT                      ; PosCount
+Array, $T1-1, uint16    				; Class
+Array, $T2, PosLookupRecord
+}
+
+ContextPosFormat3, TABLE {
+uint16, 3                               ; Format 3
+Count, 2, MAXCOUNT						; GlyphCount
+Count, 1, MAXCOUNT                      ; PosCount
+Array, $T2, Offset, Coverage, NOTNULL: DelNone   
+Array, $T3, PosLookupRecord : DelNone
+}
+
+ChainContextPosFormat1, TABLE {
+uint16, 1                               ; Format 1
+Offset, Coverage, NOTNULL               
+Count, CoverageCount($T2)              ; PosRuleSet Count
+Array, $T3, Offset, ChainPosRuleSet, NOTNULL
+}
+
+ChainPosRuleSet, TABLE {
+Count, 1, MAXCOUNT                     ; PosRule Count
+Array, $T1, Offset, ChainPosRule, NOTNULL    
+}
+
+ChainPosRule, TABLE {
+Count, 0, MAXCOUNT                     ; BacktrackGlyphCount
+Array, $T1, GlyphID, 0, MAXGLYPHID : DelNone
+Count, 1, MAXCOUNT                     ; InputGlyphCount
+Array, $T3-1, GlyphID, 0, MAXGLYPHID : DelNone
+Count, 0, MAXCOUNT                     ; LookaheadGlyphCount
+Array, $T5, GlyphID, 0, MAXGLYPHID : DelNone
+Count, 1, MAXCOUNT                     ; PosCount
+Array, $T7, PosLookupRecord :DelNone
+}
+
+ChainContextPosFormat2, TABLE {
+uint16, 2                               ; Format 2
+Offset, Coverage, NOTNULL               
+Offset, ClassDef, NOTNULL               ; Backtrack Class Def
+Offset, ClassDef, NOTNULL               ; Input Class Def
+Offset, ClassDef, NOTNULL               ; Lookahead Class Def
+Count, ClassCount($T4)                 ; ChainPosClassSet Count
+Array, $T6, Offset, ChainPosClassSet
+}
+
+ChainPosClassSet, TABLE {
+Count, 1, MAXCOUNT                     ; ChainPosClassRule Count
+Array, $T1, Offset, ChainPosClassRule, NOTNULL   
+}
+
+ChainPosClassRule, TABLE {
+Count, 0, MAXCOUNT                     ; BacktrackClassCount
+Array, $T1, uint16 : DelNone
+Count, 1, MAXCOUNT                     ; InputClassCount
+Array, $T3-1, uint16 : DelNone
+Count, 0, MAXCOUNT                     ; LookaheadClassCount
+Array, $T5, uint16 : DelNone
+Count, 1, MAXCOUNT                     ; PosCount
+Array, $T7, PosLookupRecord :DelNone
+}
+
+ChainContextPosFormat3, TABLE {
+uint16, 3                               ; Format 3
+Count, 0, MAXCOUNT                     ; BacktrackGlyphCount
+Array, $T2, Offset, Coverage, NOTNULL : DelNone
+Count, 1, MAXCOUNT                     ; InputGlyphCount
+Array, $T4, Offset, Coverage, NOTNULL : DelNone   
+Count, 0, MAXCOUNT                     ; LookaheadGlyphCount
+Array, $T6, Offset, Coverage, NOTNULL : DelNone
+Count, 1, MAXCOUNT                     ; PosCount
+Array, $T8, PosLookupRecord : DelNone
+}
+
+ExtensionPosFormat1, TABLE, 2 {
+uint16, 1                               ; Format 1
+uint16, 1, 9                            ; ExtensionLookupType
+Offset32, PosTable, NOTNULL, $T2 
+}
+
+PosTable, CLASS, 1, $P1 {
+SinglePosClass
+PairPosClass
+CursivePosClass
+MarkBasePosClass
+MarkLigPosClass
+MarkMarkPosClass
+ContextPosClass
+ChainContextPosClass
+ExtensionPosClass
+}
+
+SinglePosClass, CLASS, , $B0 {
+SinglePosFormat1
+SinglePosFormat2
+}
+
+PairPosClass, CLASS, , $B0 {
+PairPosFormat1
+PairPosFormat2
+}
+
+CursivePosClass, CLASS, , $B0 {
+CursivePosFormat1 
+}
+
+MarkBasePosClass, CLASS, , $B0 {
+MarkBasePosFormat1 
+}
+
+MarkLigPosClass, CLASS, , $B0 {
+MarkLigPosFormat1 
+}
+
+MarkMarkPosClass, CLASS, , $B0 {
+MarkMarkPosFormat1
+} 
+
+ContextPosClass, CLASS, , $B0 {
+ContextPosFormat1
+ContextPosFormat2
+ContextPosFormat3
+}
+
+ChainContextPosClass, CLASS, , $B0 {
+ChainContextPosFormat1
+ChainContextPosFormat2
+ChainContextPosFormat3
+}
+
+ExtensionPosClass, CLASS, , $B0 {
+ExtensionPosFormat1
+}

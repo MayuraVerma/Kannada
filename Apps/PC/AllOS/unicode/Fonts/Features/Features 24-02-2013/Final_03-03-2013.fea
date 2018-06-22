@@ -1,0 +1,831 @@
+@abvs2=[uni0C95 uni0C96 uni0C97 uni0C98 uni0C99 uni0C9A uni0C9B uni0C9C uni0C9D uni0C9E uni0C9F uni0CA0 uni0CA1 uni0CA2 uni0CA3 uni0CA4 uni0CA5 uni0CA6 uni0CA7 uni0CA8 uni0CAA uni0CAB uni0CAC uni0CAD uni0CAE uni0CAF uni0CB0 uni0CB1 uni0CB2 uni0CB3 uni0CB5 uni0CB6 uni0CB7 uni0CB8 uni0CB9 uni0CDE uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC mta_01 mta_09];
+@rphf1=[uni0C95 uni0C96 uni0C97 uni0C98 uni0C99 uni0C9A uni0C9B uni0C9C uni0C9D uni0C9E uni0C9F uni0CA0 uni0CA1 uni0CA2 uni0CA3 uni0CA4 uni0CA5 uni0CA6 uni0CA7 uni0CA8 uni0CAA uni0CAB uni0CAC uni0CAD uni0CAE uni0CAF uni0CB0 uni0CB1 uni0CB2 uni0CB3 uni0CB5 uni0CB6 uni0CB7 uni0CB8 uni0CB9 uni0CDE uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC mta_01 mta_09];
+@blwf1=[uni0C95 uni0C96 uni0C97 uni0C98 uni0C99 uni0C9A uni0C9B uni0C9C uni0C9D uni0C9E uni0C9F uni0CA0 uni0CA1 uni0CA2 uni0CA3 uni0CA4 uni0CA5 uni0CA6 uni0CA7 uni0CA8 uni0CAA uni0CAB uni0CAC uni0CAD uni0CAE uni0CAF uni0CB0 uni0CB1 uni0CB2 uni0CB3 uni0CB5 uni0CB6 uni0CB7 uni0CB8 uni0CB9 uni0CDE uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC mta_01 mta_09];
+@class7=[_uni0C95_uni0CCD _uni0C96_uni0CCD _uni0C97_uni0CCD _uni0C98_uni0CCD _uni0C99_uni0CCD _uni0C9A_uni0CCD _uni0C9B_uni0CCD _uni0C9C_uni0CCD _uni0C9D_uni0CCD _uni0C9E_uni0CCD _uni0C9F_uni0CCD _uni0CA0_uni0CCD _uni0CA1_uni0CCD _uni0CA2_uni0CCD _uni0CA3_uni0CCD _uni0CA4_uni0CCD _uni0CA5_uni0CCD _uni0CA6_uni0CCD _uni0CA7_uni0CCD _uni0CA8_uni0CCD _uni0CAA_uni0CCD _uni0CAB_uni0CCD _uni0CAC_uni0CCD _uni0CAD_uni0CCD _uni0CAE_uni0CCD _uni0CAF_uni0CCD _uni0CB0_uni0CCD _uni0CB1_uni0CCD _uni0CB2_uni0CCD _uni0CB3_uni0CCD _uni0CB5_uni0CCD _uni0CB6_uni0CCD _uni0CB7_uni0CCD _uni0CB8_uni0CCD _uni0CB9_uni0CCD _uni0CDE_uni0CCD _uni0C96_uni0CBC_uni0CCD _uni0C9C_uni0CBC_uni0CCD _uni0CAB_uni0CBC_uni0CCD mta_04 mta_12];
+@class6=[m_711 m_712 m_713 m_714 m_715 m_716 m_717 m_718 m_719 m_720 m_721 m_722 m_723 m_724 m_725 m_726 m_727 m_728 m_729 m_730 m_731 m_732 m_733 m_734 m_735 m_736 m_737 m_738 m_739 m_740 m_741 m_742 m_743 m_744 m_745 m_746 m_747 m_748 m_749 mta_02 mta_10];
+@oseq1=[uni0C95_uni0CCD uni0C96_uni0CCD uni0C97_uni0CCD uni0C98_uni0CCD uni0C99_uni0CCD uni0C9A_uni0CCD uni0C9B_uni0CCD uni0C9C_uni0CCD uni0C9D_uni0CCD uni0C9E_uni0CCD uni0C9F_uni0CCD uni0CA0_uni0CCD uni0CA1_uni0CCD uni0CA2_uni0CCD uni0CA3_uni0CCD uni0CA4_uni0CCD uni0CA5_uni0CCD uni0CA6_uni0CCD uni0CA7_uni0CCD uni0CA8_uni0CCD uni0CAA_uni0CCD uni0CAB_uni0CCD uni0CAC_uni0CCD uni0CAD_uni0CCD uni0CAE_uni0CCD uni0CAF_uni0CCD uni0CB0_uni0CCD uni0CB1_uni0CCD uni0CB2_uni0CCD uni0CB3_uni0CCD uni0CB5_uni0CCD uni0CB6_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD uni0CDE_uni0CCD uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD];
+@oseq12=[_446 _457];
+@oseq2=[uni0C95_uni0CCD.blws uni0C96_uni0CCD.blws uni0C97_uni0CCD.blws uni0C98_uni0CCD.blws uni0C99_uni0CCD.blws uni0C9A_uni0CCD.blws uni0C9B_uni0CCD.blws uni0C9C_uni0CCD.blws uni0C9D_uni0CCD.blws uni0C9E_uni0CCD.blws uni0C9F_uni0CCD.blws uni0CA0_uni0CCD.blws uni0CA1_uni0CCD.blws uni0CA2_uni0CCD.blws uni0CA3_uni0CCD.blws uni0CA4_uni0CCD.blws uni0CA5_uni0CCD.blws uni0CA6_uni0CCD.blws uni0CA7_uni0CCD.blws uni0CA8_uni0CCD.blws uni0CAA_uni0CCD.blws uni0CAB_uni0CCD.blws uni0CAC_uni0CCD.blws uni0CAD_uni0CCD.blws uni0CAE_uni0CCD.blws uni0CAF_uni0CCD.blws uni0CB0_uni0CCD.blws uni0CB1_uni0CCD.blws uni0CB2_uni0CCD.blws uni0CB3_uni0CCD.blws uni0CB5_uni0CCD.blws uni0CB6_uni0CCD.blws uni0CB7_uni0CCD.blws uni0CB8_uni0CCD.blws uni0CB9_uni0CCD.blws uni0CDE_uni0CCD.blws uni0C96_uni0CBC_uni0CCD.blws uni0C9C_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws];
+@oseq13=[uni0C9F_uni0CCD uni0CAA_uni0CCD uni0CB2_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD];
+@oseq14=[uni0CA4_uni0CCD uni0CB0_uni0CCD];
+@oseq15=[uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0C9B_uni0CCD uni0C9D_uni0CCD uni0CA2_uni0CCD uni0CA5_uni0CCD uni0CA7_uni0CCD uni0CAD_uni0CCD];
+@oseq23=[_301 _302 _303 _304 _305 _306 _307 _308 _309 _310 _311 _312 _313 _314 _315 _316 _317 _318 _319 _320 _321 _322 _323 _324 _325 _326 _327 _328 _329 _330 _331 _332 _333 _334 _335 _336 _337 _338 _339];
+@abvs3=[uni0C98 uni0C98_uni0CBF uni0C9B uni0C9B_uni0CBF uni0C9D uni0C9D_uni0CBF uni0CA2 uni0CA2_uni0CBF uni0CA5 uni0CA5_uni0CBF uni0CA7 uni0CA7_uni0CBF uni0CAB uni0CAB_uni0CBF uni0CAD uni0CAD_uni0CBF];
+@abvs4=[uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC uni0C96_uni0CBC_uni0CBF uni0C9C_uni0CBC_uni0CBF uni0CAB_uni0CBC_uni0CBF _uni0C96_uni0CBC_uni0CCD _uni0C9C_uni0CBC_uni0CCD _uni0CAB_uni0CBC_uni0CCD];
+@oseq24=[_341 _342 _343 _344 _345 _346 _347 _348 _349 _350 _351 _352 _353 _354 _355 _356 _357 _358 _359 _360 _361 _362 _363 _364 _365 _366 _367 _368 _369 _370 _371 _372 _373 _374 _375 _376 _377 _378 _379];
+@oseq25=[_381 _382 _383 _384 _385 _386 _387 _388 _389 _390 _391 _392 _393 _394 _395 _396 _397 _398 _399 _400 _401 _402 _403 _404 _405 _406 _407 _408 _409 _410 _411 _412 _413 _414 _415 _416 _417 _418 _419];
+@oseq16=[_431 _432 _433 _434 _435 _436 _437 _438 _439 _440 _441 _442 _443 _444 _445 _446 _447 _448 _449 _450 _451 _452 _453 _454 _455 _456 _457 _458 _459 _460 _461 _462 _463 _464 _465 _466 _467 _468 _469];
+@oseq1a=[_471 _472 _473 _474 _475 _476 _477 _478 _479 _480 _481 _482 _483 _484 _485 _486 _487 _488 _489 _490 _491 _492 _493 _494 _495 _496 _497 _498 _499 _500 _501 _502 _503 _504 _505 _506 _507 _508 _509];
+@oseq2a=[m_791 m_792 m_793 m_794 m_795 m_796 m_797 m_798 m_799 m_800 m_801 m_802 m_803 m_804 m_805 m_806 m_807 m_808 m_809 m_810 m_811 m_812 m_813 m_814 m_815 m_816 m_817 m_818 m_819 m_820 m_821 m_822 m_823 m_824 m_825 m_826 m_827 m_828 m_829];
+@oseq2b=[_711 _712 _713 _714 _715 _716 _717 _718 _719 _720 _721 _722 _723 _724 _725 _726 _727 _728 _729 _730 _731 _732 _733 _734 _735 _736 _737 _738 _739 _740 _741 _742 _743 _744 _745 _746 _747 _748 _749];
+@abvs5=[uni0C95 uni0C95.abvs uni0C95_uni0CBF _uni0C95_uni0CCD];
+@abvs1=[uni0CBE uni0CBF uni0CC0 uni0CC6 uni0CC7 uni0CC8 uni0CCA uni0CCB uni0CCC];
+@class24=[uni0C95.abvs uni0C96.abvs uni0C97.abvs uni0C98.abvs uni0C99.abvs uni0C9A.abvs uni0C9B.abvs uni0C9C.abvs uni0C9D.abvs uni0C9E.abvs uni0C9F.abvs uni0CA0.abvs uni0CA1.abvs uni0CA2.abvs uni0CA3.abvs uni0CA4.abvs uni0CA5.abvs uni0CA6.abvs uni0CA7.abvs uni0CA8.abvs uni0CAA.abvs uni0CAB.abvs uni0CAC.abvs uni0CAD.abvs uni0CAE.abvs uni0CAF.abvs uni0CB0.abvs uni0CB1.abvs uni0CB2.abvs uni0CB3.abvs uni0CB5.abvs uni0CB6.abvs uni0CB7.abvs uni0CB8.abvs uni0CB9.abvs uni0CDE.abvs uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC mta_02 mta_10];
+@oseq22=[m_751 m_752 m_753 m_754 m_755 m_756 m_757 m_758 m_759 m_760 m_761 m_762 m_763 m_764 m_765 m_766 m_767 m_768 m_769 m_770 m_771 m_772 m_773 m_774 m_775 m_776 m_777 m_778 m_779 m_780 m_781 m_782 m_783 m_784 m_785 m_786 m_787 m_788 m_789];
+@abvs7=[uni0C9C uni0C9C.abvs uni0C9C_uni0CBF _uni0C9C_uni0CCD];
+@class26=[uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC];
+@class27=[uni0C96.abvs uni0C9C.abvs uni0CAB.abvs];
+@class28=[uni0C96 uni0C9C uni0CAB];
+@class29=[uni0C96_uni0CBC uni0C9C_uni0CBC uni0CAB_uni0CBC uni0C96_uni0CBC_uni0CBF uni0C9C_uni0CBC_uni0CBF uni0CAB_uni0CBC_uni0CBF _uni0C96_uni0CBC_uni0CCD _uni0C9C_uni0CBC_uni0CCD _uni0CAB_uni0CBC_uni0CCD uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC];
+@class30=[uni0C95_uni0CBF uni0C96_uni0CBF uni0C97_uni0CBF uni0C99_uni0CBF uni0C9A_uni0CBF uni0C9C_uni0CBF uni0C9E_uni0CBF uni0C9F_uni0CBF uni0CA0_uni0CBF uni0CA1_uni0CBF uni0CA3_uni0CBF uni0CA4_uni0CBF uni0CA6_uni0CBF uni0CA8_uni0CBF uni0CAA_uni0CBF uni0CAC_uni0CBF uni0CAE_uni0CBF uni0CAF_uni0CBF uni0CB0_uni0CBF uni0CB2_uni0CBF uni0CB3_uni0CBF uni0CB5_uni0CBF uni0CB6_uni0CBF uni0CB7_uni0CBF uni0CB8_uni0CBF uni0CB9_uni0CBF uni0CDE_uni0CBF uni0C98_uni0CBF uni0C9B_uni0CBF uni0C9D_uni0CBF uni0CA2_uni0CBF uni0CA5_uni0CBF uni0CA7_uni0CBF uni0CAB_uni0CBF uni0CAD_uni0CBF uni0C96_uni0CBC_uni0CBF uni0C9C_uni0CBC_uni0CBF uni0CAB_uni0CBC_uni0CBF];
+@class31=[uni0CBE uni0CC6 uni0CCC uni0CCA uni0CC1 uni0CC2];
+
+feature dist { # Distances
+ script knda; # Kannada
+lookup dist3 {
+lookupflag IgnoreMarks;
+    pos [uni0C98] [uni0CC2] 0;
+    pos [m_682] [uni0CC2] 0;
+} dist3;
+lookup dist4 {
+lookupflag 0;
+} dist4;
+lookup dist5 {
+lookupflag 0;
+} dist5;
+lookup dist6 {
+lookupflag 0;
+} dist6;
+lookup dist8 {
+lookupflag 0;
+} dist8;
+} dist;
+
+
+feature abvm { # Above-Base Mark Positioning
+ script knda; # Kannada
+lookup abvm0 {
+    pos [uni0C99] [uni0CBF] 0;
+    pos [uni0C9E] [uni0CBF] 0;
+    pos [uni0CB1] [uni0CBF_1] 0;
+    pos [uni0CDE] [uni0CBF_1] 0;
+} abvm0;
+lookup abvm1 {
+    pos [m_740] [uni0CC6] 0;
+} abvm1;
+lookup abvm2 {
+    pos [uni0C99] [uni0CC6] 0;
+    pos [uni0C9E] [uni0CC6] 0;
+    #pos [uni0CB1] [chinhe_8] 0;
+    #pos [uni0CDE] [chinhe_8] 0;
+} abvm2;
+} abvm;
+
+
+feature haln { # Halant Forms
+ script knd2; # Kannada
+lookup haln20 {
+lookupflag RightToLeft;
+	sub	uni0C95	uni0CCD	by	_uni0C95_uni0CCD;
+	sub	uni0C96 uni0CCD	by	_uni0C96_uni0CCD;
+	sub	uni0C97 uni0CCD	by	_uni0C97_uni0CCD;
+	sub	uni0C99 uni0CCD	by	_uni0C99_uni0CCD;
+	sub	uni0C9A uni0CCD	by	_uni0C9A_uni0CCD;
+	sub	uni0C9C uni0CCD	by	_uni0C9C_uni0CCD;
+	sub	uni0C9E uni0CCD	by	_uni0C9E_uni0CCD;
+	sub	uni0C9F uni0CCD	by	_uni0C9F_uni0CCD;
+	sub	uni0CA0 uni0CCD	by	_uni0CA0_uni0CCD;
+	sub	uni0CA1 uni0CCD	by	_uni0CA1_uni0CCD;
+	sub	uni0CA3 uni0CCD	by	_uni0CA3_uni0CCD;
+	sub	uni0CA4 uni0CCD	by	_uni0CA4_uni0CCD;
+	sub	uni0CA6 uni0CCD	by	_uni0CA6_uni0CCD;
+	sub	uni0CA8 uni0CCD	by	_uni0CA8_uni0CCD;
+	sub	uni0CAA uni0CCD	by	_uni0CAA_uni0CCD;
+	sub	uni0CAC uni0CCD	by	_uni0CAC_uni0CCD;
+	sub	uni0CAE uni0CCD	by	_uni0CAE_uni0CCD;
+	sub	uni0CAF uni0CCD	by	_uni0CAF_uni0CCD;
+	sub	uni0CB0 uni0CCD	by	_uni0CB0_uni0CCD;
+	sub	uni0CB2 uni0CCD	by	_uni0CB2_uni0CCD;
+	sub	uni0CB3 uni0CCD	by	_uni0CB3_uni0CCD;
+	sub	uni0CB5 uni0CCD	by	_uni0CB5_uni0CCD;
+	sub	uni0CB6 uni0CCD	by	_uni0CB6_uni0CCD;
+	sub	uni0CB7 uni0CCD	by	_uni0CB7_uni0CCD;
+	sub	uni0CB8 uni0CCD	by	_uni0CB8_uni0CCD;
+	sub	uni0CB9 uni0CCD	by	_uni0CB9_uni0CCD;
+	sub	uni0CDE uni0CCD	by	_uni0CDE_uni0CCD;
+	sub	uni0C98 uni0CCD	by	_uni0C98_uni0CCD;
+	sub	uni0C9B uni0CCD	by	_uni0C9B_uni0CCD;
+	sub	uni0C9D uni0CCD	by	_uni0C9D_uni0CCD;
+	sub	uni0CA2 uni0CCD	by	_uni0CA2_uni0CCD;
+	sub	uni0CA5 uni0CCD	by	_uni0CA5_uni0CCD;
+	sub	uni0CA7 uni0CCD	by	_uni0CA7_uni0CCD;
+	sub	uni0CAB uni0CCD	by	_uni0CAB_uni0CCD;
+	sub	uni0CAD uni0CCD	by	_uni0CAD_uni0CCD;
+	sub	uni0C96 uni0CBC uni0CCD	by	_uni0C96_uni0CBC_uni0CCD; 
+	sub	uni0C9C uni0CBC uni0CCD	by	_uni0C9C_uni0CBC_uni0CCD;  
+	sub	uni0CAB uni0CBC uni0CCD	by	_uni0CAB_uni0CBC_uni0CCD;
+} haln20;
+script knda; # Kannada
+lookup haln20;
+} haln;
+
+
+feature akhn { # Akhands
+script knda; # Kannada
+    sub uni0C96 uni0CBC by uni0C96_uni0CBC;
+    sub uni0C9C uni0CBC by uni0C9C_uni0CBC;
+    sub uni0CAB uni0CBC by uni0CAB_uni0CBC;
+} akhn;
+
+
+feature rphf { # Reph Form
+ script knd2;
+    ignore sub uni0CB0' uni0CCD uni200D @rphf1;
+    sub uni0CB0' uni0CCD' by uni0CB0_uni0CCD.001;
+ script knda; # Kannada
+    ignore sub uni0CB0' uni0CCD uni200D @rphf1;
+    sub uni0CB0' uni0CCD' by uni0CB0_uni0CCD.001;
+} rphf;
+
+
+feature abvs { # Above-Base Substitutions
+ script knda; # Kannada
+lookup abvs16 {
+	sub	uni0C95	uni0CBF	by	uni0C95_uni0CBF;
+	sub	uni0C96 uni0CBF	by	uni0C96_uni0CBF;
+	sub	uni0C97 uni0CBF	by	uni0C97_uni0CBF;
+	sub	uni0C99 uni0CBF	by	uni0C99_uni0CBF;
+	sub	uni0C9A uni0CBF	by	uni0C9A_uni0CBF;
+	sub	uni0C9C uni0CBF	by	uni0C9C_uni0CBF;
+	sub	uni0C9E uni0CBF	by	uni0C9E_uni0CBF;
+	sub	uni0C9F uni0CBF	by	uni0C9F_uni0CBF;
+	sub	uni0CA0 uni0CBF	by	uni0CA0_uni0CBF;
+	sub	uni0CA1 uni0CBF	by	uni0CA1_uni0CBF;
+	sub	uni0CA3 uni0CBF	by	uni0CA3_uni0CBF;
+	sub	uni0CA4 uni0CBF	by	uni0CA4_uni0CBF;
+	sub	uni0CA6 uni0CBF	by	uni0CA6_uni0CBF;
+	sub	uni0CA8 uni0CBF	by	uni0CA8_uni0CBF;
+	sub	uni0CAA uni0CBF	by	uni0CAA_uni0CBF;
+	sub	uni0CAC uni0CBF	by	uni0CAC_uni0CBF;
+	sub	uni0CAE uni0CBF	by	uni0CAE_uni0CBF;
+	sub	uni0CAF uni0CBF	by	uni0CAF_uni0CBF;
+	sub	uni0CB0 uni0CBF	by	uni0CB0_uni0CBF;
+	sub	uni0CB2 uni0CBF	by	uni0CB2_uni0CBF;
+	sub	uni0CB3 uni0CBF	by	uni0CB3_uni0CBF;
+	sub	uni0CB5 uni0CBF	by	uni0CB5_uni0CBF;
+	sub	uni0CB6 uni0CBF	by	uni0CB6_uni0CBF;
+	sub	uni0CB7 uni0CBF	by	uni0CB7_uni0CBF;
+	sub	uni0CB8 uni0CBF	by	uni0CB8_uni0CBF;
+	sub	uni0CB9 uni0CBF	by	uni0CB9_uni0CBF;
+	sub	uni0CDE uni0CBF	by	uni0CDE_uni0CBF;
+	sub	uni0C98 uni0CBF	by	uni0C98_uni0CBF;
+	sub	uni0C9B uni0CBF	by	uni0C9B_uni0CBF;
+	sub	uni0C9D uni0CBF	by	uni0C9D_uni0CBF;
+	sub	uni0CA2 uni0CBF	by	uni0CA2_uni0CBF;
+	sub	uni0CA5 uni0CBF	by	uni0CA5_uni0CBF;
+	sub	uni0CA7 uni0CBF	by	uni0CA7_uni0CBF;
+	sub	uni0CAB uni0CBF	by	uni0CAB_uni0CBF;
+	sub	uni0CAD uni0CBF	by	uni0CAD_uni0CBF;
+	sub	uni0C96 uni0CBC uni0CBF	by	uni0C96_uni0CBC_uni0CBF; 
+	sub	uni0C9C uni0CBC uni0CBF	by	uni0C9C_uni0CBC_uni0CBF;  
+	sub	uni0CAB uni0CBC uni0CBF	by	uni0CAB_uni0CBC_uni0CBF;
+	
+	 	sub uni0C98 uni0CBE by m_681;
+		sub uni0C98 uni0CC6 by m_682;
+		sub uni0C98 uni0CC6 uni0CD6 by m_683;
+		sub uni0C9D uni0CC6 by m_684;
+		sub uni0CAE uni0CC6 by m_689;
+		sub uni0CAF uni0CC6 by m_691;
+		sub uni0C9D uni0CBE by m_696;
+		
+		sub uni0CAE uni0CBE by m_698;
+		
+		sub uni0CAF uni0CBE by m_699;
+		sub uni0C9D uni0CC6 uni0CD6 by m_685;
+		sub uni0CAE uni0CC6 uni0CD6 by m_690;
+		sub uni0CAF uni0CC6 uni0CD6 by m_692;
+		sub uni0CAB uni0CC1 by m_686;
+		sub uni0CAB uni0CC2 by m_687;
+		sub uni0CAB uni0CCA by m_688;
+		sub uni0CAA uni0CCA by m_693;
+		sub uni0CB5 uni0CCA by m_695;
+		sub uni0C99 uni0CBE by m_703;
+		sub uni0C99 uni0CCC by m_704;
+		
+		sub uni0C9E uni0CBE by m_701;
+		sub uni0C9E uni0CCC by m_702;
+	 		
+} abvs16;
+lookup abvs17 {
+lookupflag 0;
+    sub mta_01' @abvs1 by  mta_02;
+} abvs17;
+lookup abvs18 {
+lookupflag 0;
+    #sub @abvs2' @abvs1 by [m_711 m_712 m_713 m_714 m_715 m_716 m_717 m_718 m_719 m_720 m_721 m_722 m_723 m_724 m_725 m_726 m_727 m_728 m_729 m_730 m_731 m_732 m_733 m_734 m_735 m_736 m_737 m_738 m_739 m_740 m_741 m_742 m_743 m_744 m_745 m_746 m_747 m_748 m_749];
+    sub @abvs2' @abvs1 by [uni0C95.abvs uni0C96.abvs uni0C97.abvs uni0C98.abvs uni0C99.abvs uni0C9A.abvs uni0C9B.abvs uni0C9C.abvs uni0C9D.abvs uni0C9E.abvs uni0C9F.abvs uni0CA0.abvs uni0CA1.abvs uni0CA2.abvs uni0CA3.abvs uni0CA4.abvs uni0CA5.abvs uni0CA6.abvs uni0CA7.abvs uni0CA8.abvs uni0CAA.abvs uni0CAB.abvs uni0CAC.abvs uni0CAD.abvs uni0CAE.abvs uni0CAF.abvs uni0CB0.abvs uni0CB1.abvs uni0CB2.abvs uni0CB3.abvs uni0CB5.abvs uni0CB6.abvs uni0CB7.abvs uni0CB8.abvs uni0CB9.abvs uni0CDE.abvs uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC mta_02 mta_10];
+} abvs18;
+lookup abvs19 {
+lookupflag 0;
+    #sub mta_01 mta_515 by mta_03;
+    #sub mta_137 mta_515 by mta_139;
+} abvs19;
+lookup abvs34 {
+lookupflag 0;
+    sub uni0CB1 uni0CBF' by uni0CBF_1;
+    sub uni0CDE uni0CDE' by uni0CBF_1;
+} abvs34;
+lookup abvs37 {
+lookupflag 0;
+    # sub u0C31.abvs [u0C3E u0C4C]' by [_130 u0C3E _130 u0C4C];
+} abvs37;
+lookup abvs43 {
+lookupflag 0;
+    # sub u0C01.abvs u0C46' by u0C46.abvs;
+} abvs43;
+lookup abvs44 {
+lookupflag 0;
+    # sub u0C01.abvs' u0C3E by u0C01;
+} abvs44;
+lookup abvs45 {
+lookupflag 0;
+    # sub u0C01 u0C3E' by [_130 u0C3E];
+} abvs45;
+
+lookup abvs15{
+  sub uni0CB5 [uni0CC1 uni0CC2]' by [uni0CC1_2 uni0CC2_2];
+}abvs15;
+
+lookup abvs47{
+sub m_691 uni0CC2 by m_700;
+sub m_689 uni0CC2 by m_694;
+sub m_684 uni0CC2 by m_697;
+}abvs47;
+
+lookup abvs48{
+sub  uni0C95.abvs uni0CBE uni0CB7_uni0CCD' by m_705;
+sub  uni0C95 uni0CC1 uni0CB7_uni0CCD' by m_705;
+
+#sub  uni0C95.abvs uni0CC6 uni0CB7_uni0CCD' by m_705; 
+sub  uni0C95 uni0CC2 uni0CB7_uni0CCD' by m_705_a;
+sub  uni0C95.abvs uni0CC6 uni0CC2 uni0CB7_uni0CCD' by m_705_a; 
+#sub  uni0C95.abvs uni0CC7 uni0CB7_uni0CCD' by m_705;
+#sub  uni0C95.abvs uni0CCB uni0CB7_uni0CCD' by m_705;
+#sub  uni0C95.abvs uni0CCC uni0CB7_uni0CCD' by m_705;
+
+sub  uni0C9C.abvs uni0CBE uni0C9E_uni0CCD' by m_706;
+sub  uni0C9C uni0CC1 uni0C9E_uni0CCD' by m_706;
+
+#sub  uni0C95.abvs uni0CC6 uni0CB7_uni0CCD' by m_705; 
+sub  uni0C9C uni0CC2 uni0C9E_uni0CCD' by m_706_a;
+sub  uni0C9C.abvs uni0CC6 uni0CC2 uni0C9E_uni0CCD' by m_706_a;
+}abvs48;
+
+
+lookup abvs58 {
+sub uni0CB0 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CC1 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CC2 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+
+sub uni0CB0.abvs uni0CBE  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0.abvs uni0CBF  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0.abvs uni0CC6 uni0CD5 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0.abvs uni0CC6 uni0CD6 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+
+sub uni0CB0.abvs uni0CC6 uni0CC2  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0.abvs uni0CC6 uni0CC2  uni0CD5 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+
+sub uni0CB0 uni0CC6  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CC7  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CC8  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CCA  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0 uni0CCB  uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+sub uni0CB0_uni0CBF uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+} abvs58;
+
+lookup abvs59 {
+sub uni0CB0.abvs @abvs1 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+} abvs59;
+
+lookup abvs60 {
+sub uni0CD6 uni0CB0_uni0CCD  by _697;
+sub uni0CD5 uni0CB0_uni0CCD  by m_563;
+sub uni0CC6 uni0CC2 uni0CD5 uni0CB0_uni0CCD  by mta_025;
+} abvs60;
+
+} abvs;
+
+
+feature blws { # Below-Base Substitutions
+ script knd2; # Kannada
+  lookup blws23 {
+    sub @abvs3 [uni0CA4_uni0CCD uni0CB0_uni0CCD]' by [_446 _447];
+    sub uni0CB5.abvs uni0CC6 [uni0CC1 uni0CC2]' by [uni0CC1_2 uni0CC2_2];
+    sub uni0CB3.abvs uni0CC6 uni0CD6' by uni0CD6_2;
+    sub uni0CB3	uni0CD6'	by	uni0CD6_2;
+	  sub uni0C98	uni0CD6'	by  uni0CD6_1;
+	  sub uni0CB3 uni0CC3' by uni0CC3_2;
+    #sub @abvs3 [_446 _457]' [uni0CC3_4 uni0CC3_4]' by [_886 _897];
+} blws23;
+lookup blws24 {
+		sub @oseq13 @oseq1' by [_301 _302 _303 _304 _305 _306 _307 _308 _309 _310 _311 _312 _313 _314 _315 _316 _317 _318 _319 _320 _321 _322 _323 _324 _325 _326 _327 _328 _329 _330 _331 _332 _333 _334 _335 _336 _337 _338 _339];    
+		sub @oseq14 @oseq1' by [_341 _342 _343 _344 _345 _346 _347 _348 _349 _350 _351 _352 _353 _354 _355 _356 _357 _358 _359 _360 _361 _362 _363 _364 _365 _366 _367 _368 _369 _370 _371 _372 _373 _374 _375 _376 _377 _378 _379];    
+		sub @oseq15 @oseq1' by [_381 _382 _383 _384 _385 _386 _387 _388 _389 _390 _391 _392 _393 _394 _395 _396 _397 _398 _399 _400 _401 _402 _403 _404 _405 _406 _407 _408 _409 _410 _411 _412 _413 _414 _415 _416 _417 _418 _419];    
+     
+    sub @oseq1a @oseq1' by [_381 _382 _383 _384 _385 _386 _387 _388 _389 _390 _391 _392 _393 _394 _395 _396 _397 _398 _399 _400 _401 _402 _403 _404 _405 _406 _407 _408 _409 _410 _411 _412 _413 _414 _415 _416 _417 _418 _419];    
+    sub @oseq2  @oseq1' by [uni0C95_uni0CCD.blws uni0C96_uni0CCD.blws uni0C97_uni0CCD.blws uni0C98_uni0CCD.blws uni0C99_uni0CCD.blws uni0C9A_uni0CCD.blws uni0C9B_uni0CCD.blws uni0C9C_uni0CCD.blws uni0C9D_uni0CCD.blws uni0C9E_uni0CCD.blws uni0C9F_uni0CCD.blws uni0CA0_uni0CCD.blws uni0CA1_uni0CCD.blws uni0CA2_uni0CCD.blws uni0CA3_uni0CCD.blws uni0CA4_uni0CCD.blws uni0CA5_uni0CCD.blws uni0CA6_uni0CCD.blws uni0CA7_uni0CCD.blws uni0CA8_uni0CCD.blws uni0CAA_uni0CCD.blws uni0CAB_uni0CCD.blws uni0CAC_uni0CCD.blws uni0CAD_uni0CCD.blws uni0CAE_uni0CCD.blws uni0CAF_uni0CCD.blws uni0CB0_uni0CCD.blws uni0CB1_uni0CCD.blws uni0CB2_uni0CCD.blws uni0CB3_uni0CCD.blws uni0CB5_uni0CCD.blws uni0CB6_uni0CCD.blws uni0CB7_uni0CCD.blws uni0CB8_uni0CCD.blws uni0CB9_uni0CCD.blws uni0CDE_uni0CCD.blws uni0C96_uni0CBC_uni0CCD.blws uni0C9C_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws];
+    sub @oseq1  @oseq1' by [uni0C95_uni0CCD.blws uni0C96_uni0CCD.blws uni0C97_uni0CCD.blws uni0C98_uni0CCD.blws uni0C99_uni0CCD.blws uni0C9A_uni0CCD.blws uni0C9B_uni0CCD.blws uni0C9C_uni0CCD.blws uni0C9D_uni0CCD.blws uni0C9E_uni0CCD.blws uni0C9F_uni0CCD.blws uni0CA0_uni0CCD.blws uni0CA1_uni0CCD.blws uni0CA2_uni0CCD.blws uni0CA3_uni0CCD.blws uni0CA4_uni0CCD.blws uni0CA5_uni0CCD.blws uni0CA6_uni0CCD.blws uni0CA7_uni0CCD.blws uni0CA8_uni0CCD.blws uni0CAA_uni0CCD.blws uni0CAB_uni0CCD.blws uni0CAC_uni0CCD.blws uni0CAD_uni0CCD.blws uni0CAE_uni0CCD.blws uni0CAF_uni0CCD.blws uni0CB0_uni0CCD.blws uni0CB1_uni0CCD.blws uni0CB2_uni0CCD.blws uni0CB3_uni0CCD.blws uni0CB5_uni0CCD.blws uni0CB6_uni0CCD.blws uni0CB7_uni0CCD.blws uni0CB8_uni0CCD.blws uni0CB9_uni0CCD.blws uni0CDE_uni0CCD.blws uni0C96_uni0CBC_uni0CCD.blws uni0C9C_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws];
+	} blws24;
+lookup blws25 {
+    sub @abvs4 @oseq1' by [_431 _432 _433 _434 _435 _436 _437 _438 _439 _440 _441 _442 _443 _444 _445 _446 _447 _448 _449 _450 _451 _452 _453 _454 _455 _456 _457 _458 _459 _460 _461 _462 _463 _464 _465 _466 _467 _468 _469 ];
+    sub @abvs4 @oseq16' by [m_751 m_752 m_753 m_754 m_755 m_756 m_757 m_758 m_759 m_760 m_761 m_762 m_763 m_764 m_765 m_766 m_767 m_768 m_769 m_770 m_771 m_772 m_773 m_774 m_775 m_776 m_777 m_778 m_779 m_780 m_781 m_782 m_783 m_784 m_785 m_786 m_787 m_788 m_789];
+    sub @abvs3 @oseq1' by  [_431 _432 _433 _434 _435 _436 _437 _438 _439 _440 _441 _442 _443 _444 _445 _446 _447 _448 _449 _450 _451 _452 _453 _454 _455 _456 _457 _458 _459 _460 _461 _462 _463 _464 _465 _466 _467 _468 _469];
+    sub @oseq16 @oseq2' by [m_751 m_752 m_753 m_754 m_755 m_756 m_757 m_758 m_759 m_760 m_761 m_762 m_763 m_764 m_765 m_766 m_767 m_768 m_769 m_770 m_771 m_772 m_773 m_774 m_775 m_776 m_777 m_778 m_779 m_780 m_781 m_782 m_783 m_784 m_785 m_786 m_787 m_788 m_789];
+} blws25;
+lookup blws26 {
+    sub uni0C95_uni0CCD	uni0CC3		by _471 ;
+		sub uni0C96_uni0CCD	uni0CC3		by _472 ;
+		sub uni0C97_uni0CCD	uni0CC3		by _473 ;
+		sub uni0C98_uni0CCD	uni0CC3		by _474 ;
+		sub uni0C99_uni0CCD	uni0CC3		by _475 ;
+		sub uni0C9A_uni0CCD	uni0CC3		by _476 ;
+		sub uni0C9B_uni0CCD	uni0CC3		by _477 ;
+		sub uni0C9C_uni0CCD	uni0CC3		by _478 ;
+		sub uni0C9D_uni0CCD	uni0CC3		by _479 ;
+		sub uni0C9E_uni0CCD	uni0CC3		by _480 ;
+		sub uni0C9F_uni0CCD	uni0CC3		by _481 ;
+		sub uni0CA0_uni0CCD	uni0CC3		by _482 ;
+		sub uni0CA1_uni0CCD	uni0CC3		by _483 ;
+		sub uni0CA2_uni0CCD	uni0CC3		by _484 ;
+		sub uni0CA3_uni0CCD	uni0CC3		by _485 ;
+		sub uni0CA4_uni0CCD	uni0CC3		by _486 ;
+		sub uni0CA5_uni0CCD	uni0CC3		by _487 ;
+		sub uni0CA6_uni0CCD	uni0CC3		by _488 ;
+		sub uni0CA7_uni0CCD	uni0CC3		by _489 ;
+		sub uni0CA8_uni0CCD	uni0CC3		by _490 ;
+		sub uni0CAA_uni0CCD	uni0CC3		by _491 ;
+		sub uni0CAB_uni0CCD	uni0CC3		by _492 ;
+		sub uni0CAC_uni0CCD	uni0CC3		by _493 ;
+		sub uni0CAD_uni0CCD	uni0CC3		by _494 ;
+		sub uni0CAE_uni0CCD	uni0CC3		by _495 ;
+		sub uni0CAF_uni0CCD	uni0CC3		by _496 ;
+		sub uni0CB0_uni0CCD	uni0CC3		by _497 ;
+		sub uni0CB1_uni0CCD	uni0CC3		by _498 ;
+		sub uni0CB2_uni0CCD	uni0CC3		by _499 ;
+		sub uni0CB3_uni0CCD	uni0CC3		by _500 ;
+		sub uni0CB5_uni0CCD	uni0CC3		by _501 ;
+		sub uni0CB6_uni0CCD	uni0CC3		by _502 ;
+		sub uni0CB7_uni0CCD	uni0CC3		by _503 ;
+		sub uni0CB8_uni0CCD	uni0CC3		by _504 ;
+		sub uni0CB9_uni0CCD	uni0CC3		by _505 ;
+		sub uni0CDE_uni0CCD	uni0CC3		by _506 ;
+		sub uni0C96_uni0CBC_uni0CCD	uni0CC3	by	_507  ;
+		sub uni0C9C_uni0CBC_uni0CCD	uni0CC3	by	_508  ;
+		sub uni0CAB_uni0CBC_uni0CCD	uni0CC3	by	_509  ;
+} blws26;
+lookup blws27 {
+    sub @abvs4 @oseq1a' by [_871 _872 _873 _874 _875 _876 _877 _878 _879 _880 _881 _882 _883 _884 _885 _886 _887 _888 _889 _890 _891 _892 _893 _894 _895 _896 _897 _898 _899 _900 _901 _902 _903 _904 _905 _906 _907 _908 _909];
+} blws27;
+lookup blws28 {
+sub m_751	uni0CC3	by m_791;
+sub m_752	uni0CC3 by m_792;
+sub m_753	uni0CC3 by m_793;
+sub m_754	uni0CC3 by m_794;
+sub m_755	uni0CC3 by m_795;
+sub m_756	uni0CC3 by m_796;
+sub m_757	uni0CC3 by m_797;
+sub m_758	uni0CC3 by m_798;
+sub m_759	uni0CC3 by m_799;
+sub m_760	uni0CC3 by m_800;
+sub m_761	uni0CC3 by m_801;
+sub m_762	uni0CC3 by m_802;
+sub m_763	uni0CC3 by m_803;
+sub m_764	uni0CC3 by m_804;
+sub m_765	uni0CC3 by m_805;
+sub m_766	uni0CC3 by m_806;
+sub m_767	uni0CC3 by m_807;
+sub m_768	uni0CC3 by m_808;
+sub m_769	uni0CC3 by m_809;
+sub m_770	uni0CC3 by m_810;
+sub m_771	uni0CC3 by m_811;
+sub m_772	uni0CC3 by m_812;
+sub m_773	uni0CC3 by m_813;
+sub m_774	uni0CC3 by m_814;
+sub m_775	uni0CC3 by m_815;
+sub m_776	uni0CC3 by m_816;
+sub m_777	uni0CC3 by m_817;
+sub m_778	uni0CC3 by m_818;
+sub m_779	uni0CC3 by m_819;
+sub m_780	uni0CC3 by m_820;
+sub m_781	uni0CC3 by m_821;
+sub m_782	uni0CC3 by m_822;
+sub m_783	uni0CC3 by m_823;
+sub m_784	uni0CC3 by m_824;
+sub m_785	uni0CC3 by m_825;
+sub m_786	uni0CC3 by m_826;
+sub m_787	uni0CC3 by m_827;
+sub m_788	uni0CC3 by m_828;
+sub m_789	uni0CC3 by m_829;
+}blws28;
+lookup blws29{
+sub uni0C95_uni0CCD.blws            uni0CC3 by _511;
+sub uni0C96_uni0CCD.blws            uni0CC3 by _512;
+sub uni0C97_uni0CCD.blws            uni0CC3 by _513;
+sub uni0C98_uni0CCD.blws            uni0CC3 by _514;
+sub uni0C99_uni0CCD.blws            uni0CC3 by _515;
+sub uni0C9A_uni0CCD.blws            uni0CC3 by _516;
+sub uni0C9B_uni0CCD.blws            uni0CC3 by _517;
+sub uni0C9C_uni0CCD.blws            uni0CC3 by _518;
+sub uni0C9D_uni0CCD.blws            uni0CC3 by _519;
+sub uni0C9E_uni0CCD.blws            uni0CC3 by _520;
+sub uni0C9F_uni0CCD.blws            uni0CC3 by _521;
+sub uni0CA0_uni0CCD.blws            uni0CC3 by _522;
+sub uni0CA1_uni0CCD.blws            uni0CC3 by _523;
+sub uni0CA2_uni0CCD.blws            uni0CC3 by _524;
+sub uni0CA3_uni0CCD.blws            uni0CC3 by _525;
+sub uni0CA4_uni0CCD.blws            uni0CC3 by _526;
+sub uni0CA5_uni0CCD.blws            uni0CC3 by _527;
+sub uni0CA6_uni0CCD.blws            uni0CC3 by _528;
+sub uni0CA7_uni0CCD.blws            uni0CC3 by _529;
+sub uni0CA8_uni0CCD.blws            uni0CC3 by _530;
+sub uni0CAA_uni0CCD.blws            uni0CC3 by _531;
+sub uni0CAB_uni0CCD.blws            uni0CC3 by _532;
+sub uni0CAC_uni0CCD.blws            uni0CC3 by _533;
+sub uni0CAD_uni0CCD.blws            uni0CC3 by _534;
+sub uni0CAE_uni0CCD.blws            uni0CC3 by _535;
+sub uni0CAF_uni0CCD.blws            uni0CC3 by _536;
+sub uni0CB0_uni0CCD.blws            uni0CC3 by _537;
+sub uni0CB1_uni0CCD.blws            uni0CC3 by _538;
+sub uni0CB2_uni0CCD.blws            uni0CC3 by _539;
+sub uni0CB3_uni0CCD.blws            uni0CC3 by _540;
+sub uni0CB5_uni0CCD.blws            uni0CC3 by _541;
+sub uni0CB6_uni0CCD.blws            uni0CC3 by _542;
+sub uni0CB7_uni0CCD.blws            uni0CC3 by _543;
+sub uni0CB8_uni0CCD.blws            uni0CC3 by _544;
+sub uni0CB9_uni0CCD.blws            uni0CC3 by _545;
+sub uni0CDE_uni0CCD.blws            uni0CC3 by _546;
+sub uni0C96_uni0CBC_uni0CCD.blws    uni0CC3 by _547;
+sub uni0C9C_uni0CBC_uni0CCD.blws    uni0CC3 by _548;
+sub uni0CAB_uni0CBC_uni0CCD.blws    uni0CC3 by _549;
+}blws29;
+lookup blws30 {
+    sub uni0C95_uni0CCD	uni0CD6		by  _671 ;
+		sub uni0C96_uni0CCD	uni0CD6		by  _672 ;
+		sub uni0C97_uni0CCD	uni0CD6		by  _673 ;
+		sub uni0C98_uni0CCD	uni0CD6		by  _674 ;
+		sub uni0C99_uni0CCD	uni0CD6		by  _675 ;
+		sub uni0C9A_uni0CCD	uni0CD6		by  _676 ;
+		sub uni0C9B_uni0CCD	uni0CD6		by  _677 ;
+		sub uni0C9C_uni0CCD	uni0CD6		by  _678 ;
+		sub uni0C9D_uni0CCD	uni0CD6		by  _679 ;
+		sub uni0C9E_uni0CCD	uni0CD6		by  _680 ;
+		sub uni0C9F_uni0CCD	uni0CD6		by  _681 ;
+		sub uni0CA0_uni0CCD	uni0CD6		by  _682 ;
+		sub uni0CA1_uni0CCD	uni0CD6		by  _683 ;
+		sub uni0CA2_uni0CCD	uni0CD6		by  _684 ;
+		sub uni0CA3_uni0CCD	uni0CD6		by  _685 ;
+		sub uni0CA4_uni0CCD	uni0CD6		by  _686 ;
+		sub uni0CA5_uni0CCD	uni0CD6		by  _687 ;
+		sub uni0CA6_uni0CCD	uni0CD6		by  _688 ;
+		sub uni0CA7_uni0CCD	uni0CD6		by  _689 ;
+		sub uni0CA8_uni0CCD	uni0CD6		by  _690 ;
+		sub uni0CAA_uni0CCD	uni0CD6		by  _691 ;
+		sub uni0CAB_uni0CCD	uni0CD6		by  _692 ;
+		sub uni0CAC_uni0CCD	uni0CD6		by  _693 ;
+		sub uni0CAD_uni0CCD	uni0CD6		by  _694 ;
+		sub uni0CAE_uni0CCD	uni0CD6		by  _695 ;
+		sub uni0CAF_uni0CCD	uni0CD6		by  _696 ;
+		sub uni0CB0_uni0CCD	uni0CD6		by  _697 ;
+		sub uni0CB1_uni0CCD	uni0CD6		by  _698 ;
+		sub uni0CB2_uni0CCD	uni0CD6		by  _699 ;
+		sub uni0CB3_uni0CCD	uni0CD6		by  _700 ;
+		sub uni0CB5_uni0CCD	uni0CD6		by  _701 ;
+		sub uni0CB6_uni0CCD	uni0CD6		by  _702 ;
+		sub uni0CB7_uni0CCD	uni0CD6		by  _703 ;
+		sub uni0CB8_uni0CCD	uni0CD6		by  _704 ;
+		sub uni0CB9_uni0CCD	uni0CD6		by  _705 ;
+		sub uni0CDE_uni0CCD	uni0CD6		by  _706 ;
+		sub uni0C96_uni0CBC_uni0CCD	uni0CD6	by _707	 ;
+		sub uni0C9C_uni0CBC_uni0CCD	uni0CD6	by _708	 ;
+		sub uni0CAB_uni0CBC_uni0CCD	uni0CD6	by _709	 ;
+} blws30;
+lookup blws31{
+	sub @abvs3 [_686 _697]' by [_926 _937];
+}blws31;
+lookup blws32{
+sub uni0C95_uni0CCD.blws	uni0CD6 by _711;
+sub uni0C96_uni0CCD.blws	uni0CD6 by _712;
+sub uni0C97_uni0CCD.blws	uni0CD6 by _713;
+sub uni0C98_uni0CCD.blws	uni0CD6 by _714;
+sub uni0C99_uni0CCD.blws	uni0CD6 by _715;
+sub uni0C9A_uni0CCD.blws	uni0CD6 by _716;
+sub uni0C9B_uni0CCD.blws	uni0CD6 by _717;
+sub uni0C9C_uni0CCD.blws	uni0CD6 by _718;
+sub uni0C9D_uni0CCD.blws	uni0CD6 by _719;
+sub uni0C9E_uni0CCD.blws	uni0CD6 by _720;
+sub uni0C9F_uni0CCD.blws	uni0CD6 by _721;
+sub uni0CA0_uni0CCD.blws	uni0CD6 by _722;
+sub uni0CA1_uni0CCD.blws	uni0CD6 by _723;
+sub uni0CA2_uni0CCD.blws	uni0CD6 by _724;
+sub uni0CA3_uni0CCD.blws	uni0CD6 by _725;
+sub uni0CA4_uni0CCD.blws	uni0CD6 by _726;
+sub uni0CA5_uni0CCD.blws	uni0CD6 by _727;
+sub uni0CA6_uni0CCD.blws	uni0CD6 by _728;
+sub uni0CA7_uni0CCD.blws	uni0CD6 by _729;
+sub uni0CA8_uni0CCD.blws	uni0CD6 by _730;
+sub uni0CAA_uni0CCD.blws	uni0CD6 by _731;
+sub uni0CAB_uni0CCD.blws	uni0CD6 by _732;
+sub uni0CAC_uni0CCD.blws	uni0CD6 by _733;
+sub uni0CAD_uni0CCD.blws	uni0CD6 by _734;
+sub uni0CAE_uni0CCD.blws	uni0CD6 by _735;
+sub uni0CAF_uni0CCD.blws	uni0CD6 by _736;
+sub uni0CB0_uni0CCD.blws	uni0CD6 by _737;
+sub uni0CB1_uni0CCD.blws	uni0CD6 by _738;
+sub uni0CB2_uni0CCD.blws	uni0CD6 by _739;
+sub uni0CB3_uni0CCD.blws	uni0CD6 by _740;
+sub uni0CB5_uni0CCD.blws	uni0CD6 by _741;
+sub uni0CB6_uni0CCD.blws	uni0CD6 by _742;
+sub uni0CB7_uni0CCD.blws	uni0CD6 by _743;
+sub uni0CB8_uni0CCD.blws	uni0CD6 by _744;
+sub uni0CB9_uni0CCD.blws	uni0CD6 by _745;
+sub uni0CDE_uni0CCD.blws	uni0CD6 by _746;
+sub uni0C96_uni0CBC_uni0CCD.blws uni0CD6 by	_747;
+sub uni0C9C_uni0CBC_uni0CCD.blws uni0CD6 by	_748;
+sub uni0CAB_uni0CBC_uni0CCD.blws uni0CD6 by	_749;
+}blws32;
+lookup blws33{
+sub @abvs4 @oseq2b' by  [_911 _912 _913 _914 _915 _916 _917 _918 _919 _920 _921 _922 _923 _924 _925 _926 _927 _928 _929 _930 _931 _932 _933 _934 _935 _936 _937 _938 _939 _940 _941 _942 _943 _944 _945 _946 _947 _948 _949 ];
+sub [uni0C9F_uni0CCD uni0CAA_uni0CCD uni0CB2_uni0CCD uni0CB6_uni0CCD uni0CB7_uni0CCD] @oseq2b' by  [_751 _752 _753 _754 _755 _756 _757 _758 _759 _760 _761 _762 _763 _764 _765 _766 _767 _768 _769 _770 _771 _772 _773 _774 _775 _776 _777 _778 _779 _780 _781 _782 _783 _784 _785 _786 _787 _788 _789];
+sub [uni0CA4_uni0CCD uni0CB0_uni0CCD] @oseq2b' by  [_791 _792 _793 _794 _795 _796 _797 _798 _799 _800 _801 _802 _803 _804 _805 _806 _807 _808 _809 _810 _811 _812 _813 _814 _815 _816 _817 _818 _819 _820 _821 _822 _823 _824 _825 _826 _827 _828 _829];
+sub [uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD] @oseq2b' by  [_831 _832 _833 _834 _835 _836 _837 _838 _839 _840 _841 _842 _843 _844 _845 _846 _847 _848 _849 _850 _851 _852 _853 _854 _855 _856 _857 _858 _859 _860 _861 _862 _863 _864 _865 _866 _867 _868 _869];
+}blws33;
+lookup blws34{
+sub @abvs5 [uni0CB7_uni0CCD uni0C9E_uni0CCD uni0CB2_uni0CCD]' by [m_705 m_706 m_707];
+sub @abvs7 [uni0CB7_uni0CCD uni0C9E_uni0CCD uni0CB2_uni0CCD]' by [m_705 m_706 m_707];
+}blws34;
+lookup blws35{
+sub @class7 @oseq1' by [m_601 m_602 m_603 m_604 m_605 m_606 m_607 m_608 m_609 m_610 m_611 m_612 m_613 m_614 m_615 m_616 m_617 m_618 m_619 m_620 m_621 m_622 m_623 m_624 m_625 m_626 m_627 m_628 m_629 m_630 m_631 m_632 m_633 m_634 m_635 m_636 m_637 m_638 m_639];
+sub @abvs2 @class7' by [uni0C95_uni0CCD uni0C96_uni0CCD uni0C97_uni0CCD uni0C98_uni0CCD uni0C99_uni0CCD uni0C9A_uni0CCD uni0C9B_uni0CCD uni0C9C_uni0CCD uni0C9D_uni0CCD uni0C9E_uni0CCD uni0C9F_uni0CCD uni0CA0_uni0CCD uni0CA1_uni0CCD uni0CA2_uni0CCD uni0CA3_uni0CCD uni0CA4_uni0CCD uni0CA5_uni0CCD uni0CA6_uni0CCD uni0CA7_uni0CCD uni0CA8_uni0CCD uni0CAA_uni0CCD uni0CAB_uni0CCD uni0CAC_uni0CCD uni0CAD_uni0CCD uni0CAE_uni0CCD uni0CAF_uni0CCD uni0CB0_uni0CCD uni0CB1_uni0CCD uni0CB2_uni0CCD uni0CB3_uni0CCD uni0CB5_uni0CCD uni0CB6_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD uni0CDE_uni0CCD uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD];
+sub @class30 @class7' by [uni0C95_uni0CCD uni0C96_uni0CCD uni0C97_uni0CCD uni0C98_uni0CCD uni0C99_uni0CCD uni0C9A_uni0CCD uni0C9B_uni0CCD uni0C9C_uni0CCD uni0C9D_uni0CCD uni0C9E_uni0CCD uni0C9F_uni0CCD uni0CA0_uni0CCD uni0CA1_uni0CCD uni0CA2_uni0CCD uni0CA3_uni0CCD uni0CA4_uni0CCD uni0CA5_uni0CCD uni0CA6_uni0CCD uni0CA7_uni0CCD uni0CA8_uni0CCD uni0CAA_uni0CCD uni0CAB_uni0CCD uni0CAC_uni0CCD uni0CAD_uni0CCD uni0CAE_uni0CCD uni0CAF_uni0CCD uni0CB0_uni0CCD uni0CB1_uni0CCD uni0CB2_uni0CCD uni0CB3_uni0CCD uni0CB5_uni0CCD uni0CB6_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD uni0CDE_uni0CCD uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD];
+sub @class31 @class7' by [uni0C95_uni0CCD uni0C96_uni0CCD uni0C97_uni0CCD uni0C98_uni0CCD uni0C99_uni0CCD uni0C9A_uni0CCD uni0C9B_uni0CCD uni0C9C_uni0CCD uni0C9D_uni0CCD uni0C9E_uni0CCD uni0C9F_uni0CCD uni0CA0_uni0CCD uni0CA1_uni0CCD uni0CA2_uni0CCD uni0CA3_uni0CCD uni0CA4_uni0CCD uni0CA5_uni0CCD uni0CA6_uni0CCD uni0CA7_uni0CCD uni0CA8_uni0CCD uni0CAA_uni0CCD uni0CAB_uni0CCD uni0CAC_uni0CCD uni0CAD_uni0CCD uni0CAE_uni0CCD uni0CAF_uni0CCD uni0CB0_uni0CCD uni0CB1_uni0CCD uni0CB2_uni0CCD uni0CB3_uni0CCD uni0CB5_uni0CCD uni0CB6_uni0CCD uni0CB7_uni0CCD uni0CB8_uni0CCD uni0CB9_uni0CCD uni0CDE_uni0CCD uni0C96_uni0CBC_uni0CCD uni0C9C_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD uni0CAB_uni0CBC_uni0CCD];
+}blws35;
+lookup blws36{
+sub @class7 @oseq1 @oseq2' by [m_641 m_642 m_643 m_644 m_645 m_646 m_647 m_648 m_649 m_650 m_651 m_652 m_653 m_654 m_655 m_656 m_657 m_658 m_659 m_660 m_661 m_662 m_663 m_664 m_665 m_666 m_667 m_668 m_669 m_670 m_671 m_672 m_673 m_674 m_675 m_676 m_677 m_678 m_679];
+}blws36;
+lookup blws37 {
+sub _uni0C95_uni0CCD  [m_633 m_610 m_629]' by [m_705 m_706 m_707];
+}blws37;
+
+lookup blws21{
+		sub m_504	_736	by m_512;
+}blws21;
+
+lookup blws22 {
+  	sub uni0C95_uni0CCD	uni0CB7_uni0CCD.blws										 by m_501;
+		sub uni0C95_uni0CCD	uni0CA4_uni0CCD.blws										 by m_502;
+		sub uni0C95_uni0CCD	uni0CAF_uni0CCD.blws										 by m_503;
+		sub uni0C95_uni0CCD	uni0CB0_uni0CCD.blws										 by m_504;
+		sub uni0C95_uni0CCD	uni0CB2_uni0CCD.blws										 by m_505;
+		sub uni0C95_uni0CCD	uni0CB5_uni0CCD.blws										 by m_506;
+		sub uni0C95_uni0CCD	uni0CB8_uni0CCD.blws										 by m_507;
+		sub uni0C95_uni0CCD	uni0CA4_uni0CCD.blws	uni0CC3_4							 by m_508;
+		sub uni0C95_uni0CCD	uni0CA4_uni0CCD.blws	uni0CD6_4							 by m_509;
+		sub uni0C95_uni0CCD	uni0CB0_uni0CCD.blws	uni0CD6_4							 by m_510;
+		sub uni0C95_uni0CCD	uni0CB0_uni0CCD.blws	uni0CAF_uni0CCD.blws				 by m_511;
+
+		sub uni0C95_uni0CCD	uni0CB5_uni0CCD.blws	uni0CC3_4							 by m_513;
+		sub uni0C95_uni0CCD	uni0CB8_uni0CCD.blws	uni0CC3_4							 by m_514;
+		sub uni0C95_uni0CCD	uni0CB8_uni0CCD.blws	uni0CD6_4							 by m_515;
+		sub uni0C95_uni0CCD	uni0CB5_uni0CCD.blws	uni0CD6_4							 by m_516;
+		sub uni0C95_uni0CCD	uni0CB5_uni0CCD.blws	uni0CAF_uni0CCD.blws	uni0CD6_4	 by m_517;
+		sub uni0C95_uni0CCD	uni0CB8_uni0CCD.blws	uni0CAF_uni0CCD.blws				 by m_518;
+		sub uni0C95_uni0CCD	uni0CA1_uni0CCD.blws										 by m_519;
+		sub uni0C97_uni0CCD	uni0CAF_uni0CCD.blws										 by m_520;
+		sub uni0C97_uni0CCD	uni0CB0_uni0CCD.blws										 by m_521;
+		sub uni0C97_uni0CCD	uni0CB2_uni0CCD.blws										 by m_522;
+		sub uni0C97_uni0CCD	uni0CB0_uni0CCD.blws	uni0CD6_4							 by m_523;
+		sub uni0C97_uni0CCD	uni0CB2_uni0CCD.blws	uni0CD6_4							 by m_524;
+		sub uni0C97_uni0CCD	uni0CAF_uni0CCD.blws	uni0CD6_4							 by m_525;
+		sub uni0C9A_uni0CCD	uni0CAF	uni0CAF_uni0CCD.blws								 by m_526;
+		sub uni0C9A_uni0CCD	uni0CAF	uni0CAF_uni0CCD.blws	uni0CD6_4					 by m_527;
+		sub uni0C9B_uni0CCD	uni0CB0_uni0CCD.blws										 by m_528;
+		sub uni0C9C_uni0CCD	uni0CB5_uni0CCD.blws										 by m_529;
+		sub uni0C9D_uni0CCD	uni0CAF_uni0CCD.blws										 by m_530;
+		sub uni0C9F_uni0CCD	uni0CAF_uni0CCD.blws										 by m_531;
+		sub uni0C9F_uni0CCD	uni0CB0_uni0CCD.blws										 by m_532;
+		sub uni0C9F_uni0CCD	uni0CB0_uni0CCD.blws	uni0CAF_uni0CCD.blws				 by m_533;
+		sub uni0C9F_uni0CCD	uni0CB2_uni0CCD.blws										 by m_534;
+		sub uni0C9F_uni0CCD	uni0CB0_uni0CCD.blws	uni0CD6_4							 by m_535;
+		sub uni0C9F_uni0CCD	uni0CB8_uni0CCD.blws										 by m_536;
+		sub uni0CA0_uni0CCD	uni0CAF_uni0CCD.blws										 by m_537;
+		sub uni0CA1_uni0CCD	uni0CB0_uni0CCD.blws										 by m_538;
+		sub uni0CA1_uni0CCD	uni0CB8_uni0CCD.blws										 by m_539;
+		sub uni0CA1_uni0CCD	uni0CB2_uni0CCD.blws										 by m_540;
+		sub uni0CA4_uni0CCD	uni0CB0_uni0CCD.blws										 by m_541;
+		sub uni0CA4_uni0CCD	uni0CD6													 by m_542;
+		sub uni0CA4_uni0CCD	uni0CAF_uni0CCD.blws										 by m_543;
+		sub uni0CA4_uni0CCD	uni0CC3													 by m_544;
+		sub uni0CA4_uni0CCD	_371										 by m_545;
+		sub uni0CA4_uni0CCD	uni0CB0_uni0CCD.blws	uni0CD6_4							 by m_546;
+		sub uni0CA5_uni0CCD	uni0CAE_uni0CCD.blws										 by m_547;
+		sub uni0CA5_uni0CCD	uni0CAF_uni0CCD.blws										 by m_548;
+		sub uni0CA6_uni0CCD	uni0CAF_uni0CCD.blws										 by m_549;
+		sub uni0CA6_uni0CCD	uni0CB5_uni0CCD.blws										 by m_550;
+		sub uni0CA8_uni0CCD	uni0CAF_uni0CCD.blws										 by m_551;
+		sub uni0CA8_uni0CCD	uni0CB8_uni0CCD.blws										 by m_552;
+		sub uni0CAA_uni0CCD	uni0CD6_4													 by m_553;
+		sub uni0CAA_uni0CCD	uni0CB0_uni0CCD.blws	uni0CD6_4							 by m_554;
+		sub uni0CAA_uni0CCD	uni0CAF_uni0CCD.blws										 by m_555;
+		sub uni0CAA_uni0CCD	uni0CB8_uni0CCD.blws										 by m_556;
+		sub uni0CAA_uni0CCD	uni0C9C_uni0CCD.blws										 by m_557;
+		sub uni0CAB_uni0CCD	uni0CAF_uni0CCD.blws										 by m_558;
+		sub uni0CAD_uni0CCD	uni0CB0_uni0CCD.blws										 by m_559;
+		sub uni0CAE_uni0CCD	uni0CAF_uni0CCD.blws										 by m_560;
+		sub uni0CAE_uni0CCD	uni0CAF_uni0CCD.blws	uni0CD6_4							 by m_561;
+		sub uni0CB0_uni0CCD	uni0CAF_uni0CCD.blws										 by m_562;
+		sub uni0CB0_uni0CCD	uni0CD5														 by m_563;
+		sub uni0CB0_uni0CCD	uni0CB5_uni0CCD.blws	uni0CAF_uni0CCD.blws				 by m_564;
+		sub uni0CB2_uni0CCD	uni0CB8_uni0CCD.blws										 by m_565;
+		sub uni0CB2_uni0CCD	uni0CAF_uni0CCD.blws										 by m_566;
+		sub uni0CB5_uni0CCD	uni0CB8_uni0CCD.blws										 by m_567;
+		sub uni0CB6_uni0CCD	uni0CB0_uni0CCD.blws										 by m_568;
+		sub uni0CB7_uni0CCD	uni0CAE_uni0CCD.blws										 by m_569;
+		sub uni0CB7_uni0CCD	uni0CAE_uni0CCD.blws	uni0CC3_4							 by m_570;
+		sub uni0CB7_uni0CCD	uni0CA3_uni0CCD.blws										 by m_571;
+		sub uni0CB7_uni0CCD	uni0CA3_uni0CCD.blws	uni0CC3_4							 by m_572;
+		sub uni0CB7_uni0CCD	uni0CAE_uni0CCD.blws	uni0CAF_uni0CCD.blws	uni0CD6_4	 by m_573;
+		sub uni0CB7_uni0CCD	uni0CAE_uni0CCD.blws	uni0CAF_uni0CCD.blws				 by m_574;
+		sub uni0CB8_uni0CCD	uni0CAF_uni0CCD.blws										 by m_575;
+		sub uni0CB8_uni0CCD	uni0C9F_uni0CCD.blws										 by m_576;
+		sub uni0CB8_uni0CCD	uni0CA1_uni0CCD.blws										 by m_577;
+		sub uni0CB8_uni0CCD	uni0CB5_uni0CCD.blws										 by m_578;
+		sub uni0CB8_uni0CCD	uni0C95_uni0CCD.blws										 by m_579;
+		sub uni0CB8_uni0CCD	uni0CA5_uni0CCD.blws										 by m_580;
+		sub uni0CB9_uni0CCD	uni0CAF_uni0CCD.blws										 by m_581;
+		sub uni0CB9_uni0CCD	uni0CA5_uni0CCD.blws										 by m_582;
+		sub uni0CB9_uni0CCD	uni0CA5_uni0CCD.blws	uni0CD6							 by m_583;
+		sub _446	uni0CB0_uni0CCD										 by m_584;
+		sub _446	uni0CD6													 by m_585;
+		sub _446	uni0CAF_uni0CCD										 by m_586;
+		sub _446	uni0CC3													 by m_587;
+		sub _446	uni0CB5_uni0CCD										 by m_588;
+		sub _446	uni0CB0_uni0CCD	uni0CD6							 by m_589;
+		#sub uni0CA4_uni0CCD	uni0CD6														 by m_591;
+		sub _447	uni0CD6													 by _937;
+		sub _447	uni0CAF_uni0CCD										 by m_593;
+		sub _447	uni0CC4													 by m_587;
+		sub _447	uni0CB5_uni0CCD	uni0CAF_uni0CCD	 by m_594;
+		sub _447	uni0CD5								 by m_591;
+		#sub m_584	uni0CD6_3													 by m_592;
+		#sub m_584	uni0CAF_uni0CCD.blws										 by m_593;
+		sub uni0CA4_uni0CCD	uni0CB5_uni0CCD.blws	uni0CAF_uni0CCD.blws				 by m_594;
+		#sub uni0CA4_uni0CCD																 by m_595;
+		#sub uni0CB0_uni0CCD																 by m_596;
+		#sub uni0CB7_uni0CCD																 by m_705;
+		#sub uni0C9E_uni0CCD																 by m_706;
+		#sub uni0CB2_uni0CCD																 by m_707;
+  }blws22;
+lookup blws61{
+sub @oseq1 @class7' by [uni0C95_uni0CCD.blws uni0C96_uni0CCD.blws uni0C97_uni0CCD.blws uni0C98_uni0CCD.blws uni0C99_uni0CCD.blws uni0C9A_uni0CCD.blws uni0C9B_uni0CCD.blws uni0C9C_uni0CCD.blws uni0C9D_uni0CCD.blws uni0C9E_uni0CCD.blws uni0C9F_uni0CCD.blws uni0CA0_uni0CCD.blws uni0CA1_uni0CCD.blws uni0CA2_uni0CCD.blws uni0CA3_uni0CCD.blws uni0CA4_uni0CCD.blws uni0CA5_uni0CCD.blws uni0CA6_uni0CCD.blws uni0CA7_uni0CCD.blws uni0CA8_uni0CCD.blws uni0CAA_uni0CCD.blws uni0CAB_uni0CCD.blws uni0CAC_uni0CCD.blws uni0CAD_uni0CCD.blws uni0CAE_uni0CCD.blws uni0CAF_uni0CCD.blws uni0CB0_uni0CCD.blws uni0CB1_uni0CCD.blws uni0CB2_uni0CCD.blws uni0CB3_uni0CCD.blws uni0CB5_uni0CCD.blws uni0CB6_uni0CCD.blws uni0CB7_uni0CCD.blws uni0CB8_uni0CCD.blws uni0CB9_uni0CCD.blws uni0CDE_uni0CCD.blws uni0C96_uni0CBC_uni0CCD.blws uni0C9C_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws uni0CAB_uni0CBC_uni0CCD.blws];
+}blws61;
+script knda;
+lookup blws24;
+lookup blws34;
+lookup blws35;
+lookup blws61;
+} blws;
+
+
+feature psts {
+script knd2;
+lookup psts46 {
+  sub uni0CB5 [uni0CC1 uni0CC2]' by [uni0CC1_2 uni0CC2_2];
+  sub uni0CB5.abvs uni0CC6 [uni0CC1 uni0CC2]' by [uni0CC1_2 uni0CC2_2];
+  sub uni0CB3.abvs uni0CC6 uni0CD6' by uni0CD6_2;
+  sub [uni0C99.abvs uni0C9E.abvs] uni0CC6  uni0CD6' by uni0CD6_5;
+}psts46;
+#single glyph substitution
+lookup psts47{
+sub	@class7	@oseq1	uni200C'	by	uni200C	;
+}psts47;
+#double glyph substitution
+lookup psts48{
+sub	@class7	@oseq1 @oseq2	uni200C'	by	uni200C	;
+}psts48;
+#half character substitution
+lookup psts49{
+sub	@class7'	uni200C	by	[uni0C95.abvs uni0C96.abvs uni0C97.abvs uni0C98.abvs uni0C99.abvs uni0C9A.abvs uni0C9B.abvs uni0C9C.abvs uni0C9D.abvs uni0C9E.abvs uni0C9F.abvs uni0CA0.abvs uni0CA1.abvs uni0CA2.abvs uni0CA3.abvs uni0CA4.abvs uni0CA5.abvs uni0CA6.abvs uni0CA7.abvs uni0CA8.abvs uni0CAA.abvs uni0CAB.abvs uni0CAC.abvs uni0CAD.abvs uni0CAE.abvs uni0CAF.abvs uni0CB0.abvs uni0CB1.abvs uni0CB2.abvs uni0CB3.abvs uni0CB5.abvs uni0CB6.abvs uni0CB7.abvs uni0CB8.abvs uni0CB9.abvs uni0CDE.abvs uni0C96.abvs_uni0CBC uni0C9C.abvs_uni0CBC uni0CAB.abvs_uni0CBC mta_02 mta_10] ;
+}psts49;
+lookup psts55 {
+    
+sub uni0CB0.abvs uni0CC6 [uni0CC3 uni0CC4 uni0CCB uni0CD5 uni0CD6]' uni0CB0_uni0CCD.001' by _497;
+   
+sub [uni0CB0 uni0CB0.abvs uni0CB0_uni0CBF] [uni0CC3 uni0CC4 uni0CCB uni0CD5 uni0CD6]' uni0CB0_uni0CCD.001' by _897;
+} psts55;
+lookup psts56 {
+    
+sub [uni0CB0 uni0CB0_uni0CBF] uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+    
+sub uni0CB0.abvs uni0CC6 uni0CC2 uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+    
+sub uni0CB0.abvs [uni0CBE uni0CC6 uni0CCC] uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+    
+sub uni0CB0 [uni0CC1 uni0CC2] uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+    
+sub uni0CB0 uni0CCD uni0CB0_uni0CCD.001' by uni0CB0_uni0CCD;
+} psts56;
+lookup psts57 {
+sub uni0CB0.abvs uni0CC6' uni0CC2' uni0CD5' uni0CB0_uni0CCD.001' by mta_025;
+} psts57;
+script knda;
+#lookup psts44;
+#lookup psts45;
+lookup psts46;
+lookup psts47;
+lookup psts48;
+lookup psts49;
+lookup psts55;
+lookup psts56;
+lookup psts57;
+} psts;
+
+
+
+
+
+feature blwf { # Below-Base Forms
+ script knda; # Kannada
+#lookup blwf23{
+#lookupflag 0;
+ #sub uni0CD mta_09' by [uni0C9C uni0CCD uni0C9E];
+#}blwf23;
+lookup blwf24 {
+lookupflag 0;
+    #ignore sub uni0CCD' @blwf1 uni0CBC;
+    #sub uni0CCD' @blwf1' by mta_401;
+} blwf24;
+lookup blwf25 {
+lookupflag 0;
+    #ignore sub uni0CB0 uni0CCD' uni200D @rphf1 uni0CBC;
+    #sub uni0CB0 uni0CCD' uni200D' @rphf1' by glyph181;
+} blwf25;
+  lookup blwf50 {
+    sub	uni0C95	uni0CCD	by	uni0C95_uni0CCD;
+	sub	uni0C96 uni0CCD	by	uni0C96_uni0CCD;
+	sub	uni0C97 uni0CCD	by	uni0C97_uni0CCD;
+	sub	uni0C99 uni0CCD	by	uni0C99_uni0CCD;
+	sub	uni0C9A uni0CCD	by	uni0C9A_uni0CCD;
+	sub	uni0C9C uni0CCD	by	uni0C9C_uni0CCD;
+	sub	uni0C9E uni0CCD	by	uni0C9E_uni0CCD;
+	sub	uni0C9F uni0CCD	by	uni0C9F_uni0CCD;
+	sub	uni0CA0 uni0CCD	by	uni0CA0_uni0CCD;
+	sub	uni0CA1 uni0CCD	by	uni0CA1_uni0CCD;
+	sub	uni0CA3 uni0CCD	by	uni0CA3_uni0CCD;
+	sub	uni0CA4 uni0CCD	by	uni0CA4_uni0CCD;
+	sub	uni0CA6 uni0CCD	by	uni0CA6_uni0CCD;
+	sub	uni0CA8 uni0CCD	by	uni0CA8_uni0CCD;
+	sub	uni0CAA uni0CCD	by	uni0CAA_uni0CCD;
+	sub	uni0CAC uni0CCD	by	uni0CAC_uni0CCD;
+	sub	uni0CAE uni0CCD	by	uni0CAE_uni0CCD;
+	sub	uni0CAF uni0CCD	by	uni0CAF_uni0CCD;
+	sub	uni0CB0 uni0CCD	by	uni0CB0_uni0CCD;
+	sub	uni0CB2 uni0CCD	by	uni0CB2_uni0CCD;
+	sub	uni0CB3 uni0CCD	by	uni0CB3_uni0CCD;
+	sub	uni0CB5 uni0CCD	by	uni0CB5_uni0CCD;
+	sub	uni0CB6 uni0CCD	by	uni0CB6_uni0CCD;
+	sub	uni0CB7 uni0CCD	by	uni0CB7_uni0CCD;
+	sub	uni0CB8 uni0CCD	by	uni0CB8_uni0CCD;
+	sub	uni0CB9 uni0CCD	by	uni0CB9_uni0CCD;
+	sub	uni0CDE uni0CCD	by	uni0CDE_uni0CCD;
+	sub	uni0C98 uni0CCD	by	uni0C98_uni0CCD;
+	sub	uni0C9B uni0CCD	by	uni0C9B_uni0CCD;
+	sub	uni0C9D uni0CCD	by	uni0C9D_uni0CCD;
+	sub	uni0CA2 uni0CCD	by	uni0CA2_uni0CCD;
+	sub	uni0CA5 uni0CCD	by	uni0CA5_uni0CCD;
+	sub	uni0CA7 uni0CCD	by	uni0CA7_uni0CCD;
+	sub	uni0CAB uni0CCD	by	uni0CAB_uni0CCD;
+	sub	uni0CAD uni0CCD	by	uni0CAD_uni0CCD;
+	sub	uni0C96 uni0CBC uni0CCD	by	uni0C96_uni0CBC_uni0CCD; 
+	sub	uni0C9C uni0CBC uni0CCD	by	uni0C9C_uni0CBC_uni0CCD;  
+	sub	uni0CAB uni0CBC uni0CCD	by	uni0CAB_uni0CBC_uni0CCD;
+} blwf50;
+
+
+} blwf;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

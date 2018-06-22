@@ -1,0 +1,9 @@
+Package: kanconv
+Version: 1.2-1
+Architecture: i386
+Maintainer: Kan Conv <kanconv@gmail.com>
+Installed-Size: 2
+Section: misc
+Priority: optional
+Description: greet user
+ kanconv greets the user, or the world.

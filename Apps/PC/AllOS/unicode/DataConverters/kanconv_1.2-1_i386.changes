@@ -1,0 +1,22 @@
+Format: 1.8
+Date: Thu, 14 Aug 2014 00:25:18 -0300
+Source: kanconv
+Binary: kanconv
+Architecture: i386
+Version: 1.2-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Kan Conv <kanconv@gmail.com>
+Changed-By: kanconv <kanconv@gmail.com>
+Description: 
+ kanconv    - greet user
+Changes: 
+ kanconv (1.2-1) UNRELEASED; urgency=medium
+ .
+   * Initial release. (Closes: #XXXXXX)
+Checksums-Sha1: 
+ 7577319b2dddf40b0023ba291736acd8bbe05e65 1030 kanconv_1.2-1_i386.deb
+Checksums-Sha256: 
+ c5fa3bd41d4a49631f76f6e2fc8e92506f401b5d4a5be90140f05592298a8982 1030 kanconv_1.2-1_i386.deb
+Files: 
+ 28e97f92a0b09f96607c03fdf2c07190 1030 misc optional kanconv_1.2-1_i386.deb

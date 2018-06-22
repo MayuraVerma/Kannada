@@ -1,0 +1,188 @@
+/*	
+Group: Tabbed Navigation
+$Id: tabnav.css,v 1.18 2008/04/25 01:00:16 mok Exp $
+@author btapley
+*/
+.tabtitle,
+.dyn-tabsection .tabcontent { display: none; }
+.hide {
+display: none;
+}
+.tabNav {
+display: block;
+word-spacing: -1ex;
+letter-spacing: -1ex;
+line-height: 0;
+margin-left: 0;
+margin-right: 0;
+margin-bottom: 1em;
+zoom: 1;
+_height: 1em;
+}
+.tabNav li,
+.tabNav li a {
+display: inline;
+display: inline-block;
+display: -moz-inline-box;
+zoom: 1;
+_height: 1em;
+}
+.tabNav li a:hover { background-color: transparent; }	/* override default hover bg color */
+.tabNav li {
+padding-bottom: 0; /* unfortunately <LI> is globally redefined to have padding bottom. I need to override that here */
+_display: inline;
+word-spacing: 0;
+letter-spacing: 0;
+line-height: 1.25;
+}
+[className~=tabNav] li { display: inline; }
+.tabNav li a { vertical-align: /*\*/ bottom /*/ baseline /**/; }
+/* Hide space delimited selector from Mac IE: http://www.macedition.com/cb/ie5macbugs/substringbug.html \*/
+.tabCenter { text-align: center; }
+.tabRight { text-align: right; }
+/**/
+.tabZen {
+padding-left: 0;
+padding-right: 0;
+border-bottom: 3px solid #666;
+}
+.tabZen li {
+background-repeat: no-repeat;
+font-weight: bold;
+}
+.tabZen li.on,
+.tabZen li.on:hover {  background-color: #666; }
+.tabZen li.on a,
+.tabZen li.on a:visited,
+.tabZen li.on a:hover {	color: #FFF; }
+.tabZen li:hover,
+.tabZen li.hover { background-color: #EEE; }
+.tabZen li:hover a,
+.tabZen li.hover a { color: #888; }
+.tabZen li a {
+padding: 5px 12px 4px;
+text-decoration: none;
+color: #999;
+}
+.tabZen li a:visited { color: #999; }
+.tabZen li a:hover { _text-decoration: none }
+.tabZen li.on a:hover {	_color: #FFF !important; }
+.tabZen li.off a:hover { 
+_background-color: #EEE;
+_color: #888 !important;
+}
+.tabHalo {
+background-image: url(img/navBtile.gif);
+background-repeat: repeat-x;
+background-position: left bottom;
+padding-left: 2ex;
+padding-right: 2ex;
+}
+.tabHalo li {
+background-repeat: no-repeat;
+border-bottom: 1px solid #73838C;
+background-image: url(img/itemLdoor.gif);
+font-weight: bold;
+}
+.tabHalo li.on,
+.tabHalo li.on:hover {
+background-image: url(img/itemLdoor_on.gif);
+border-bottom-color: #FFF;
+}
+.tabHalo li.on a,
+.tabHalo li.on a:hover { background-image: url(img/itemRdoor_on.gif); }
+.tabHalo li:hover { background-image: url(img/itemLdoor_hover.gif); }
+.tabHalo li:hover a { background-image: url(img/itemRdoor_hover.gif); }
+.tabHalo li a {
+background-image: url(img/itemRdoor.gif);
+background-position: top right;
+padding: 5px 12px 4px 8px;
+margin-left: 5px;
+text-decoration: none;
+color: #000;
+}
+.tabHalo li a:visited { color: #000; }
+.tabMini {
+background-image: url(img/navBtile.gif);
+background-repeat: repeat-x;
+background-position: left bottom;
+padding-left: 2ex;
+padding-right: 2ex;
+}
+.tabMini li {
+background-repeat: no-repeat;
+border-bottom: 1px solid #73838C;
+background-image: url(img/itemLdoor.gif);
+font-weight: normal;
+font-size: .917em; /* based on 75% or 12px base font */
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.tabMini li.on,
+.tabMini li.on:hover {
+background-image: url(img/itemLdoor_on.gif);
+border-bottom-color: #FFF;
+}
+.tabMini li.on a,
+.tabMini li.on a:hover { background-image: url(img/itemRdoor_on.gif); }
+.tabMini li:hover { background-image: url(img/itemLdoor_hover.gif); }
+.tabMini li:hover a { background-image: url(img/itemRdoor_hover.gif); }
+.tabMini li a {
+background-image: url(img/itemRdoor.gif);
+background-position: top right;
+padding: 5px 12px 4px 8px;
+margin-left: 5px;
+text-decoration: none;
+color: #000;
+}
+.tabMini li a:visited { color: #000; }
+.tabBlackboard {
+padding: 4px 3px 3px 3px;
+background-color: #505050;
+background-image: url(nico/navtile.gif);
+background-repeat: repeat-x;
+background-position: left bottom;
+}
+.tabBlackboard li {
+font-size: .917em; /* based on 12px or 75% base font */
+}
+.tabBlackboard li.on {
+background-color: #FDFDFD;
+background-image: url(nico/tabtile.gif);
+background-repeat: repeat-x;
+}
+.tabBlackboard li a {
+text-decoration: none;
+text-transform: uppercase;
+-moz-outline: none;
+padding-right: 1.5ex;
+padding-left: 1.5ex;
+padding-top: 2px;
+padding-bottom: 4px;
+}
+.tabBlackboard li a { color: #c7c7c7; }
+.tabBlackboard li a:hover { color: #FFF; }
+.tabBlackboard li a:visited { color: #c7c7c7; }
+.tabBlackboard li a:visited:hover { color: #FFF; }
+.tabBlackboard li.on a { color: #424242; }
+.tabBlackboard li.on a:hover,
+.tabBlackboard li.on a:visited { color: #424242; }
+.tabChiclet {
+background: #ebebeb url(flex/boxshadow.gif) repeat-x bottom left;
+border-top: 1px solid #b1b1b1;
+padding-bottom: 4px;
+}
+.tabChiclet li {
+background-color: #efefef;
+border-left: 1px solid #fff;
+border-right: 1px solid #b1b1b1;
+}
+.tabChiclet li a {
+padding: 6px 16px;
+color: #000;
+}
+.tabChiclet li a:hover {
+background-color: #def;
+color: #000;
+}
+.tabChiclet li.on { background-color: #f9f9f9; }
+.tabChiclet li a:visited { color: #000; }

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*	TREE
+$Id: tree.print.css,v 1.1 2008/02/06 21:17:47 btapley Exp $
+@author btapley
+ */
+.treelist {
+margin: 12pt 0;
+padding: 0;
+}
+.treelist dt {
+font-weight: bold;
+font-size: 10pt;
+line-height: 13pt;
+margin-top: 15pt;
+margin-bottom: 3pt;
+display: block;
+}
+.treelist dd {
+font-size: 10pt;
+line-height: 13pt;
+margin-bottom: 12pt;
+}
+.treelist dd dt,
+.treelist dd dd {
+margin-left: 3ex;
+font-size: 8pt;
+line-height: 11pt;
+}
+.treelist dd dt {
+margin-top: 0;
+margin-bottom: 0;
+display: list-item;
+list-style-type: disc;
+list-style-position: outside;
+zoom: 100%;
+}
+.treelist dd dd {
+margin-bottom: 6pt;
+}
